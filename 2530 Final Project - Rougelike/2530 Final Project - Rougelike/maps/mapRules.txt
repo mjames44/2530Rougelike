@@ -1,1 +1,19 @@
-﻿
+﻿Map Rules
+
+These are the rules for building maps for our project.
+
+* At this point, only Mike has seen this, so only he has had input.  That can and will change.
+
+1. Always edit maps in Libreoffice Calc.  This allows the conditional formatting to work properly.
+2. We need a way to draw maps bigger than the screen, so we can draw to a given window.
+3. All rows need to be the number of columns.
+4. Closed doors have an opening difficulty of their map value - 100.  //Unimplemented...
+
+The integer codes for map objects are
+0		open space	'.'
+1		Wall		//Wall character...
+2		Black Space ' '
+3		Up stairs	'>'
+4		Down stairs	'<'
+100		Open Door	'-'
+101-300 Closed door	'+'
