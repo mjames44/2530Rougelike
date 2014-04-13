@@ -12,7 +12,7 @@ namespace _2530_Final_Project___Rougelike
         static PlayerCharacter pc;
         static List<Character> characterList;
         static bool done;
-        static int[,] mapSpace;
+        static int[][] mapSpace;
         static int playingSpaceLeft;
         static int playingSpaceTop;
         static List<int> standableTiles;
@@ -26,7 +26,7 @@ namespace _2530_Final_Project___Rougelike
             initializeGame();
 
             standableTiles = new List<int> { 0, 3, 4, 100 };
-            
+
             // Initial Draw
             drawMap();
 
@@ -42,20 +42,22 @@ namespace _2530_Final_Project___Rougelike
                 #endregion
             }
 
-            
+
         }
 
         private static void initializeGame()
         {
+            Console.SetWindowSize(160, 40);
+
             playingSpaceLeft = 0;
             playingSpaceTop = 0;
-            
+
             characterList = new List<Character>();
             pc = new PlayerCharacter();
             characterList.Add(pc);
             done = false;
 
-           initializeMap();
+            initializeMap();
         }
 
         #region Update Methods
@@ -77,10 +79,10 @@ namespace _2530_Final_Project___Rougelike
                 case '?':
                     showHelpScreen();
                     break;
-                case 'o' :
+                case 'o':
                     tryOpenDoor();
                     break;
-                case 'Q' :
+                case 'Q':
                     done = true;
                     break;
             }
@@ -93,23 +95,23 @@ namespace _2530_Final_Project___Rougelike
 
             switch (Console.ReadKey(false).Key)
             {
-                case ConsoleKey.UpArrow :
-                    if (mapSpace[pc.Y - 1, pc.X] >= 101 && mapSpace[pc.Y,pc.X] <= 300)
+                case ConsoleKey.UpArrow:
+                    if (mapSpace[pc.Y - 1][pc.X] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
                         openDoor(1);
                     break;
                 case ConsoleKey.DownArrow:
-                    if (mapSpace[pc.Y + 1, pc.X] >= 101 && mapSpace[pc.Y, pc.X] <= 300)
+                    if (mapSpace[pc.Y + 1][pc.X] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
                         openDoor(2);
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (mapSpace[pc.Y, pc.X - 1] >= 101 && mapSpace[pc.Y, pc.X] <= 300)
+                    if (mapSpace[pc.Y][pc.X - 1] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
                         openDoor(3);
                     break;
                 case ConsoleKey.RightArrow:
-                    if (mapSpace[pc.Y, pc.X + 1] >= 101 && mapSpace[pc.Y, pc.X] <= 300)
+                    if (mapSpace[pc.Y][pc.X + 1] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
                         openDoor(4);
                     break;
-                    
+
             }
         }
 
@@ -118,38 +120,47 @@ namespace _2530_Final_Project___Rougelike
             Random rand = new Random();
             int pickScore = rand.Next(101);
 
-            switch(doorDirection)
+            switch (doorDirection)
             {
-                case 1 :
-                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y - 1, pc.X])
+                case 1:
+                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y - 1][pc.X])
                     {
-                        mapSpace[pc.Y - 1, pc.X] = 100;
+                        if (mapSpace[pc.Y - 1][pc.X] < 300)
+                            mapSpace[pc.Y - 1][pc.X] = 100;
+                        else
+                            message = "You can't pick this lock";
                     }
 
-                    message = String.Format("Door Direction: {0} Score:{1} MapValue: {2}", "up", pickScore + pc.LockPickSkill, mapSpace[pc.Y - 1, pc.X]);
                     break;
                 case 2:
-                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y + 1, pc.X])
+                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y + 1][pc.X])
                     {
-                        mapSpace[pc.Y + 1, pc.X] = 100;
+                        if (mapSpace[pc.Y + 1][pc.X] < 300)
+                            mapSpace[pc.Y + 1][pc.X] = 100;
+                        else
+                            message = "You can't pick this lock";
                     }
 
-                    message = String.Format("Door Direction: {0} Score:{1} MapValue: {2}", "down", pickScore + pc.LockPickSkill, mapSpace[pc.Y + 1, pc.X]);
                     break;
                 case 3:
-                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y, pc.X - 1])
+                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y][pc.X - 1])
                     {
-                        mapSpace[pc.Y, pc.X - 1] = 100;
+                        if (mapSpace[pc.Y][pc.X - 1] < 300)
+                            mapSpace[pc.Y][pc.X - 1] = 100;
+                        else
+                            message = "You can't pick this lock";
                     }
 
-                    message = String.Format("Door Direction: {0} Score:{1} MapValue: {2}", "left", pickScore + pc.LockPickSkill, mapSpace[pc.Y, pc.X - 1]);
                     break;
                 case 4:
-                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y, pc.X + 1])
+                    if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y][pc.X + 1])
                     {
-                        mapSpace[pc.Y, pc.X + 1] = 100;
+                        if (mapSpace[pc.Y][pc.X + 1] < 300)
+                            mapSpace[pc.Y][pc.X + 1] = 100;
+                        else
+                            message = "You can't pick this lock";
                     }
-                    message = String.Format("Door Direction: {0} Score:{1} MapValue: {2}", "right", pickScore + pc.LockPickSkill, mapSpace[pc.Y, pc.X + 1]);
+
                     break;
             }
 
@@ -178,13 +189,13 @@ namespace _2530_Final_Project___Rougelike
 
         private static void moveCharacter(ConsoleKey key)
         {
-            if (key == ConsoleKey.DownArrow && canMoveHere(mapSpace[pc.Y + 1, pc.X]))
+            if (key == ConsoleKey.DownArrow && canMoveHere(mapSpace[pc.Y + 1][pc.X]))
                 pc.Y++;
-            else if (key == ConsoleKey.UpArrow && canMoveHere(mapSpace[pc.Y - 1, pc.X]))
+            else if (key == ConsoleKey.UpArrow && canMoveHere(mapSpace[pc.Y - 1][pc.X]))
                 pc.Y--;
-            else if (key == ConsoleKey.RightArrow && canMoveHere(mapSpace[pc.Y, pc.X + 1]))
+            else if (key == ConsoleKey.RightArrow && canMoveHere(mapSpace[pc.Y][pc.X + 1]))
                 pc.X++;
-            else if (key == ConsoleKey.LeftArrow && canMoveHere(mapSpace[pc.Y, pc.X - 1]))
+            else if (key == ConsoleKey.LeftArrow && canMoveHere(mapSpace[pc.Y][pc.X - 1]))
                 pc.X--;
 
             drawMap();
@@ -207,27 +218,38 @@ namespace _2530_Final_Project___Rougelike
             maxMessageCounterValue = 10;
             messageCounter = -1;
 
-            mapSpace = new int[,] {
-            {1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1},
-            {1,0,0,0,0,0,0,0,1,2,1,0,0,0,0,0,0,0,0,1},
-            {1,0,0,0,0,0,0,0,1,2,1,0,0,0,0,0,0,0,0,1},
-            {1,0,0,3,0,4,0,0,1,2,1,0,0,0,0,0,0,0,0,1},
-            {1,0,0,0,0,0,0,0,1,2,1,0,0,0,0,0,0,0,0,1},
-            {1,0,0,0,0,0,0,0,1,2,1,0,1,1,1,1,1,1,1,1},
-            {1,0,0,0,0,0,0,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {1,1,1,1,1,1,1,100,1,2,1,0,1,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,1,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,1,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,1,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,1,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,1,0,1,2,1,0,1,2,2,2,2,2,2,2},
-            {1,1,1,1,1,1,1,101,1,1,1,0,1,2,2,2,2,2,2,2},
-            {1,3,4,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2},
-            {1,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2},
-            {1,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2},
-            {1,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2},
-            {1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2}};
+            List<int[]> tempList = new List<int[]>();
+            List<int> eachLine;
+            string[] lineArray;
+            string tempString;
 
+            /* How to do this
+             * 
+             * Get a line from the file
+             * Break it into individual numbers
+             * parse each number as an int
+             * store it as a list
+             * 
+             * 
+             * */
+            using (StreamReader sr = new StreamReader("maps/mapLevel0.csv"))
+            {
+                while ((tempString = sr.ReadLine()) != null)
+                {
+                    eachLine = new List<int>();
+
+                    lineArray = tempString.Split(',');
+
+                    foreach (string el in lineArray)
+                    {
+                        eachLine.Add(int.Parse(el));
+                    }
+
+                    tempList.Add(eachLine.ToArray());
+                }
+            }
+
+            mapSpace = tempList.ToArray();
         }
         #endregion
 
@@ -254,28 +276,30 @@ namespace _2530_Final_Project___Rougelike
              * */
 
             #region Step 1
+            int currentPosition;
 
-            char[,] playingSpace = new char[mapSpace.GetLength(0), mapSpace.GetLength(1)];
+            char[,] playingSpace = new char[mapSpace.Length, mapSpace[0].Length];
 
-            for (int row = 0; row < mapSpace.GetLength(0); row++)
+            for (int row = 0; row < mapSpace.Length; row++)
             {
-                for (int col = 0; col < mapSpace.GetLength(1); col++)
+                for (int col = 0; col < mapSpace[0].Length; col++)
                 {
                     // See the map rules for the meaning of each symbol
+                    currentPosition = mapSpace[row][col];
 
-                    if (mapSpace[row,col] == 0)
-                            playingSpace[row, col] = '.';
-                    else if (mapSpace[row,col] == 1)
-                            playingSpace[row, col] = (char)166;
-                    else if (mapSpace[row,col] == 2)
-                            playingSpace[row, col] = ' ';
-                    else if (mapSpace[row,col] == 3)
+                    if (currentPosition == 0)
+                        playingSpace[row, col] = '.';
+                    else if (currentPosition == 1)
+                        playingSpace[row, col] = (char)166;
+                    else if (currentPosition == 2)
+                        playingSpace[row, col] = ' ';
+                    else if (currentPosition == 3)
                         playingSpace[row, col] = '>';
-                    else if (mapSpace[row,col] == 4)
+                    else if (currentPosition == 4)
                         playingSpace[row, col] = '<';
-                    else if (mapSpace[row,col] == 100)
+                    else if (currentPosition == 100)
                         playingSpace[row, col] = '-';
-                    else if (mapSpace[row,col] >= 100 && mapSpace[row,col] <= 300)
+                    else if (currentPosition >= 100 && currentPosition <= 300)
                         playingSpace[row, col] = '+';
                 }
             }
@@ -289,7 +313,29 @@ namespace _2530_Final_Project___Rougelike
             #region Step 3
             Console.Clear();
             Console.SetCursorPosition(playingSpaceLeft, playingSpaceTop);
-            
+
+            StringBuilder map = new StringBuilder();
+
+            for (int row = 0; row < playingSpace.GetLength(0); row++)
+            {
+                for (int col = 0; col < playingSpace.GetLength(1); col++)
+                {
+                    // Need to figure out which character we want to use for walls.
+                    map.Append(playingSpace[row, col]);
+                }
+                map.Append('\n');
+            }
+
+            Console.Write(map.ToString());
+
+            showMessage();
+            #endregion
+        }
+
+        private static void showMessage()
+        {
+            Console.WriteLine();
+
             if (message != oldMessage)
             {
                 oldMessage = message;
@@ -306,21 +352,6 @@ namespace _2530_Final_Project___Rougelike
                 Console.WriteLine();
                 messageCounter--;
             }
-
-            StringBuilder map = new StringBuilder();
-
-            for (int row = 0; row < playingSpace.GetLength(0); row++)
-            {
-                for (int col = 0; col < playingSpace.GetLength(1); col++)
-                {
-                    // Need to figure out which character we want to use for walls.
-                    map.Append(playingSpace[row, col]);
-                }
-                map.Append('\n');
-            }
-
-            Console.Write(map.ToString());
-            #endregion
         }
         # endregion
     }

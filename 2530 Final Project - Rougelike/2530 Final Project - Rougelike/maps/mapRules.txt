@@ -4,10 +4,11 @@ These are the rules for building maps for our project.
 
 * At this point, only Mike has seen this, so only he has had input.  That can and will change.
 
-1. Always edit maps in Libreoffice Calc.  This allows the conditional formatting to work properly.
+1. Always edit the maps.xls file in Libreoffice Calc.  This allows the conditional formatting to work properly.
 2. We need a way to draw maps bigger than the screen, so we can draw to a given window.
 3. All rows need to be the number of columns.
 4. Closed doors have an opening difficulty of their map value - 100.  //Unimplemented...
+5. After editing a map, save the sheet as .csv file.
 
 The integer codes for map objects are
 0		open space	'.'
