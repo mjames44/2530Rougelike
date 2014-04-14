@@ -23,18 +23,18 @@ namespace _2530_Final_Project___Rougelike
 
         static void Main(string[] args)
         {
-            initializeGame();
+            InitializeGame();
 
             standableTiles = new List<int> { 0, 3, 4, 100 };
 
             // Initial Draw
-            drawMap();
+            DrawMap();
 
             while (!done)
             {
                 #region Listen for input, update character updates, execute all other updates
                 #region Character
-                keyboardInput(Console.ReadKey(false));
+                KeyboardInput(Console.ReadKey(false));
                 #endregion Character
 
                 #region Other Stuff
@@ -45,7 +45,7 @@ namespace _2530_Final_Project___Rougelike
 
         }
 
-        private static void initializeGame()
+        private static void InitializeGame()
         {
             Console.SetWindowSize(160, 40);
 
@@ -57,11 +57,11 @@ namespace _2530_Final_Project___Rougelike
             characterList.Add(pc);
             done = false;
 
-            initializeMap();
+            InitializeMap();
         }
 
         #region Update Methods
-        private static void keyboardInput(ConsoleKeyInfo keyPressed)
+        private static void KeyboardInput(ConsoleKeyInfo keyPressed)
         {
             switch (keyPressed.Key)
             {
@@ -69,7 +69,7 @@ namespace _2530_Final_Project___Rougelike
                 case ConsoleKey.LeftArrow:
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.DownArrow:
-                    moveCharacter(keyPressed.Key);
+                    MoveCharacter(keyPressed.Key);
                     break;
                 default: break;
             }
@@ -77,10 +77,10 @@ namespace _2530_Final_Project___Rougelike
             switch (keyPressed.KeyChar)
             {
                 case '?':
-                    showHelpScreen();
+                    ShowHelpScreen();
                     break;
                 case 'o':
-                    tryOpenDoor();
+                    TryOpenDoor();
                     break;
                 case 'Q':
                     done = true;
@@ -88,7 +88,7 @@ namespace _2530_Final_Project___Rougelike
             }
         }
 
-        private static void tryOpenDoor()
+        private static void TryOpenDoor()
         {
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("Door in which direction?");
@@ -97,25 +97,25 @@ namespace _2530_Final_Project___Rougelike
             {
                 case ConsoleKey.UpArrow:
                     if (mapSpace[pc.Y - 1][pc.X] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
-                        openDoor(1);
+                        OpenDoor(1);
                     break;
                 case ConsoleKey.DownArrow:
                     if (mapSpace[pc.Y + 1][pc.X] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
-                        openDoor(2);
+                        OpenDoor(2);
                     break;
                 case ConsoleKey.LeftArrow:
                     if (mapSpace[pc.Y][pc.X - 1] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
-                        openDoor(3);
+                        OpenDoor(3);
                     break;
                 case ConsoleKey.RightArrow:
                     if (mapSpace[pc.Y][pc.X + 1] >= 101 && mapSpace[pc.Y][pc.X] <= 300)
-                        openDoor(4);
+                        OpenDoor(4);
                     break;
 
             }
         }
 
-        private static void openDoor(int doorDirection)
+        private static void OpenDoor(int doorDirection)
         {
             Random rand = new Random();
             int pickScore = rand.Next(101);
@@ -164,10 +164,10 @@ namespace _2530_Final_Project___Rougelike
                     break;
             }
 
-            drawMap();
+            DrawMap();
         }
 
-        private static void showHelpScreen()
+        private static void ShowHelpScreen()
         {
             Console.Clear();
 
@@ -184,24 +184,24 @@ namespace _2530_Final_Project___Rougelike
                 }
             } while (input != ConsoleKey.Q);
 
-            drawMap();
+            DrawMap();
         }
 
-        private static void moveCharacter(ConsoleKey key)
+        private static void MoveCharacter(ConsoleKey key)
         {
-            if (key == ConsoleKey.DownArrow && canMoveHere(mapSpace[pc.Y + 1][pc.X]))
+            if (key == ConsoleKey.DownArrow && CanMoveHere(mapSpace[pc.Y + 1][pc.X]))
                 pc.Y++;
-            else if (key == ConsoleKey.UpArrow && canMoveHere(mapSpace[pc.Y - 1][pc.X]))
+            else if (key == ConsoleKey.UpArrow && CanMoveHere(mapSpace[pc.Y - 1][pc.X]))
                 pc.Y--;
-            else if (key == ConsoleKey.RightArrow && canMoveHere(mapSpace[pc.Y][pc.X + 1]))
+            else if (key == ConsoleKey.RightArrow && CanMoveHere(mapSpace[pc.Y][pc.X + 1]))
                 pc.X++;
-            else if (key == ConsoleKey.LeftArrow && canMoveHere(mapSpace[pc.Y][pc.X - 1]))
+            else if (key == ConsoleKey.LeftArrow && CanMoveHere(mapSpace[pc.Y][pc.X - 1]))
                 pc.X--;
 
-            drawMap();
+            DrawMap();
         }
 
-        private static bool canMoveHere(int p)
+        private static bool CanMoveHere(int p)
         {
             foreach (int el in standableTiles)
             {
@@ -212,7 +212,7 @@ namespace _2530_Final_Project___Rougelike
             return false;
         }
 
-        private static void initializeMap()
+        private static void InitializeMap()
         {
             message = "This is the message";
             maxMessageCounterValue = 10;
@@ -223,15 +223,6 @@ namespace _2530_Final_Project___Rougelike
             string[] lineArray;
             string tempString;
 
-            /* How to do this
-             * 
-             * Get a line from the file
-             * Break it into individual numbers
-             * parse each number as an int
-             * store it as a list
-             * 
-             * 
-             * */
             using (StreamReader sr = new StreamReader("maps/mapLevel0.csv"))
             {
                 while ((tempString = sr.ReadLine()) != null)
@@ -254,7 +245,7 @@ namespace _2530_Final_Project___Rougelike
         #endregion
 
         #region Draw Methods
-        private static char[,] drawCharacter(char[,] map)
+        private static char[,] DrawCharacter(char[,] map)
         {
             foreach (Character el in characterList)
             {
@@ -264,7 +255,7 @@ namespace _2530_Final_Project___Rougelike
             return map;
         }
 
-        private static void drawMap()
+        private static void DrawMap()
         {
             // Need to clear the console, so the character draw methods will draw correctly
             // and the character can detect the walls.
@@ -287,27 +278,14 @@ namespace _2530_Final_Project___Rougelike
                     // See the map rules for the meaning of each symbol
                     currentPosition = mapSpace[row][col];
 
-                    if (currentPosition == 0)
-                        playingSpace[row, col] = '.';
-                    else if (currentPosition == 1)
-                        playingSpace[row, col] = (char)166;
-                    else if (currentPosition == 2)
-                        playingSpace[row, col] = ' ';
-                    else if (currentPosition == 3)
-                        playingSpace[row, col] = '>';
-                    else if (currentPosition == 4)
-                        playingSpace[row, col] = '<';
-                    else if (currentPosition == 100)
-                        playingSpace[row, col] = '-';
-                    else if (currentPosition >= 100 && currentPosition <= 300)
-                        playingSpace[row, col] = '+';
+                    playingSpace[row,col] = DrawTile(currentPosition);
                 }
             }
 
             #endregion
 
             #region Step 2
-            playingSpace = drawCharacter(playingSpace);
+            playingSpace = DrawCharacter(playingSpace);
             #endregion
 
             #region Step 3
@@ -328,15 +306,37 @@ namespace _2530_Final_Project___Rougelike
 
             Console.Write(map.ToString());
 
-            showMessage();
+            ShowMessage();
             #endregion
         }
 
-        private static void showMessage()
+        private static char DrawTile(int currentPosition)
+        {
+            if (currentPosition == 1)
+                return (char)9618;
+            else if (currentPosition == 2)
+                return ' ';
+            else if (currentPosition == 3)
+                return '>';
+            else if (currentPosition == 4)
+                return '<';
+            else if (currentPosition == 5)
+                return (char)9650;
+            else if (currentPosition == 6)
+                return (char)9617;
+            else if (currentPosition == 100)
+                return '-';
+            else if (currentPosition >= 100 && currentPosition <= 300)
+                return '+';
+            else
+                return '.';
+        }
+
+        private static void ShowMessage()
         {
             Console.WriteLine();
 
-            if (message != oldMessage)
+            if (message != oldMessage && messageCounter > 0)
             {
                 oldMessage = message;
                 Console.WriteLine("{0}\n", message);
