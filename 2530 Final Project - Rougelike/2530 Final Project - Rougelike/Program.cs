@@ -152,6 +152,7 @@ namespace _2530_Final_Project___Rougelike
                     }
 
                     break;
+                // Doesn't work yet.
                 case 4:
                     if (pickScore + pc.LockPickSkill >= mapSpace[pc.Y][pc.X + 1])
                     {
@@ -223,7 +224,7 @@ namespace _2530_Final_Project___Rougelike
             string[] lineArray;
             string tempString;
 
-            using (StreamReader sr = new StreamReader("maps/mapLevel0.csv"))
+            using (StreamReader sr = new StreamReader("maps/mapLevelTest.csv"))
             {
                 while ((tempString = sr.ReadLine()) != null)
                 {

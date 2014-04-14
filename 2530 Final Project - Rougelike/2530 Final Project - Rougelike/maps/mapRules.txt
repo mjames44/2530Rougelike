@@ -2,19 +2,31 @@
 
 These are the rules for building maps for our project.
 
-* At this point, only Mike has seen this, so only he has had input.  That can and will change.
+* This can and will change.
 
 1. Always edit the maps.xls file in Libreoffice Calc.  This allows the conditional formatting to work properly.
-2. We need a way to draw maps bigger than the screen, so we can draw to a given window.
+2. The map must be at MOST 100 wide by 40 tall. (100, CV) (Let's call this standard size)
 3. All rows need to be the number of columns.
 4. Closed doors have an opening difficulty of their map value - 100.  //Unimplemented...
 5. After editing a map, save the sheet as .csv file.
 
 The integer codes for map objects are
+
+* Non-Trigger *
+Value	Name		Character			Unicode
 0		open space	'.'
-1		Wall		//Wall character...
+1		Wall		//Wall character...	9618
 2		Black Space ' '
 3		Up stairs	'>'
 4		Down stairs	'<'
+5		Tree		// Tree Character	9650
+6		Water		// Water Character	9617 
 100		Open Door	'-'
 101-300 Closed door	'+'
+
+* Trigger *
+501 - 1000 Mike's Area
+
+1001 - 1500 - Dirk's Area
+
+1501 - 2000 - Patrick's Area
