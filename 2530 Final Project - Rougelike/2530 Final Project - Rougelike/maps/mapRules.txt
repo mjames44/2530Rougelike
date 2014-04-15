@@ -1,4 +1,4 @@
-﻿Map Rules
+Map Rules
 
 These are the rules for building maps for our project.
 
@@ -21,11 +21,26 @@ Value	Name		Character			Unicode
 4		Down stairs	'<'
 5		Tree		// Tree Character	9650
 6		Water		// Water Character	9617 
+11		Yellow Flower	// Y Flower Character	8903
+12		Blue Flower	// B Flower Character 	8720
+13		Pink Flower	// P Flower Character	8859
 100		Open Door	'-'
 101-300 Closed door	'+'
 
 * Trigger *
 501 - 1000 Mike's Area
+501		Town gate -> Forest 1	'.'
+502		Town gate -> Forest 2	'.'
+503		Town gate -> Castle	'.'
+504		Black Smith		'-'
+505		Armory			'-'
+506		Villager House 1	'-'
+507		Villager House 2	'-'
+508		Barracks		'-'
+509		Stables			'-'
+
+
+
 
 1001 - 1500 - Dirk's Area
 
