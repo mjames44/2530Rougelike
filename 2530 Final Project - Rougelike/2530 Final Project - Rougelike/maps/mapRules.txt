@@ -44,5 +44,26 @@ Value	Name		Character			Unicode
 
 
 1001 - 1500 - Dirk's Area
+1001		Secret gate
+1002		Treasure Chest
+300		Abandoned House Door
+1003		Abandoned House 
+1004		Abandoned House Door Switch
+1005		Secret Gate Switch 
 
 1501 - 2000 - Patrick's Area
+
+
+
+
+
+
+
+Notes 4/16/2014
+Assignments for the weekend
+Dirk Forest 2, Forest 3, Forest 4, and Lake
+Rick Mountain, Dark Castle inside/outside
+Mike Castle inside/outside, refactor/fix code
+
+Plan for Monsters on Monday
+
