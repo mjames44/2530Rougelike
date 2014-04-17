@@ -1,0 +1,42 @@
+//if (currentPosition == 1)
+            //    return (char)9618;
+            //else if (currentPosition == 2)
+            //    return ' ';
+            //else if (currentPosition == 3)
+            //    return '>';
+            //else if (currentPosition == 4)
+            //    return '<';
+            //else if (currentPosition == 5)
+            //    return (char)9650;
+            //else if (currentPosition == 6)
+            //    return (char)9617;
+            //else if (currentPosition == 11)
+            //    return (char)8903;
+            //else if (currentPosition == 12)
+            //    return (char)8720;
+            //else if (currentPosition == 13)
+            //    return (char)8859;
+            //else if (currentPosition == 100)
+            //    return '-';
+            //else if (currentPosition >= 100 && currentPosition <= 300)
+            //    return '+';
+            //else if (currentPosition == 501)
+            //    return '.';
+            //else if (currentPosition == 502)
+            //    return '.';
+            //else if (currentPosition == 503)
+            //    return '.';
+            //else if (currentPosition == 504)
+            //    return '-';
+            //else if (currentPosition == 505)
+            //    return '-';
+            //else if (currentPosition == 506)
+            //    return '-';
+            //else if (currentPosition == 507)
+            //    return '-';
+            //else if (currentPosition == 508)
+            //    return '-';
+            //else if (currentPosition == 509)
+            //    return '-';
+            //else
+            //    return '.';

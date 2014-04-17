@@ -9,6 +9,7 @@ These are the rules for building maps for our project.
 3. All rows need to be the number of columns.
 4. Closed doors have an opening difficulty of their map value - 100.  //Unimplemented...
 5. After editing a map, save the sheet as .csv file.
+6. Messages can be 52 characters wide and 5 lines long.
 
 The integer codes for map objects are
 

@@ -9,20 +9,32 @@ namespace _2530_Final_Project___Rougelike
 {
     class Program
     {
-        static PlayerCharacter pc;
-        static List<Character> characterList;
-        static bool done;
-        static int[][] mapSpace;
-        static int playingSpaceLeft;
-        static int playingSpaceTop;
-        static List<int> standableTiles;
-        static string message;
-        static string oldMessage;
-        static int messageCounter;
-        static int maxMessageCounterValue;
+        #region Fields
+        static PlayerCharacter pc; // Player character object represting the player
+        static List<Character> characterList; // A list of all current characters, player, non-player, and monsters
+        static bool done; // Keeps the game going until the player inputs 'Q'.
+        static int[][] mapSpace; // Contains the current integer array for the map, from the .csv file
+        static List<int> standableTiles; // An array of tiles where the character can actually stand
+        static string message; // The output message for feedback to the user.
+        static string oldMessage; // The previous message
+        static int messageCounter; // A counter of how long messages stay on the screen.
+        static int maxMessageCounter; // The reset value for the counter above.
+        static int maxMessageWidth;
+        static int messagePosition; // The area where the message will appear, from the top.
+        static StringBuilder messageWiper;
+        static MapLevel0 theMap;
+        #endregion
 
+        #region Main Method
         static void Main(string[] args)
         {
+            maxMessageCounter = 10;
+            messagePosition = 43;
+            maxMessageWidth = 52;
+
+            theMap = new MapLevel0();
+
+            // Sets up the game for the first time.
             InitializeGame();
 
             standableTiles = new List<int> { 0, 3, 4, 100 };
@@ -35,9 +47,12 @@ namespace _2530_Final_Project___Rougelike
                 #region Listen for input, update character updates, execute all other updates
                 #region Character
                 KeyboardInput(Console.ReadKey(false));
+
+                DrawCharacters();
                 #endregion Character
 
                 #region Other Stuff
+                ShowMessage();
                 #endregion Other Stuff
                 #endregion
             }
@@ -45,20 +60,73 @@ namespace _2530_Final_Project___Rougelike
 
         }
 
+        #endregion
+
+
+        #region Initialize Methods
+        /*  Initialize Game Method
+         * 
+         * Creates a new game from default values.
+         * Will eventually be one of two options, the other being to load from a saved game.
+         * */
         private static void InitializeGame()
         {
-            Console.SetWindowSize(160, 40);
+            messageWiper = new StringBuilder();
 
-            playingSpaceLeft = 0;
-            playingSpaceTop = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < maxMessageWidth; j++)
+                    messageWiper.Append(' ');
+                messageWiper.Append('\n');
+            }
+
+            Console.SetWindowSize(160, 50); // Size of the console window
+            Console.Title = "CSIS Final Project"; // Title of the console window
+
+            pc = new PlayerCharacter();
+            pc.X = 5;
+            pc.Y = 5;
 
             characterList = new List<Character>();
-            pc = new PlayerCharacter();
             characterList.Add(pc);
             done = false;
 
             InitializeMap();
+
+            Console.CursorVisible = false;
         }
+
+        private static void InitializeMap()
+        {
+            mapSpace = theMap.ReadMap();
+        }
+
+        //private static List<int[]> ReadMap()
+        //{
+        //    List<int[]> tempList = new List<int[]>();
+        //    List<int> eachLine;
+        //    string[] lineArray;
+        //    string tempString;
+
+        //    using (StreamReader sr = new StreamReader("maps/mapLevel0.csv"))
+        //    {
+        //        while ((tempString = sr.ReadLine()) != null)
+        //        {
+        //            eachLine = new List<int>();
+
+        //            lineArray = tempString.Split(',');
+
+        //            foreach (string el in lineArray)
+        //            {
+        //                eachLine.Add(int.Parse(el));
+        //            }
+
+        //            tempList.Add(eachLine.ToArray());
+        //        }
+        //    }
+        //    return tempList;
+        //}
+        #endregion
 
         #region Update Methods
         private static void KeyboardInput(ConsoleKeyInfo keyPressed)
@@ -86,6 +154,20 @@ namespace _2530_Final_Project___Rougelike
                     done = true;
                     break;
             }
+        }
+
+        private static void MoveCharacter(ConsoleKey key)
+        {
+            pc.PreviousPosition = pc.Position;
+
+            if (key == ConsoleKey.DownArrow && CanMoveHere(mapSpace[pc.Y + 1][pc.X]))
+                pc.Y++;
+            else if (key == ConsoleKey.UpArrow && CanMoveHere(mapSpace[pc.Y - 1][pc.X]))
+                pc.Y--;
+            else if (key == ConsoleKey.RightArrow && CanMoveHere(mapSpace[pc.Y][pc.X + 1]))
+                pc.X++;
+            else if (key == ConsoleKey.LeftArrow && CanMoveHere(mapSpace[pc.Y][pc.X - 1]))
+                pc.X--;
         }
 
         private static void TryOpenDoor()
@@ -188,20 +270,6 @@ namespace _2530_Final_Project___Rougelike
             DrawMap();
         }
 
-        private static void MoveCharacter(ConsoleKey key)
-        {
-            if (key == ConsoleKey.DownArrow && CanMoveHere(mapSpace[pc.Y + 1][pc.X]))
-                pc.Y++;
-            else if (key == ConsoleKey.UpArrow && CanMoveHere(mapSpace[pc.Y - 1][pc.X]))
-                pc.Y--;
-            else if (key == ConsoleKey.RightArrow && CanMoveHere(mapSpace[pc.Y][pc.X + 1]))
-                pc.X++;
-            else if (key == ConsoleKey.LeftArrow && CanMoveHere(mapSpace[pc.Y][pc.X - 1]))
-                pc.X--;
-
-            DrawMap();
-        }
-
         private static bool CanMoveHere(int p)
         {
             foreach (int el in standableTiles)
@@ -212,147 +280,99 @@ namespace _2530_Final_Project___Rougelike
 
             return false;
         }
-
-        private static void InitializeMap()
-        {
-            message = "This is the message";
-            maxMessageCounterValue = 10;
-            messageCounter = -1;
-
-            List<int[]> tempList = new List<int[]>();
-            List<int> eachLine;
-            string[] lineArray;
-            string tempString;
-
-            using (StreamReader sr = new StreamReader("maps/mapLevelTest.csv"))
-            {
-                while ((tempString = sr.ReadLine()) != null)
-                {
-                    eachLine = new List<int>();
-
-                    lineArray = tempString.Split(',');
-
-                    foreach (string el in lineArray)
-                    {
-                        eachLine.Add(int.Parse(el));
-                    }
-
-                    tempList.Add(eachLine.ToArray());
-                }
-            }
-
-            mapSpace = tempList.ToArray();
-        }
         #endregion
 
         #region Draw Methods
-        private static char[,] DrawCharacter(char[,] map)
+        private static void DrawCharacters()
         {
             foreach (Character el in characterList)
             {
-                map[el.Y, el.X] = el.CharacterRepresentation;
-            }
+                Console.SetCursorPosition(el.PreviousX, el.PreviousY);
+                Console.Write(SelectTile(mapSpace[el.PreviousY][el.PreviousX]));
 
-            return map;
+                Console.SetCursorPosition(el.X, el.Y);
+                Console.Write(el.CharacterRepresentation);
+
+                // Sends the cursor off into no mans land, so it doens't overwrite stuff.
+                Console.CursorTop = 41;
+            }
         }
 
+
+        /*  DrawMap Method
+         * 
+         * * Only runs once per map. *
+         * 
+         * - Reads the contents of the current mapSpace Array, then adds the result to a stringbuilder for output.
+         * - Then writes out the characters and any message that may be wating to be written.
+         *  */
         private static void DrawMap()
         {
             // Need to clear the console, so the character draw methods will draw correctly
             // and the character can detect the walls.
 
             /* Steps
-             * 1. Copy mapSpace into playSpace
-             * 2. Update playSpace with Character info
-             * 3. Print playSpace.
+             * 1. Copy mapSpace into into a Stringbuilder using SelectTiles()
+             * 2. Print each line of the Stringbuilder
+             * 3. Print out each character at it's current location.
              * */
-
-            #region Step 1
-            int currentPosition;
-
-            char[,] playingSpace = new char[mapSpace.Length, mapSpace[0].Length];
-
-            for (int row = 0; row < mapSpace.Length; row++)
-            {
-                for (int col = 0; col < mapSpace[0].Length; col++)
-                {
-                    // See the map rules for the meaning of each symbol
-                    currentPosition = mapSpace[row][col];
-
-                    playingSpace[row,col] = DrawTile(currentPosition);
-                }
-            }
-
-            #endregion
-
-            #region Step 2
-            playingSpace = DrawCharacter(playingSpace);
-            #endregion
-
-            #region Step 3
             Console.Clear();
-            Console.SetCursorPosition(playingSpaceLeft, playingSpaceTop);
 
             StringBuilder map = new StringBuilder();
 
-            for (int row = 0; row < playingSpace.GetLength(0); row++)
+            for (int row = 0; row < mapSpace.Length; row++)
             {
-                for (int col = 0; col < playingSpace.GetLength(1); col++)
+                for (int col = 0; col < mapSpace[row].Length; col++)
                 {
                     // Need to figure out which character we want to use for walls.
-                    map.Append(playingSpace[row, col]);
+                    map.Append(SelectTile(mapSpace[row][col]));
                 }
-                map.Append('\n');
+
+                Console.WriteLine(map.ToString());
+                map.Clear();
             }
 
-            Console.Write(map.ToString());
-
-            ShowMessage();
-            #endregion
+            DrawCharacters();
         }
 
-        private static char DrawTile(int currentPosition)
+        private static char SelectTile(int currentPosition)
         {
-            if (currentPosition == 1)
-                return (char)9618;
-            else if (currentPosition == 2)
-                return ' ';
-            else if (currentPosition == 3)
-                return '>';
-            else if (currentPosition == 4)
-                return '<';
-            else if (currentPosition == 5)
-                return (char)9650;
-            else if (currentPosition == 6)
-                return (char)9617;
-            else if (currentPosition == 100)
-                return '-';
-            else if (currentPosition >= 100 && currentPosition <= 300)
-                return '+';
-            else
-                return '.';
+            MapLevel0 newMap = new MapLevel0();
+
+            foreach (int el in MapLevel0.tileInfo.Keys)
+            {
+                if (el == currentPosition)
+                    return MapLevel0.tileInfo[el].CharacterRepresentation;
+            }
+
+            // Should never reach this point, but it shuts the program up...
+            return ' ';
         }
 
         private static void ShowMessage()
         {
-            Console.WriteLine();
-
-            if (message != oldMessage && messageCounter > 0)
+            if (message != oldMessage)
             {
                 oldMessage = message;
+
+                WipeMessage();
                 Console.WriteLine("{0}\n", message);
-                messageCounter = maxMessageCounterValue;
+                messageCounter = maxMessageCounter;
             }
-            else if (messageCounter > 0)
-            {
-                Console.WriteLine("{0}\n", message);
+            else if (messageCounter < 0)
+                WipeMessage();
+            else
                 messageCounter--;
-            }
-            else if (messageCounter == 0)
-            {
-                Console.WriteLine();
-                messageCounter--;
-            }
+        }
+
+        private static void WipeMessage()
+        {
+            // Wipe out the old message.
+            Console.SetCursorPosition(0, messagePosition);
+            Console.Write(messageWiper);
+
+            // Reset the position for the next message
+            Console.SetCursorPosition(0, messagePosition);
         }
         # endregion
     }

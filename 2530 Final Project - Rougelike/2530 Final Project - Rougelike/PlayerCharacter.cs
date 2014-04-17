@@ -12,10 +12,9 @@ namespace _2530_Final_Project___Rougelike
 
         public PlayerCharacter()
         {
-            X = 5;
-            Y = 5;
             CharacterRepresentation = '@';
             LockPickSkill = 100;
+            HP = 25;
         }
     }
 }
