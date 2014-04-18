@@ -52,7 +52,12 @@ Value	Name		Character			Unicode
 1005		Secret Gate Switch 
 
 1501 - 2000 - Patrick's Area
-
+1501  Mountain -> Forest 2
+1502  Mountain -> Cave
+1503  Mountain -> Lake
+1504  Dark Castle -> Forest?
+1505  Entrance to dark castle main floor from outside
+1506  Secret passage to inside dark castle
 
 
 
