@@ -21,7 +21,7 @@ namespace _2530_Final_Project___Rougelike
         }
 
         // Don't want to leave this public set, need to figure out why it's complaining
-        public char CharacterRepresentation { get; set; }
+        public char CharacterRepresentation { get; protected set; }
 
         public int[] Position
         {
@@ -48,6 +48,5 @@ namespace _2530_Final_Project___Rougelike
                 PreviousY = value[0];
             }
         }
-
     }
 }

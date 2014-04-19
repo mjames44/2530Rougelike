@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MapCityMain.cs" />
     <Compile Include="MapLevel0.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="Program.cs" />
@@ -56,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="maps\map.xls" />
     <None Include="maps\mapCityMain.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

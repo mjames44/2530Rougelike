@@ -7,15 +7,15 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapLevel0 : Map
+    class MapCityMain : Map
     {
-        public MapLevel0(int ep) : base (ep)
+        public MapCityMain(int ep) : base(ep)
         {
-            FileName = "mapLevel0.csv";
+            FileName = "mapCityMain.csv";
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> {551});
+            StandableTiles.AddRange(new List<int> { 501});
         }
 
         protected override void AddTiles()
@@ -26,9 +26,9 @@ namespace _2530_Final_Project___Rougelike
         {
             switch (mapValue)
             {
-                case 551 :
-                    Program.newMap = new MapCityMain(0);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                case 501:
+                    Program.newMap = new MapLevel0(0);
+                    Program.CheckSpace = typeof(MapLevel0).GetMethod("CheckSpace");
                     break;
             }
         }
@@ -38,7 +38,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 5, 5 };
+                    StartingPosition = new int[] { 78, 37 };
                     break;
             }
         }
