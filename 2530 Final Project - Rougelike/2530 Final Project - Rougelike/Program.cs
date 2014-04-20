@@ -15,7 +15,7 @@ namespace _2530_Final_Project___Rougelike
         delegate void SpaceChecker(int mapValue);
         // Delegate that checks the value of the 
         // character is standing on, fires methods.
-        
+
         #endregion
 
         #region Fields
@@ -44,7 +44,7 @@ namespace _2530_Final_Project___Rougelike
             maxMessageCounter = 10;
             messagePosition = 43;
             maxMessageWidth = 52;
-            
+
             // Sets up the game for the first time.
             InitializeGame();
 
@@ -62,7 +62,7 @@ namespace _2530_Final_Project___Rougelike
                 #region Map
                 if (currentMap != newMap)
                 {
-                    saveMap();
+                    SaveMap();
 
                     InitializeMap(newMap);
 
@@ -87,10 +87,10 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapLevel0(0);
+            currentMap = new MapForest1(0);
             newMap = currentMap;
-            CheckSpace = typeof(MapLevel0).GetMethod("CheckSpace");
-            
+            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
+
 
             InitializeConsole();
             InitializePlayChar();
@@ -103,7 +103,7 @@ namespace _2530_Final_Project___Rougelike
         {
             Console.SetWindowSize(160, 50); // Size of the console window
             Console.Title = "CSIS Final Project"; // Title of the console window
-            
+
             messageWiper = new StringBuilder();
 
             for (int i = 0; i < 5; i++)
@@ -133,7 +133,7 @@ namespace _2530_Final_Project___Rougelike
             }
 
             pc.Position = theMap.StartingPosition;
-            
+
             DrawMap(theMap);
             DrawCharacters();
         }
@@ -164,6 +164,12 @@ namespace _2530_Final_Project___Rougelike
                 case 'Q':
                     done = true;
                     break;
+                case 'T':
+                    foreach (int el in currentMap.TileInfo.Keys)
+                    {
+                        Console.WriteLine("{0}\t{1}", el, currentMap.TileInfo[el].CharacterRepresentation);
+                    }
+                    break;
             }
         }
 
@@ -184,7 +190,9 @@ namespace _2530_Final_Project___Rougelike
         private static void TryOpenDoor()
         {
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine("Door in which direction?");
+            message = "Door in which direction?";
+
+            ShowMessage(1);
 
             switch (Console.ReadKey(false).Key)
             {
@@ -292,7 +300,7 @@ namespace _2530_Final_Project___Rougelike
             return false;
         }
 
-        private static void saveMap()
+        private static void SaveMap()
         {
             using (StreamWriter sw = new StreamWriter("maps/" + pcName + currentMap.FileName))
             {
@@ -308,6 +316,41 @@ namespace _2530_Final_Project___Rougelike
                 }
             }
         }
+
+        private static Dictionary<int, List<int[]>> AnalyzeArray(Map theMap)
+        {
+            List<int> whatInts = new List<int>();
+            Dictionary<int, List<int[]>> spaces = new Dictionary<int, List<int[]>>();
+
+            for (int row = 0; row < theMap.MapSpace.Length; row++)
+            {
+                for (int col = 0; col < theMap.MapSpace[row].Length; col++)
+                {
+                    if (!(whatInts.Contains(theMap.MapSpace[row][col])))
+                    {
+                        whatInts.Add(theMap.MapSpace[row][col]);
+                    }
+                }
+            }
+
+            foreach (int el in whatInts)
+            {
+                List<int[]> tempList = new List<int[]>();
+
+                for (int row = 0; row < theMap.MapSpace.Length; row++)
+                {
+                    for (int col = 0; col < theMap.MapSpace[row].Length; col++)
+                    {
+                        if (el == theMap.MapSpace[row][col])
+                            tempList.Add(new int[] { row, col });
+                    }
+                }
+
+                spaces.Add(el, tempList);
+            }
+
+            return spaces;
+        }
         #endregion
 
         #region Draw Methods
@@ -315,9 +358,15 @@ namespace _2530_Final_Project___Rougelike
         {
             foreach (Character el in characterList)
             {
-                Console.SetCursorPosition(el.PreviousX, el.PreviousY);
-                Console.Write(SelectTile(currentMap.MapSpace[el.PreviousY][el.PreviousX]));
+                if (currentMap == newMap)
+                {
+                    Console.ForegroundColor = currentMap.TileInfo[currentMap.MapSpace[el.PreviousY][el.PreviousX]].Color;
+                    Console.SetCursorPosition(el.PreviousX, el.PreviousY);
+                    Console.Write(SelectTile(currentMap.MapSpace[el.PreviousY][el.PreviousX],
+                        currentMap));
+                }
 
+                Console.ForegroundColor = pc.Color;
                 Console.SetCursorPosition(el.X, el.Y);
                 Console.Write(el.CharacterRepresentation);
 
@@ -343,29 +392,48 @@ namespace _2530_Final_Project___Rougelike
              * 2. Print each line of the Stringbuilder
              * 3. Print out each character at it's current location.
              * */
+            Dictionary<int, List<int[]>> whatIsWhere = AnalyzeArray(theMap);
+
             Console.Clear();
 
-            StringBuilder map = new StringBuilder();
+            foreach (int el in whatIsWhere.Keys)
+            {
+                Console.ForegroundColor = theMap.TileInfo[el].Color;
+
+                foreach (int[] el2 in whatIsWhere[el])
+                {
+                    DrawInColor(theMap, el, el2);
+                }
+            }
+
+            /*StringBuilder map = new StringBuilder();
 
             for (int row = 0; row < theMap.MapSpace.Length; row++)
             {
                 for (int col = 0; col < theMap.MapSpace[row].Length; col++)
                 {
                     // Need to figure out which character we want to use for walls.
-                    map.Append(SelectTile(theMap.MapSpace[row][col]));
+                    map.Append(SelectTile(theMap.MapSpace[row][col], theMap));
                 }
 
                 Console.WriteLine(map.ToString());
                 map.Clear();
-            }
+            }*/
         }
 
-        private static char SelectTile(int currentPosition)
+        private static void DrawInColor(Map theMap, int el, int[] el2)
         {
-            foreach (int el in currentMap.TileInfo.Keys)
+            Console.SetCursorPosition(el2[1], el2[0]);
+            Console.Write(theMap.TileInfo[el].CharacterRepresentation);
+        }
+
+        private static char SelectTile(int currentPosition, Map theMap)
+        {
+
+            foreach (int el in theMap.TileInfo.Keys)
             {
                 if (el == currentPosition)
-                    return currentMap.TileInfo[el].CharacterRepresentation;
+                    return theMap.TileInfo[el].CharacterRepresentation;
             }
 
             // Should never reach this point, but it shuts the program up...
@@ -374,13 +442,18 @@ namespace _2530_Final_Project___Rougelike
 
         private static void ShowMessage()
         {
+            ShowMessage(null);
+        }
+
+        private static void ShowMessage(int? i)
+        {
             if (message != oldMessage)
             {
                 oldMessage = message;
 
                 WipeMessage();
                 Console.WriteLine("{0}\n", message);
-                messageCounter = maxMessageCounter;
+                messageCounter = i ?? maxMessageCounter;
             }
             else if (messageCounter < 0)
                 WipeMessage();

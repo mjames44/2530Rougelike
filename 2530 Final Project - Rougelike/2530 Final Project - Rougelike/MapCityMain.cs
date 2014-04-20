@@ -15,11 +15,25 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> { 501});
+            StandableTiles.AddRange(new List<int> { 501, 502, 503, 504, 505, 506, 507, 508, 509});
         }
 
         protected override void AddTiles()
         {
+            TileInfo[0].Color = ConsoleColor.DarkYellow;
+
+            TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));
+            TileInfo.Add(12, new Tile(ConsoleColor.Blue, '%'));
+            TileInfo.Add(13, new Tile(ConsoleColor.Magenta, '#'));
+            TileInfo.Add(501, new Tile(ConsoleColor.DarkYellow, '.'));
+            TileInfo.Add(502, new Tile(ConsoleColor.DarkYellow, '.'));
+            TileInfo.Add(503, new Tile(ConsoleColor.DarkYellow, '.'));
+            TileInfo.Add(504, new Tile(ConsoleColor.White, '-'));
+            TileInfo.Add(505, new Tile(ConsoleColor.White, '-'));
+            TileInfo.Add(506, new Tile(ConsoleColor.White, '-'));
+            TileInfo.Add(507, new Tile(ConsoleColor.White, '-'));
+            TileInfo.Add(508, new Tile(ConsoleColor.White, '-'));
+            TileInfo.Add(509, new Tile(ConsoleColor.White, '-'));
         }
 
         public override void CheckSpace(int mapValue)
@@ -27,8 +41,8 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 501:
-                    Program.newMap = new MapLevel0(0);
-                    Program.CheckSpace = typeof(MapLevel0).GetMethod("CheckSpace");
+                    Program.newMap = new MapForest1(1);
+                    Program.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
                     break;
             }
         }

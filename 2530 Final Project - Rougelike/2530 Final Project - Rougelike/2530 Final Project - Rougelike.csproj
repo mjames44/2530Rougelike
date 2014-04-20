@@ -51,6 +51,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="MapCityMain.cs" />
     <Compile Include="MapLevel0.cs" />
+    <Compile Include="MapForest1.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +60,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="maps\mapCityMain.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapForest1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapLevel0.csv">
