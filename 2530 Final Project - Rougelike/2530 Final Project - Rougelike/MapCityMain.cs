@@ -21,6 +21,7 @@ namespace _2530_Final_Project___Rougelike
         protected override void AddTiles()
         {
             TileInfo[0].Color = ConsoleColor.DarkYellow;
+            TileInfo[1].Color = ConsoleColor.Gray;
 
             TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));
             TileInfo.Add(12, new Tile(ConsoleColor.Blue, '%'));

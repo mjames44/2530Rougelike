@@ -30,6 +30,7 @@ Value	Name		Character			Unicode
 
 * Trigger *
 501 - 1000 Mike's Area
+// City
 501		Town gate -> Forest 1	'.'
 502		Town gate -> Forest 2	'.'
 503		Town gate -> Castle	'.'
@@ -40,8 +41,10 @@ Value	Name		Character			Unicode
 508		Barracks		'-'
 509		Stables			'-'
 
-
-
+// Castle
+551		Castle -> City		'.'
+552		Castle -> CastleInside1	'-'
+553		Castle DrawBridge		'='
 
 1001 - 1500 - Dirk's Area
 1001		Secret gate
