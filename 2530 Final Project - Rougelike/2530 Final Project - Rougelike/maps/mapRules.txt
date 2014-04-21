@@ -63,6 +63,7 @@ Value	Name		Character			Unicode
 1506  Secret passage to inside dark castle dungeon
 1507  Dark Castle main floor to outside
 1508  Secret passage from dungeon to outside dark castle
+1509  Mountain path to Forest2 samll
 
 
 
