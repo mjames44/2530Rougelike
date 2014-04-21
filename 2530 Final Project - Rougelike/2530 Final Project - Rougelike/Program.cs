@@ -87,10 +87,13 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapForest1(0);
+           /* currentMap = new MapForest1(0);
             newMap = currentMap;
             CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
-
+            */
+            currentMap = new MapMountain(1);
+            newMap = currentMap;
+            CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
 
             InitializeConsole();
             InitializePlayChar();

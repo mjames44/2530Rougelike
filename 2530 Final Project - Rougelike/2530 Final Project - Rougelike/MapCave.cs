@@ -20,7 +20,9 @@ namespace _2530_Final_Project___Rougelike
 
         protected override void AddTiles()
         {
-            TileInfo.Add(20, new Tile(ConsoleColor.Black, ' '));// add new tiles
+            TileInfo.Add(20, new Tile(ConsoleColor.Red, (char)9618));// add new tiles
+            TileInfo[2].Color = ConsoleColor.Red;
+            TileInfo[2].CharacterRepresentation = (char)9618;
             TileInfo.Add(1504, new Tile(ConsoleColor.White, '.'));
 
         }
@@ -46,7 +48,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 38, 50 };//start position in cave
+                    StartingPosition = new int[] { 50, 38 };//start position in cave
                     break;
                 
             }
