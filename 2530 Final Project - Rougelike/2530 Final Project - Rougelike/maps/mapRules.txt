@@ -45,6 +45,23 @@ Value	Name		Character			Unicode
 551		Castle -> City		'.'
 552		Castle -> CastleInside1	'-'
 553		Castle DrawBridge		'='
+554		Castle -> Guard Tower L	'-'
+555		Castle -> Guard Tower R	'-'
+571		Guard Tower L -> Castle '-'
+572		Guard Tower L -> GuardTower L2	'>'
+573		Guard Tower L2 -> GuardTower L	'<'
+574		Guard Tower L2 -> GuardTower L3 '>'
+575		Guard Tower L3 -> GuardTower L2	'<'
+575		Guard Tower L3 -> GuardTower L4	'>'
+576		Guard Tower Treasure Room Door	'+'
+577		Guard Tower L4 -> GuardTower L3 '<'
+591		Guard Tower R -> Castle			'-'
+592		Guard Tower R -> GuardTower R2	'>'
+593		Guard Tower R2 -> GuardTower R	'<'
+594		Guard Tower R2 -> GuardTower R3	'>'
+595		Guard Tower R3 -> GuardTower R2	'<'	
+595		Guard Tower R3 -> GuardTower R4	'>'
+
 
 1001 - 1500 - Dirk's Area
 1001		Secret gate
