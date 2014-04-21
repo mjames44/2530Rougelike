@@ -59,6 +59,7 @@ Value	Name		Character			Unicode
 1505  Entrance to dark castle main floor from outside
 1506  Secret passage to inside dark castle
 1507  Dark Castle outside to inside the main floor
+1508 Secret passage from dungeon to outside dark castle
 
 
 
