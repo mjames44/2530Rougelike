@@ -91,9 +91,9 @@ namespace _2530_Final_Project___Rougelike
             newMap = currentMap;
             CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
             */
-            currentMap = new MapMountain(1);
+            currentMap = new MapDarkCastle(1);
             newMap = currentMap;
-            CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+            CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
 
             InitializeConsole();
             InitializePlayChar();
