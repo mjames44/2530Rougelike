@@ -37,22 +37,22 @@ namespace _2530_Final_Project___Rougelike
                     Program.newMap = new MapCityMain(0);
                     Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;*/
-                case 1501 :
-                    Program.newMap = new MapForest2(1);
-                    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
-                    break;
+                //case 1501 :
+                //    Program.newMap = new MapForest2(1);
+                //    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                //    break;
                 case 1502:
                     Program.newMap = new MapCave(0);
                     Program.CheckSpace = typeof(MapCave).GetMethod("CheckSpace");
                     break;
-                case 1503:
-                    Program.newMap = new MapLake(0); //going into position
-                    Program.CheckSpace = typeof(MapLake).GetMethod("CheckSpace");
-                    break;
-                case 1509:
-                    Program.newMap = new MapForest2(2); //going into position
-                    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
-                    break;
+                //case 1503:
+                //    Program.newMap = new MapLake(0); //going into position
+                //    Program.CheckSpace = typeof(MapLake).GetMethod("CheckSpace");
+                //    break;
+                //case 1509:
+                //    Program.newMap = new MapForest2(2); //going into position
+                //    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                //    break;
             }
         }
 

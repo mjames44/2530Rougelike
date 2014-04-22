@@ -87,9 +87,9 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapForest1(0);
+            currentMap = new MapCastleTowerLeft3(1);
             newMap = currentMap;
-            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
+            CheckSpace = typeof(MapCastleTowerLeft3).GetMethod("CheckSpace");
 
 
             InitializeConsole();
@@ -190,9 +190,10 @@ namespace _2530_Final_Project___Rougelike
         private static void TryOpenDoor()
         {
             Console.SetCursorPosition(0, 0);
+
             message = "Door in which direction?";
 
-            ShowMessage(1);
+            ShowMessage(0);
 
             switch (Console.ReadKey(false).Key)
             {
@@ -212,7 +213,6 @@ namespace _2530_Final_Project___Rougelike
                     if (currentMap.MapSpace[pc.Y][pc.X + 1] >= 101 && currentMap.MapSpace[pc.Y][pc.X] <= 300)
                         OpenDoor(4);
                     break;
-
             }
         }
 
@@ -224,49 +224,69 @@ namespace _2530_Final_Project___Rougelike
             switch (doorDirection)
             {
                 case 1:
-                    if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y - 1][pc.X])
+                    if (currentMap.MapSpace[pc.Y - 1][pc.X] != 300)
                     {
-                        if (currentMap.MapSpace[pc.Y - 1][pc.X] < 300)
-                            currentMap.MapSpace[pc.Y - 1][pc.X] = 100;
-                        else
-                            message = "You can't pick this lock";
-                    }
+                        if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y - 1][pc.X])
+                        {
 
+                            currentMap.MapSpace[pc.Y - 1][pc.X] = 100;
+                        }
+                    }
+                    else
+                    {
+                        message = "You can't pick this lock";
+                        ShowMessage(0);
+                    }
                     break;
                 case 2:
-                    if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y + 1][pc.X])
+                    if (currentMap.MapSpace[pc.Y + 1][pc.X] != 300)
                     {
-                        if (currentMap.MapSpace[pc.Y + 1][pc.X] < 300)
+                        if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y + 1][pc.X])
+                        {
                             currentMap.MapSpace[pc.Y + 1][pc.X] = 100;
-                        else
-                            message = "You can't pick this lock";
+                        }
                     }
+                    else
+                    {
+                        message = "You can't pick this lock";
+                        ShowMessage(0);
 
+                    }
                     break;
                 case 3:
-                    if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y][pc.X - 1])
+                    if (currentMap.MapSpace[pc.Y][pc.X - 1] != 300)
                     {
-                        if (currentMap.MapSpace[pc.Y][pc.X - 1] < 300)
+                        if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y][pc.X - 1])
+                        {
+
                             currentMap.MapSpace[pc.Y][pc.X - 1] = 100;
-                        else
-                            message = "You can't pick this lock";
-                    }
 
-                    break;
-                // Doesn't work yet.
-                case 4:
-                    if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y][pc.X + 1])
+                        }
+                    }
+                    else
                     {
-                        if (currentMap.MapSpace[pc.Y][pc.X + 1] < 300)
-                            currentMap.MapSpace[pc.Y][pc.X + 1] = 100;
-                        else
-                            message = "You can't pick this lock";
+                        message = "You can't pick this lock";
+                        ShowMessage(0);
                     }
+                    break;
+                case 4:
+                    if (currentMap.MapSpace[pc.Y][pc.X + 1] != 300)
+                    {
+                        if (pickScore + pc.LockPickSkill >= currentMap.MapSpace[pc.Y][pc.X + 1])
+                        {
 
+                            currentMap.MapSpace[pc.Y][pc.X + 1] = 100;
+                        }
+                    }
+                    else
+                    {
+                        message = "You can't pick this lock";
+                        ShowMessage(0);
+                    }
                     break;
             }
 
-            DrawMap(currentMap);
+            ShowMessage(0);
         }
 
         private static void ShowHelpScreen()
@@ -456,7 +476,11 @@ namespace _2530_Final_Project___Rougelike
                 messageCounter = i ?? maxMessageCounter;
             }
             else if (messageCounter < 0)
+            {
                 WipeMessage();
+                oldMessage = "";
+                message = "";
+            }
             else
                 messageCounter--;
         }

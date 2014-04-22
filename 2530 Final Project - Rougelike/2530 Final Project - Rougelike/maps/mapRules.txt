@@ -26,6 +26,10 @@ Value	Name		Character			Unicode
 12		Blue Flower	// B Flower Character 	8720
 13		Pink Flower	// P Flower Character	8859
 100		Open Door	'-'
+
+// 401 - 500 Temporary range per map, Notate in class.
+
+
 101-300 Closed door	'+'
 
 * Trigger *
@@ -51,8 +55,8 @@ Value	Name		Character			Unicode
 572		Guard Tower L -> GuardTower L2	'>'
 573		Guard Tower L2 -> GuardTower L	'<'
 574		Guard Tower L2 -> GuardTower L3 '>'
-575		Guard Tower L3 -> GuardTower L2	'<'
-575		Guard Tower L3 -> GuardTower L4	'>'
+575		Guard Tower L3 -> GuardTower L4	'<'
+578		Guard Tower L3 -> GuardTower L2	'>' // Oops
 576		Guard Tower Treasure Room Door	'+'
 577		Guard Tower L4 -> GuardTower L3 '<'
 591		Guard Tower R -> Castle			'-'
