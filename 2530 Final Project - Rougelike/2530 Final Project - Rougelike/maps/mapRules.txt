@@ -79,8 +79,14 @@ Value	Name		Character			Unicode
 1505  Entrance to dark castle main floor from outside
 1506  Secret passage to inside dark castle dungeon
 1507  Dark Castle main floor to outside
-1508  Secret passage from dungeon to outside dark castle
+1508  Dark Castle Main Floor to Tower 1
 1509  Mountain path to Forest2 samll
+1510  Dark Castle Main Floor to Tower 2
+1511  Dark Castle Main Floor to Tower 3
+1512  Dark Castle Main Floor to Tower 4
+1513  Dark Castle Main Floor to Dungeon
+1514  Dungeon to Dark Castle Main Floor
+1515  Secret passage from Dungeon to outside Dark Castle
 
 
 
