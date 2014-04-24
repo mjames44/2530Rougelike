@@ -20,5 +20,10 @@ namespace _2530_Final_Project___Rougelike
             HP = 25;
             Name = "Stevo";
         }
+
+        public override void SpaceOccupied()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

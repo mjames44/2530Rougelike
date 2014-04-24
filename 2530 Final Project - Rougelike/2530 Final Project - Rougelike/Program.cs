@@ -407,11 +407,8 @@ namespace _2530_Final_Project___Rougelike
             // Need to clear the console, so the character draw methods will draw correctly
             // and the character can detect the walls.
 
-            /* Steps
-             * 1. Copy currentMap.MapSpace into into a Stringbuilder using SelectTiles()
-             * 2. Print each line of the Stringbuilder
-             * 3. Print out each character at it's current location.
-             * */
+            // New method, with color
+
             Dictionary<int, List<int[]>> whatIsWhere = AnalyzeArray(theMap);
 
             Console.Clear();
@@ -425,6 +422,13 @@ namespace _2530_Final_Project___Rougelike
                     DrawInColor(theMap, el, el2);
                 }
             }
+
+            // Old method, no color
+            /* Steps
+             * 1. Copy currentMap.MapSpace into into a Stringbuilder using SelectTiles()
+             * 2. Print each line of the Stringbuilder
+             * 3. Print out each character at it's current location.
+             * */
 
             /*StringBuilder map = new StringBuilder();
 
