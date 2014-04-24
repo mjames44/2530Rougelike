@@ -415,7 +415,8 @@ namespace _2530_Final_Project___Rougelike
 
             foreach (int el in whatIsWhere.Keys)
             {
-                Console.ForegroundColor = theMap.TileInfo[el].Color;
+                try {Console.ForegroundColor = theMap.TileInfo[el].Color;}
+                catch { Console.ForegroundColor = ConsoleColor.White; }
 
                 foreach (int[] el2 in whatIsWhere[el])
                 {
@@ -464,6 +465,7 @@ namespace _2530_Final_Project___Rougelike
             return ' ';
         }
 
+        #region Message Methods
         private static void ShowMessage()
         {
             ShowMessage(null);
@@ -498,6 +500,7 @@ namespace _2530_Final_Project___Rougelike
             // Reset the position for the next message
             Console.SetCursorPosition(0, messagePosition);
         }
-        # endregion
+        #endregion
+        #endregion
     }
 }
