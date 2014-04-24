@@ -47,6 +47,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MapCityMain.cs" />
+    <Compile Include="MapCave.cs" />
+    <Compile Include="MapDarkCastle.cs" />
+    <Compile Include="MapTower4.cs" />
+    <Compile Include="MapTower3.cs" />
+    <Compile Include="MapTower2.cs" />
+    <Compile Include="MapTower1.cs" />
+    <Compile Include="MapDarkCastleMainFloor.cs" />
+    <Compile Include="MapDungeon.cs" />
+    <Compile Include="MapMountain.cs" />
+    <Compile Include="MapLevel0.cs" />
+    <Compile Include="MapForest1.cs" />
+    <Compile Include="PlayerCharacter.cs" />
     <Compile Include="characterClasses\Character.cs" />
     <Compile Include="mapClasses\Map.cs" />
     <Compile Include="mapClasses\MapCastleTowerLeft4.cs" />
@@ -68,6 +83,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="maps\mapTower4.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapTower3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapTower2.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapTower1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapDarkCastleMainFloor.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapDungeon.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapDarkCastle.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapCave.csv">
     <None Include="maps\mapCastle.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

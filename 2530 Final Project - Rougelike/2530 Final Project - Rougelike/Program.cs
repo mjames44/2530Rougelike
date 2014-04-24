@@ -424,14 +424,14 @@ namespace _2530_Final_Project___Rougelike
                 }
             }
 
-            // Old method, no color
-            /* Steps
-             * 1. Copy currentMap.MapSpace into into a Stringbuilder using SelectTiles()
-             * 2. Print each line of the Stringbuilder
-             * 3. Print out each character at it's current location.
-             * */
+            /* Old method, no color
+            //* Steps
+            // * 1. Copy currentMap.MapSpace into into a Stringbuilder using SelectTiles()
+            // * 2. Print each line of the Stringbuilder
+            // * 3. Print out each character at it's current location.
+            // * 
 
-            /*StringBuilder map = new StringBuilder();
+            StringBuilder map = new StringBuilder();
 
             for (int row = 0; row < theMap.MapSpace.Length; row++)
             {
@@ -442,7 +442,7 @@ namespace _2530_Final_Project___Rougelike
                 }
 
                 Console.WriteLine(map.ToString());
-                map.Clear();
+            map.Clear();
             }*/
         }
 
