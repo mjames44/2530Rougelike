@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     abstract class Map
     {
         // Fields
-        protected Dictionary<int, Tile> tileInfo;
+        private Dictionary<int, Tile> tileInfo;
 
         // Properties
         public int[] StartingPosition { get; protected set; }

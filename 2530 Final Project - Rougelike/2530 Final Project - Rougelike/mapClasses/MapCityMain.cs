@@ -9,18 +9,20 @@ namespace _2530_Final_Project___Rougelike
 {
     class MapCityMain : Map
     {
-        public MapCityMain(int ep) : base(ep)
+        public MapCityMain(int ep)
+            : base(ep)
         {
             FileName = "mapCityMain.csv";
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> { 501, 502, 503, 504, 505, 506, 507, 508, 509});
+            StandableTiles.AddRange(new List<int> { 501, 502, 503, 504, 505, 506, 507, 508, 509 });
         }
 
         protected override void AddTiles()
         {
             TileInfo[0].Color = ConsoleColor.DarkYellow;
+            TileInfo[1].Color = ConsoleColor.Gray;
 
             TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));
             TileInfo.Add(12, new Tile(ConsoleColor.Blue, '%'));
@@ -44,6 +46,10 @@ namespace _2530_Final_Project___Rougelike
                     Program.newMap = new MapForest1(1);
                     Program.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
                     break;
+                case 503:
+                    Program.newMap = new MapCastle(0);
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    break;
             }
         }
 
@@ -53,6 +59,12 @@ namespace _2530_Final_Project___Rougelike
             {
                 case 0:
                     StartingPosition = new int[] { 78, 37 };
+                    break;
+                case 1:
+                    StartingPosition = new int[] { 0, 0 };
+                    break;
+                case 2:
+                    StartingPosition = new int[] { 48, 1 };
                     break;
             }
         }

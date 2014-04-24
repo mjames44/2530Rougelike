@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Character
+    abstract class Character
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -14,13 +14,11 @@ namespace _2530_Final_Project___Rougelike
         public int PreviousY { get; set; }
         public int HP { get; set; }
 
-
         public Character()
         { 
            
         }
 
-        // Don't want to leave this public set, need to figure out why it's complaining
         public char CharacterRepresentation { get; protected set; }
 
         public int[] Position
@@ -48,5 +46,7 @@ namespace _2530_Final_Project___Rougelike
                 PreviousY = value[0];
             }
         }
+
+        public abstract void SpaceOccupied();
     }
 }

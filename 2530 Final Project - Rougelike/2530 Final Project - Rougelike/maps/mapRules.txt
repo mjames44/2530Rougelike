@@ -30,6 +30,7 @@ Value	Name		Character			Unicode
 
 * Trigger *
 501 - 1000 Mike's Area
+// City
 501		Town gate -> Forest 1	'.'
 502		Town gate -> Forest 2	'.'
 503		Town gate -> Castle	'.'
@@ -40,7 +41,26 @@ Value	Name		Character			Unicode
 508		Barracks		'-'
 509		Stables			'-'
 
-
+// Castle
+551		Castle -> City		'.'
+552		Castle -> CastleInside1	'-'
+553		Castle DrawBridge		'='
+554		Castle -> Guard Tower L	'-'
+555		Castle -> Guard Tower R	'-'
+571		Guard Tower L -> Castle '-'
+572		Guard Tower L -> GuardTower L2	'>'
+573		Guard Tower L2 -> GuardTower L	'<'
+574		Guard Tower L2 -> GuardTower L3 '>'
+575		Guard Tower L3 -> GuardTower L2	'<'
+575		Guard Tower L3 -> GuardTower L4	'>'
+576		Guard Tower Treasure Room Door	'+'
+577		Guard Tower L4 -> GuardTower L3 '<'
+591		Guard Tower R -> Castle			'-'
+592		Guard Tower R -> GuardTower R2	'>'
+593		Guard Tower R2 -> GuardTower R	'<'
+594		Guard Tower R2 -> GuardTower R3	'>'
+595		Guard Tower R3 -> GuardTower R2	'<'	
+595		Guard Tower R3 -> GuardTower R4	'>'
 
 
 1001 - 1500 - Dirk's Area
@@ -59,8 +79,18 @@ Value	Name		Character			Unicode
 1505  Entrance to dark castle main floor from outside
 1506  Secret passage to inside dark castle dungeon
 1507  Dark Castle main floor to outside
-1508  Secret passage from dungeon to outside dark castle
+1508  Dark Castle Main Floor to Tower 1
 1509  Mountain path to Forest2 samll
+1510  Dark Castle Main Floor to Tower 2
+1511  Dark Castle Main Floor to Tower 3
+1512  Dark Castle Main Floor to Tower 4
+1513  Dark Castle Main Floor to Dungeon
+1514  Dungeon to Dark Castle Main Floor
+1515  Secret passage from Dungeon to outside Dark Castle
+1516  Tower1 to Dark Castle main Floor
+1517  Tower2 to Dark Castle main Floor
+1518  Tower3 to Dark Castle main Floor
+1519  Tower4 to Dark Castle main Floor
 
 
 
