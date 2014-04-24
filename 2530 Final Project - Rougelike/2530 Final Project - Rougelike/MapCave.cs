@@ -31,11 +31,8 @@ namespace _2530_Final_Project___Rougelike
         {
             switch (mapValue)
             {
-                /*case 551 :
-                    Program.newMap = new MapCityMain(0);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
-                    break;*/
-                case 1504:
+
+                case 1504://triggers to go to map mountain
                     Program.newMap = new MapMountain(1);
                     Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;

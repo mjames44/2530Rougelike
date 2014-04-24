@@ -7,22 +7,22 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapTower1 : Map
+    class MapTower4 : Map
     {
-        public MapTower1(int ep)
+        public MapTower4(int ep)
             : base(ep)
         {
-            FileName = "mapTower1.csv";
+            FileName = "mapTower4.csv";
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> {1516});// trigger tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1519});// trigger tiles that lead to other  places
         }
 
         protected override void AddTiles()
         {
 
-            TileInfo.Add(1516, new Tile(ConsoleColor.White, '#'));
+            TileInfo.Add(1519, new Tile(ConsoleColor.White, '#'));
 
         }
 
@@ -30,8 +30,8 @@ namespace _2530_Final_Project___Rougelike
         {
             switch (mapValue)
             {
-                case 1516://Trigger to go to map Dark Castle Main Floor
-                    Program.newMap = new MapDarkCastleMainFloor(1);
+               case 1519://Trigger to go to map Dark Castle Main Floor
+                    Program.newMap = new MapDarkCastleMainFloor(4);
                     Program.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
                     break;
             
@@ -44,7 +44,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 3, 4 };//start position from DarkCastle Main Floor to Tower 1
+                    StartingPosition = new int[] { 6, 4 };//start position from DarkCastle Main Floor to Tower 1
                     break;
 
             }

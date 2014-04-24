@@ -52,6 +52,9 @@
     <Compile Include="MapCityMain.cs" />
     <Compile Include="MapCave.cs" />
     <Compile Include="MapDarkCastle.cs" />
+    <Compile Include="MapTower4.cs" />
+    <Compile Include="MapTower3.cs" />
+    <Compile Include="MapTower2.cs" />
     <Compile Include="MapTower1.cs" />
     <Compile Include="MapDarkCastleMainFloor.cs" />
     <Compile Include="MapDungeon.cs" />
@@ -65,6 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="maps\mapTower4.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapTower3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapTower2.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="maps\mapTower1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

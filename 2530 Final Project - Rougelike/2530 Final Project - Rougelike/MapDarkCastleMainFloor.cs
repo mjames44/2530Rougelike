@@ -16,14 +16,12 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> {1507,1508,1510,1511,1512,1513 });// trigger tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1507,1508,1510,1511,1512,1513 });// trigger tiles that lead to other places
         }
 
         protected override void AddTiles()
         {
-            TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));// add new tiles
-            TileInfo.Add(12, new Tile(ConsoleColor.Cyan, '*'));
-            TileInfo.Add(13, new Tile(ConsoleColor.Magenta, '*'));
+
             TileInfo.Add(1507, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1508, new Tile(ConsoleColor.White, '#'));
             TileInfo.Add(1510, new Tile(ConsoleColor.White, '#'));
@@ -36,31 +34,28 @@ namespace _2530_Final_Project___Rougelike
         {
             switch (mapValue)
             {
-                /*case 551 :
-                    Program.newMap = new MapCityMain(0);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
-                    break;*/
-                case 1507 :
+
+                case 1507://triggers to go to map Dark Castle
                     Program.newMap = new MapDarkCastle(1);
                     Program.CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
                     break;
-                case 1508:
+                case 1508://triggers to go to map Tower 1
                     Program.newMap = new MapTower1(0);
                     Program.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
                     break;
-                /*case 1510:
+                case 1510://triggers to go to map Tower 2
                     Program.newMap = new MapTower2(0);
-                    Program.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapTower2).GetMethod("CheckSpace");
                     break;
-                case 1511:
+                case 1511://triggers to go to map Tower 3
                     Program.newMap = new MapTower3(0);
-                    Program.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapTower3).GetMethod("CheckSpace");
                     break;
-                case 1512:
+                case 1512://triggers to go to map Tower 4
                     Program.newMap = new MapTower4(0);
-                    Program.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
-                    break;*/
-                case 1513:
+                    Program.CheckSpace = typeof(MapTower4).GetMethod("CheckSpace");
+                    break;
+                case 1513://triggers to go to map Dungeon
                     Program.newMap = new MapDungeon(0); //going into position
                     Program.CheckSpace = typeof(MapDungeon).GetMethod("CheckSpace");
                     break;
@@ -79,16 +74,16 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 10, 4 };//start position from Tower 1 to Dark Castle Main Floor
                     break;
                 case 2:
-                    StartingPosition = new int[] { 10, 36 };//start position from Tower 2 to Dark Castle Main Floor
+                    StartingPosition = new int[] { 10, 35 };//start position from Tower 2 to Dark Castle Main Floor
                     break;
                 case 3:
-                    StartingPosition = new int[] { 82, 36 };//start position from Tower 3 to Dark Castle Main Floor
+                    StartingPosition = new int[] { 86, 35 };//start position from Tower 3 to Dark Castle Main Floor
                     break;
                 case 4:
-                    StartingPosition = new int[] { 82, 5 };//start position from Tower 4 to Dark Castle Main Floor
+                    StartingPosition = new int[] { 86, 5 };//start position from Tower 4 to Dark Castle Main Floor
                     break;
                 case 5:
-                    StartingPosition = new int[] { 71, 18 };//start position from Dungeon to Dark Castle Main Floor
+                    StartingPosition = new int[] { 70, 17 };//start position from Dungeon to Dark Castle Main Floor
                     break;
             }
         }
