@@ -47,28 +47,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapDarkCastle.cs" />
-    <Compile Include="MapTower4.cs" />
-    <Compile Include="MapTower3.cs" />
-    <Compile Include="MapTower2.cs" />
-    <Compile Include="MapTower1.cs" />
-    <Compile Include="MapDarkCastleMainFloor.cs" />
-    <Compile Include="MapDungeon.cs" />
-    <Compile Include="characterClasses\Character.cs" />
-    <Compile Include="mapClasses\Map.cs" />
-    <Compile Include="mapClasses\MapCastleTowerLeft4.cs" />
-    <Compile Include="mapClasses\MapCastleTowerLeft3.cs" />
-    <Compile Include="mapClasses\MapCastleTowerLeft2.cs" />
-    <Compile Include="mapClasses\MapCityMain.cs" />
-    <Compile Include="mapClasses\MapCave.cs" />
-    <Compile Include="mapClasses\MapCastle.cs" />
-    <Compile Include="mapClasses\MapCastleTowerLeft1.cs" />
-    <Compile Include="mapClasses\MapMountain.cs" />
-    <Compile Include="mapClasses\MapLevel0.cs" />
-    <Compile Include="mapClasses\MapForest1.cs" />
-    <Compile Include="characterClasses\Monster.cs" />
-    <Compile Include="characterClasses\NonPlayer.cs" />
-    <Compile Include="characterClasses\PlayerCharacter.cs" />
+    <Compile Include="mapClasses\MapDarkCastle.cs" />
+    <Compile Include="mapClasses\MapTower4.cs" />
+    <Compile Include="mapClasses\MapTower3.cs" />
+    <Compile Include="mapClasses\MapTower2.cs" />
+    <Compile Include="mapClasses\MapTower1.cs" />
+    <Compile Include="mapClasses\MapDarkCastleMainFloor.cs" />
+    <Compile Include="mapClasses\MapDungeon.cs" />
+    <Compile Include="characterClasses\Character.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\Map.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastleTowerLeft4.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastleTowerLeft3.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastleTowerLeft2.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCityMain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCave.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastle.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastleTowerLeft1.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapMountain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapLevel0.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapForest1.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\Monster.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\NonPlayer.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\PlayerCharacter.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile.cs" />
@@ -140,7 +170,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="maps\mapRules.txt" />
+    <Content Include="maps\mapRules.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
