@@ -47,6 +47,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="characterClasses\NonPlayerCharacter.cs" />
+    <Compile Include="characterClasses\RandomGuy.cs" />
+    <Compile Include="characterClasses\TestMonster.cs" />
     <Compile Include="ItemClasses\HealingPotion.cs" />
     <Compile Include="ItemClasses\Item.cs" />
     <Compile Include="ItemClasses\NullItem.cs" />
@@ -98,12 +101,10 @@
     <Compile Include="characterClasses\Monster.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\NonPlayer.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="characterClasses\PlayerCharacter.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="NonPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile.cs" />

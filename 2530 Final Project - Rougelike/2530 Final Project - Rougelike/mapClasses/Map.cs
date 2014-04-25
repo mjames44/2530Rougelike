@@ -28,6 +28,7 @@ namespace _2530_Final_Project___Rougelike
             } 
         }
         public string FileName { get; protected set; }
+        public List<Character> MapCharacters { get; protected set; }
 
         // Constructors
         public Map(int entryPoint)
@@ -36,6 +37,8 @@ namespace _2530_Final_Project___Rougelike
             StandableTiles = new List<int> { 0, 3, 4 , 100};
             BuildTiles();
             SetStartingPosition(entryPoint);
+
+            MapCharacters = new List<Character>();
         }
 
         // Methods

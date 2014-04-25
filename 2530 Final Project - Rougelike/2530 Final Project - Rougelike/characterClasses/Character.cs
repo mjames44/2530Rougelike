@@ -8,11 +8,10 @@ namespace _2530_Final_Project___Rougelike
 {
     abstract class Character
     {
+        // Properties
         public int X { get; set; }
         public int Y { get; set; }
-        public int PreviousX { get; set; }
-        public int PreviousY { get; set; }
-
+        public char CharacterRepresentation { get; protected set; }
         public string Name { get; protected set; }
         public ConsoleColor Color { get; protected set; }
         public int Attack { get; set; }
@@ -21,12 +20,8 @@ namespace _2530_Final_Project___Rougelike
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
 
-        public Character()
-        { 
-           
-        }
-
-        public char CharacterRepresentation { get; protected set; }
+        public int PreviousX { get; set; }
+        public int PreviousY { get; set; }
 
         public int[] Position
         {
@@ -54,6 +49,31 @@ namespace _2530_Final_Project___Rougelike
             }
         }
 
-        public abstract void SpaceOccupied();
+        // Constructor
+        public Character(char cr, string name, ConsoleColor color, 
+            int atk, int def, int arm, int min, int max)
+        {
+            CharacterRepresentation = cr;
+            Name = name;
+            Color = color;
+            Attack = atk;
+            Defense = def;
+            Armor = arm;
+            MinDamage = min;
+            MaxDamage = max;
+        }
+
+        // Methods
+        public abstract Character Interact(Character otherChar);
+
+        protected int GetDamage()
+        {
+            Random rand = new Random();
+
+            if (MaxDamage - MinDamage != 0)
+                return (int)(rand.Next() % (MaxDamage - MinDamage)) - (0 - MinDamage);
+            else
+                return 0;
+        }
     }
 }

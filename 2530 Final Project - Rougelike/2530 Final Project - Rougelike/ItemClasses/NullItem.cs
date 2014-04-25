@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    interface NonPlayer
+    class NullItem : Item
     {
-        
+        public NullItem() : base("", 0, 0, 0, 0,' ', ConsoleColor.Black) { }
     }
 }

@@ -22,7 +22,6 @@ namespace _2530_Final_Project___Rougelike
         static PlayerCharacter pc; // Player character object represting the player
         static List<Character> characterList; // A list of all current characters, player, non-player, and monsters
         static bool done; // Keeps the game going until the player inputs 'Q'.
-        static string message; // The output message for feedback to the user.
         static string oldMessage; // The previous message
         static int messageCounter; // A counter of how long messages stay on the screen.
         static int maxMessageCounter; // The reset value for the counter above.
@@ -32,6 +31,7 @@ namespace _2530_Final_Project___Rougelike
         static Map currentMap;  // Stores the current map object.
         static SpaceChecker spacecheck;
 
+        public static string Message { get; set; } // The output message for feedback to the user.
         public static MethodInfo CheckSpace;
         public static Map newMap;
         public static string pcName;
@@ -56,6 +56,8 @@ namespace _2530_Final_Project___Rougelike
 
                 spacecheck(currentMap.MapSpace[pc.Y][pc.X]);
 
+                checkCharacters(); // Who died?
+
                 DrawCharacters();
                 #endregion Character
 
@@ -75,6 +77,36 @@ namespace _2530_Final_Project___Rougelike
                 #endregion Other Stuff
                 #endregion
             }
+        }
+
+        private static void checkCharacters()
+        {
+            List<int> deadMonsters = new List<int>();
+
+            for (int i = 0; i < characterList.Count; i++)
+            {
+                if (characterList.ElementAt(i) is Monster)
+                {
+                    Monster tempMonster = (Monster)characterList.ElementAt(i);
+                    if (tempMonster.HP <= 0)
+                        deadMonsters.Add(i);
+                }
+                else if (characterList.ElementAt(i) is PlayerCharacter)
+                {
+                    if (pc.CurrentHP <= 0)
+                    {
+                        pc.Death();
+                        break;
+                    }
+                }
+            }
+
+            foreach (int el in deadMonsters)
+            {
+                MonsterDeath(el);
+            }
+
+            pc.WriteInfo();
         }
 
         #endregion
@@ -125,11 +157,19 @@ namespace _2530_Final_Project___Rougelike
 
         private static void InitializeMap(Map theMap)
         {
+            characterList = new List<Character>();
+            characterList.Add(pc);
+
             Delegate methodHolder = Delegate.CreateDelegate(typeof(SpaceChecker), theMap, CheckSpace, false);
 
             if (methodHolder != null)
             {
                 spacecheck = (SpaceChecker)methodHolder;
+            }
+
+            foreach (Character el in theMap.MapCharacters)
+            {
+                characterList.Add(el);
             }
 
             pc.Position = theMap.StartingPosition;
@@ -183,20 +223,46 @@ namespace _2530_Final_Project___Rougelike
             pc.PreviousPosition = pc.Position;
 
             if (key == ConsoleKey.DownArrow && CanMoveHere(currentMap.MapSpace[pc.Y + 1][pc.X]))
-                pc.Y++;
+            {
+                if (!SpaceOccupied(pc.Y + 1, pc.X, pc))
+                    pc.Y++;
+            }
             else if (key == ConsoleKey.UpArrow && CanMoveHere(currentMap.MapSpace[pc.Y - 1][pc.X]))
-                pc.Y--;
+            {
+                if (!SpaceOccupied(pc.Y - 1, pc.X, pc))
+                    pc.Y--;
+            }
             else if (key == ConsoleKey.RightArrow && CanMoveHere(currentMap.MapSpace[pc.Y][pc.X + 1]))
-                pc.X++;
+            {
+                if (!SpaceOccupied(pc.Y, pc.X + 1, pc))
+                    pc.X++;
+            }
             else if (key == ConsoleKey.LeftArrow && CanMoveHere(currentMap.MapSpace[pc.Y][pc.X - 1]))
-                pc.X--;
+                if (!SpaceOccupied(pc.Y, pc.X - 1, pc))
+                    pc.X--;
         }
+
+        private static bool SpaceOccupied(int y, int x, Character callingCharacter)
+        {
+            for (int i = 0; i < characterList.Count; i++)
+            {
+                if (x == characterList[i].X && y == characterList[i].Y)
+                {
+                    characterList[i] = callingCharacter.Interact(characterList[i]);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 
         private static void TryOpenDoor()
         {
             Console.SetCursorPosition(0, 0);
 
-            message = "Door in which direction?";
+            Message = "Door in which direction?";
 
             ShowMessage(0);
 
@@ -239,7 +305,7 @@ namespace _2530_Final_Project___Rougelike
                     }
                     else
                     {
-                        message = "You can't pick this lock";
+                        Message = "You can't pick this lock";
                         ShowMessage(0);
                     }
                     break;
@@ -253,7 +319,7 @@ namespace _2530_Final_Project___Rougelike
                     }
                     else
                     {
-                        message = "You can't pick this lock";
+                        Message = "You can't pick this lock";
                         ShowMessage(0);
 
                     }
@@ -270,7 +336,7 @@ namespace _2530_Final_Project___Rougelike
                     }
                     else
                     {
-                        message = "You can't pick this lock";
+                        Message = "You can't pick this lock";
                         ShowMessage(0);
                     }
                     break;
@@ -285,7 +351,7 @@ namespace _2530_Final_Project___Rougelike
                     }
                     else
                     {
-                        message = "You can't pick this lock";
+                        Message = "You can't pick this lock";
                         ShowMessage(0);
                     }
                     break;
@@ -381,9 +447,15 @@ namespace _2530_Final_Project___Rougelike
         {
             pc.ItemInventory.Add(theItem);
 
-            message = String.Format("You got {0}", theItem.Name);
+            Message = String.Format("You got {0}", theItem.Name);
 
             ShowMessage(1);
+        }
+
+        internal static void AwardXP(int XP)
+        {
+            pc.XP += XP;
+            pc.CheckXPLevel();
         }
         #endregion
 
@@ -485,26 +557,26 @@ namespace _2530_Final_Project___Rougelike
 
 
         #region Message Methods
-        private static void ShowMessage()
+        public static void ShowMessage()
         {
             ShowMessage(null);
         }
 
-        private static void ShowMessage(int? i)
+        public static void ShowMessage(int? i)
         {
-            if (message != oldMessage)
+            if (Message != oldMessage)
             {
-                oldMessage = message;
+                oldMessage = Message;
 
                 WipeMessage();
-                Console.WriteLine("{0}\n", message);
+                Console.WriteLine("{0}\n", Message);
                 messageCounter = i ?? maxMessageCounter;
             }
             else if (messageCounter < 0)
             {
                 WipeMessage();
                 oldMessage = "";
-                message = "";
+                Message = "";
             }
             else
                 messageCounter--;
@@ -556,7 +628,7 @@ namespace _2530_Final_Project___Rougelike
                         bool doneEquip = false;
 
                         Console.WriteLine();
-                        Console.WriteLine("Use as what? (1 - weapon, 2 - armor, 3 - item, esc to quit");
+                        Console.WriteLine("Use as what? (1 - weapon, 2 - armor, 3 - item, esc to quit)");
 
                         selection = Console.ReadKey(true);
 
@@ -568,21 +640,21 @@ namespace _2530_Final_Project___Rougelike
                             }
                             else if (selection.KeyChar == '1')
                             {
-                                message = pc.Equip(selectedItem, "Weapon", itemIndex);
+                                Message = pc.Equip(selectedItem, "Weapon", itemIndex);
 
                                 doneEquip = true;
                                 loopDone = true;
                             }
                             else if (selection.KeyChar == '2')
                             {
-                                message = pc.Equip(selectedItem, "Armor", itemIndex);
+                                Message = pc.Equip(selectedItem, "Armor", itemIndex);
 
                                 doneEquip = true;
                                 loopDone = true;
                             }
                             else if (selection.KeyChar == '3')
                             {
-                                message = pc.UseItem(selectedItem, itemIndex);
+                                Message = pc.UseItem(selectedItem, itemIndex);
 
                                 doneEquip = true;
                                 loopDone = true;
@@ -597,7 +669,7 @@ namespace _2530_Final_Project___Rougelike
             }
             else
             {
-                message = "The Inventory is empty";
+                Message = "The Inventory is empty";
 
                 ShowMessage(0);
             }
@@ -647,5 +719,20 @@ namespace _2530_Final_Project___Rougelike
             }
         }
         #endregion
+
+
+        internal static void MonsterDeath(int index)
+        {
+            Monster tempMonster = (Monster)characterList[index];
+            AwardXP(tempMonster.XP);
+            tempMonster.DropItem();
+
+            Console.ForegroundColor = currentMap.TileInfo[currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX]].Color;
+            Console.SetCursorPosition(tempMonster.PreviousX, tempMonster.PreviousY);
+            Console.Write(SelectTile(currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX],
+                currentMap));
+
+            characterList.RemoveAt(index);
+        }
     }
 }

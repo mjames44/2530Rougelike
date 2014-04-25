@@ -21,7 +21,7 @@ namespace _2530_Final_Project___Rougelike
         public int LockPickSkill { get; private set; }
         public List<Item> ItemInventory { get; set; }
         public Dictionary<string, Item> EquipedItems { get; protected set; }
-        public int XP { get; protected set; }
+        public int XP { get; set; }
         public int NextLevel { get; private set; }
         public int Level { get; private set; }
         public int CurrentHP { get; set; }
@@ -29,16 +29,15 @@ namespace _2530_Final_Project___Rougelike
 
         // Constructors
         public PlayerCharacter(string name)
+            : base('@', name, ConsoleColor.White, 5, 5, 0, 0, 0)
         {
             levelHPProgression = new int[] { 25, 10, 15, 20, 25, 30 };
             levelAttackProgression = new int[] { 1, 2, 2, 3, 2 };
             levelDefenseProgression = new int[] { 2, 1, 2, 2, 3 };
             levelLockpick = new int[] { 10, 10, 15, 20, 20, 25 };
 
-            levelIntervals = new int[] { 0, 100, 200, 400, 800, 1600 };
+            levelIntervals = new int[] { 0, 100, 200, 400, 800, 1600, Int16.MaxValue };
 
-            Color = ConsoleColor.White;
-            CharacterRepresentation = '@';
             infoLeft = 105;
             infoTop = 2;
 
@@ -49,13 +48,10 @@ namespace _2530_Final_Project___Rougelike
         // Methods
         private void NewPlayerCharacter(string name)
         {
-            Name = name;
             Level = 1;
             MaxHP = 25;
-            CurrentHP = 2;
+            CurrentHP = MaxHP;
 
-            Attack = 5;
-            Defense = 5;
             XP = 0;
             NextLevel = 100;
 
@@ -64,26 +60,23 @@ namespace _2530_Final_Project___Rougelike
 
         private void LevelUp() // Ding!
         {
+            Level++;
+
             MaxHP += levelHPProgression[Level];
             Attack += levelAttackProgression[Level];
             Defense += levelDefenseProgression[Level];
             LockPickSkill += levelLockpick[Level];
+
+            NextLevel = levelIntervals[Level];
         }
 
         private void NewCharacterItems()
         {
             ItemInventory = new List<Item>(); // Any items to begin with?  Healing potion?
-            ItemInventory.Add(new HealingPotion());
-            ItemInventory.Add(new WoodenHelmet());
 
             EquipedItems = new Dictionary<string, Item>();
             EquipedItems.Add("Weapon", new NullItem());
             EquipedItems.Add("Armor", new NullItem());
-        }
-
-        public override void SpaceOccupied()
-        {
-            // If a monster, Attack.  If an npc, talk.
         }
 
         public string Equip(Item theItem, string itemType, int index)
@@ -94,9 +87,9 @@ namespace _2530_Final_Project___Rougelike
             }
 
             EquipedItems[itemType] = theItem;
-                ItemInventory.RemoveAt(index);
+            ItemInventory.RemoveAt(index);
 
-                UpdateInventory();
+            UpdateInventory();
 
             return String.Format("{0} has been equiped as {1}", theItem.Name, itemType);
         }
@@ -138,7 +131,7 @@ namespace _2530_Final_Project___Rougelike
         public void WriteInfo()
         {
 
-            
+            Console.ForegroundColor = ConsoleColor.White;
             Console.CursorTop = infoTop;
 
 
@@ -156,7 +149,8 @@ namespace _2530_Final_Project___Rougelike
             pcInfo.Add(string.Format("Lock Pick Skill: {0}\n\n", LockPickSkill));
 
             pcInfo.Add(string.Format("totalXP: {0}\n", XP));
-            pcInfo.Add(string.Format("Next Level: {0}", NextLevel));
+            if (NextLevel < 2000)
+                pcInfo.Add(string.Format("Next Level: {0}", NextLevel));
 
             foreach (string el in pcInfo)
             {
@@ -165,11 +159,6 @@ namespace _2530_Final_Project___Rougelike
             }
         }
 
-        //public void RemoveItem(int index)
-        //{
-        //    RemoveItem(EquipedItems.ElementAt(index).Key);
-        //}
-
         public void RemoveItem(string itemType)
         {
             ItemInventory.Add(EquipedItems[itemType]);
@@ -177,6 +166,47 @@ namespace _2530_Final_Project___Rougelike
             EquipedItems[itemType] = new NullItem();
 
             UpdateInventory();
+        }
+
+        public override Character Interact(Character otherChar)
+        {
+            if (otherChar is Monster)
+            {
+                Monster monster = (Monster)otherChar; 
+                monster = AttackMonster(monster);
+
+                return monster;
+            }
+            else
+            {
+                NonPlayerCharacter npc = (NonPlayerCharacter)otherChar;
+                npc.Talk();
+
+                return npc;
+            }
+        }
+
+        private Monster AttackMonster(Monster monster)
+        {
+            int attackDamage = Attack + GetDamage() - monster.Armor;
+
+            monster.HP -= attackDamage;
+
+            Program.Message = String.Format("You hit the {0} for {1} damage.", monster.Name, attackDamage);
+
+            return monster;
+        }
+
+        internal void CheckXPLevel()
+        {
+            if (XP > NextLevel)
+            {
+                LevelUp();
+            }
+        }
+
+        public void Death()
+        {
         }
     }
 }
