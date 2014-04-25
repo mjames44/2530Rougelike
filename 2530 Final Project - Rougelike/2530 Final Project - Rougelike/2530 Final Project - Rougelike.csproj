@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemClasses\Item.cs" />
     <Compile Include="mapClasses\MapDarkCastle.cs" />
     <Compile Include="mapClasses\MapTower4.cs" />
     <Compile Include="mapClasses\MapTower3.cs" />
