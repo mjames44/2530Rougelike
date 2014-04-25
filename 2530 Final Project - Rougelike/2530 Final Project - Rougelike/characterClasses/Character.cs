@@ -12,7 +12,14 @@ namespace _2530_Final_Project___Rougelike
         public int Y { get; set; }
         public int PreviousX { get; set; }
         public int PreviousY { get; set; }
-        public int HP { get; set; }
+
+        public string Name { get; protected set; }
+        public ConsoleColor Color { get; protected set; }
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int Armor { get; set; }
+        public int MinDamage { get; set; }
+        public int MaxDamage { get; set; }
 
         public Character()
         { 

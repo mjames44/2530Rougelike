@@ -8,13 +8,15 @@ namespace _2530_Final_Project___Rougelike
 {
     class MapForest1 : Map
     {
+        RustyDagger dagger = new RustyDagger();
+
         public MapForest1(int ep) : base(ep)
         {
             FileName = "mapForest1.csv";
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> { 1006 });
+            StandableTiles.AddRange(new List<int> { 1006, 2001 });
         }
 
         protected override void AddTiles()
@@ -25,6 +27,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo.Add(1004, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1005, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1006, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(2001, new Tile(dagger.Color, dagger.CharacterRepresentation));
         }
 
         public override void CheckSpace(int mapValue)
@@ -34,6 +37,10 @@ namespace _2530_Final_Project___Rougelike
                 case 1006:
                     Program.newMap = new MapCityMain(0);
                     Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    break;
+                case 2001 :
+                    Program.AddItem(dagger);
+                    MapSpace[9][6] = 0;
                     break;
             }
         }

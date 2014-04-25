@@ -47,7 +47,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemClasses\HealingPotion.cs" />
     <Compile Include="ItemClasses\Item.cs" />
+    <Compile Include="ItemClasses\NullItem.cs" />
+    <Compile Include="ItemClasses\RustyDagger.cs" />
+    <Compile Include="ItemClasses\WoodenHelmet.cs" />
     <Compile Include="mapClasses\MapDarkCastle.cs" />
     <Compile Include="mapClasses\MapTower4.cs" />
     <Compile Include="mapClasses\MapTower3.cs" />

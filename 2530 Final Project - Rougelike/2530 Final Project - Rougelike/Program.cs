@@ -52,7 +52,7 @@ namespace _2530_Final_Project___Rougelike
             {
                 #region Listen for input, update characters, update maps, execute all other updates
                 #region Character
-                KeyboardInput(Console.ReadKey(false));
+                KeyboardInput(Console.ReadKey(true));
 
                 spacecheck(currentMap.MapSpace[pc.Y][pc.X]);
 
@@ -87,9 +87,9 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapCastleTowerLeft3(1);
+            currentMap = new MapForest1(0);
             newMap = currentMap;
-            CheckSpace = typeof(MapCastleTowerLeft3).GetMethod("CheckSpace");
+            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
 
 
             InitializeConsole();
@@ -101,7 +101,7 @@ namespace _2530_Final_Project___Rougelike
 
         private static void InitializeConsole()
         {
-            Console.SetWindowSize(160, 50); // Size of the console window
+            Console.SetWindowSize(125, 50); // Size of the console window
             Console.Title = "CSIS Final Project"; // Title of the console window
 
             messageWiper = new StringBuilder();
@@ -116,7 +116,7 @@ namespace _2530_Final_Project___Rougelike
 
         private static void InitializePlayChar()
         {
-            pc = new PlayerCharacter();
+            pc = new PlayerCharacter("Stevo");
             characterList = new List<Character>();
             characterList.Add(pc);
 
@@ -135,7 +135,6 @@ namespace _2530_Final_Project___Rougelike
             pc.Position = theMap.StartingPosition;
 
             DrawMap(theMap);
-            DrawCharacters();
         }
         #endregion
 
@@ -155,20 +154,26 @@ namespace _2530_Final_Project___Rougelike
 
             switch (keyPressed.KeyChar)
             {
-                case '?':
+                case '?': // Help
                     ShowHelpScreen();
                     break;
-                case 'o':
+                case 'o': // open door
                     TryOpenDoor();
                     break;
-                case 'Q':
+                case 'Q': // Quit
                     done = true;
                     break;
-                case 'T':
+                case 'T': // List tiles in current map
                     foreach (int el in currentMap.TileInfo.Keys)
                     {
                         Console.WriteLine("{0}\t{1}", el, currentMap.TileInfo[el].CharacterRepresentation);
                     }
+                    break;
+                case 'i': // show inventory
+                    ShowInventory();
+                    break;
+                case 'r': // Remove Weapon/Armor
+                    RemoveItem();
                     break;
             }
         }
@@ -195,7 +200,7 @@ namespace _2530_Final_Project___Rougelike
 
             ShowMessage(0);
 
-            switch (Console.ReadKey(false).Key)
+            switch (Console.ReadKey(true).Key)
             {
                 case ConsoleKey.UpArrow:
                     if (currentMap.MapSpace[pc.Y - 1][pc.X] >= 101 && currentMap.MapSpace[pc.Y][pc.X] <= 300)
@@ -302,7 +307,7 @@ namespace _2530_Final_Project___Rougelike
             {
                 while (Console.KeyAvailable)
                 {
-                    input = Console.ReadKey(false).Key;
+                    input = Console.ReadKey(true).Key;
                 }
             } while (input != ConsoleKey.Q);
 
@@ -371,6 +376,15 @@ namespace _2530_Final_Project___Rougelike
 
             return spaces;
         }
+
+        public static void AddItem(Item theItem)
+        {
+            pc.ItemInventory.Add(theItem);
+
+            message = String.Format("You got {0}", theItem.Name);
+
+            ShowMessage(1);
+        }
         #endregion
 
         #region Draw Methods
@@ -415,7 +429,7 @@ namespace _2530_Final_Project___Rougelike
 
             foreach (int el in whatIsWhere.Keys)
             {
-                try {Console.ForegroundColor = theMap.TileInfo[el].Color;}
+                try { Console.ForegroundColor = theMap.TileInfo[el].Color; }
                 catch { Console.ForegroundColor = ConsoleColor.White; }
 
                 foreach (int[] el2 in whatIsWhere[el])
@@ -444,6 +458,9 @@ namespace _2530_Final_Project___Rougelike
                 Console.WriteLine(map.ToString());
             map.Clear();
             }*/
+
+            DrawCharacters();
+            pc.WriteInfo();
         }
 
         private static void DrawInColor(Map theMap, int el, int[] el2)
@@ -464,6 +481,8 @@ namespace _2530_Final_Project___Rougelike
             // Should never reach this point, but it shuts the program up...
             return ' ';
         }
+
+
 
         #region Message Methods
         private static void ShowMessage()
@@ -501,6 +520,132 @@ namespace _2530_Final_Project___Rougelike
             Console.SetCursorPosition(0, messagePosition);
         }
         #endregion
+        #endregion
+
+        #region Inventory Methods
+        private static void ShowInventory()
+        {
+            if (pc.ItemInventory.Count != 0)
+            {
+                bool loopDone = false;
+
+                while (!loopDone)
+                {
+                    Console.SetCursorPosition(0, 0);
+
+                    Console.WriteLine("Which Item? (esc to quit)");
+
+                    for (int i = 0; i < pc.ItemInventory.Count; i++)
+                    {
+                        Console.WriteLine("{0}) {1}", (char)(i + 97),
+                            pc.ItemInventory.ElementAt(i).Name);
+                    }
+
+                    ConsoleKeyInfo selection = Console.ReadKey(true);
+
+                    if (selection.Key == ConsoleKey.Escape)
+                    {
+                        loopDone = true;
+                    }
+
+                    if (((int)(selection.KeyChar) - 97) < pc.ItemInventory.Count && (int)(selection.KeyChar) - 97 >= 0)
+                    {
+                        Item selectedItem = pc.ItemInventory.ElementAt(selection.KeyChar - 97);
+                        int itemIndex = (int)selection.KeyChar - 97;
+
+                        bool doneEquip = false;
+
+                        Console.WriteLine();
+                        Console.WriteLine("Use as what? (1 - weapon, 2 - armor, 3 - item, esc to quit");
+
+                        selection = Console.ReadKey(true);
+
+                        while (!doneEquip)
+                        {
+                            if (selection.Key == ConsoleKey.Escape)
+                            {
+                                doneEquip = true;
+                            }
+                            else if (selection.KeyChar == '1')
+                            {
+                                message = pc.Equip(selectedItem, "Weapon", itemIndex);
+
+                                doneEquip = true;
+                                loopDone = true;
+                            }
+                            else if (selection.KeyChar == '2')
+                            {
+                                message = pc.Equip(selectedItem, "Armor", itemIndex);
+
+                                doneEquip = true;
+                                loopDone = true;
+                            }
+                            else if (selection.KeyChar == '3')
+                            {
+                                message = pc.UseItem(selectedItem, itemIndex);
+
+                                doneEquip = true;
+                                loopDone = true;
+                            }
+                        }
+
+                    }
+
+                    Program.DrawMap(currentMap);
+                    ShowMessage(0);
+                }
+            }
+            else
+            {
+                message = "The Inventory is empty";
+
+                ShowMessage(0);
+            }
+
+
+        }
+
+        private static void RemoveItem()
+        {
+            bool loopDone = false;
+
+
+
+
+
+            while (!loopDone)
+            {
+                Console.SetCursorPosition(0, 0);
+
+                Console.WriteLine("Remove which? (esc to quit)");
+
+                for (int i = 0; i < pc.EquipedItems.Count; i++)
+                {
+                    Console.WriteLine("{0}) {1}: {2}",
+                        (char)(i + 97),
+                        pc.EquipedItems.ElementAt(i).Key,
+                        pc.EquipedItems.ElementAt(i).Value.Name);
+                }
+
+                ConsoleKeyInfo selection = Console.ReadKey(true);
+
+                if (selection.Key == ConsoleKey.Escape)
+                {
+                    loopDone = true;
+                }
+                else if ((int)selection.KeyChar - 97 < pc.EquipedItems.Count)
+                {
+                    int selectedIndex = (int)selection.KeyChar - 97;
+
+                    if (pc.EquipedItems.Values.ElementAt(selectedIndex).GetType() != typeof(NullItem))
+                        pc.RemoveItem(pc.EquipedItems.Keys.ElementAt(selectedIndex));
+
+                    loopDone = true;
+                }
+
+                DrawMap(currentMap);
+            }
+        }
         #endregion
     }
 }
