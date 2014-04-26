@@ -70,7 +70,6 @@ C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Fin
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapLevel0.cs
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapForest1.cs
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\characterClasses\Monster.cs
-C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\characterClasses\NonPlayer.cs
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\characterClasses\PlayerCharacter.cs
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\maps\mapTower4.csv
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\maps\mapTower3.csv

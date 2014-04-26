@@ -111,6 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="maps\Abandoned House.csv" />
+    <None Include="maps\mapForest2.csv" />
+    <None Include="maps\mapForest3.csv" />
+    <None Include="maps\mapForest4.csv" />
+    <None Include="maps\mapLake.csv" />
     <None Include="maps\mapTower4.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -139,12 +144,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapCave.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="maps\mapForest2.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="maps\mapForest3.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapMountain.csv">
