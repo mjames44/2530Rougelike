@@ -46,7 +46,6 @@ C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\maps\mapCastleTowerLeft4.csv
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\2530 Final Project - Rougelike.exe
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\2530 Final Project - Rougelike.pdb
-C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\TcKs.MSOffice.Excel.dll
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\TcKs.MSOffice.Common.dll
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\TcKs.MSOffice.Excel.pdb
 C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\TcKs.MSOffice.Common.pdb
@@ -95,3 +94,10 @@ C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Fin
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\2530 Final Project - Rougelike.exe
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\2530 Final Project - Rougelike.pdb
 C:\Users\User\Source\Repos\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\obj\Debug\2530 Final Project - Rougelike.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCityArmorySmith.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCastleSubmaps.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCityBarracks.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCityStables.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCitySubmaps.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCityHouse2.cs
+C:\Users\Mike\Documents\GitHub\2530Rougelike\2530 Final Project - Rougelike\2530 Final Project - Rougelike\bin\Debug\mapClasses\MapCityHouse1.cs

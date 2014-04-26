@@ -40,6 +40,12 @@ Value	Name		Character			Unicode
 507		Villager House 2	'-'
 508		Barracks		'-'
 509		Stables			'-'
+511		Door Armory -> CityMain		'.'
+512		Door Smith -> CityMain		'.'
+512		Door House1 -> CityMain		'.'
+513		Door House2 -> CityMain		'.'
+514		Door Barracks -> CityMain	'.'
+515		Door Stables -> CityMain	'.'
 
 // Castle
 551		Castle -> City		'.'

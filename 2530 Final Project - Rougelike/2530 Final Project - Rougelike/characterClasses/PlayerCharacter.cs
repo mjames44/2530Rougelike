@@ -29,11 +29,10 @@ namespace _2530_Final_Project___Rougelike
 
         // Constructors
         public PlayerCharacter(string name)
-            : base('@', name, ConsoleColor.White, 5, 5, 0, 0, 0)
         {
             levelHPProgression = new int[] { 25, 10, 15, 20, 25, 30 };
-            levelAttackProgression = new int[] { 1, 2, 2, 3, 2 };
-            levelDefenseProgression = new int[] { 2, 1, 2, 2, 3 };
+            levelAttackProgression = new int[] { 1, 2, 2, 3, 2, 3 };
+            levelDefenseProgression = new int[] { 2, 1, 2, 2, 3, 3 };
             levelLockpick = new int[] { 10, 10, 15, 20, 20, 25 };
 
             levelIntervals = new int[] { 0, 100, 200, 400, 800, 1600, Int16.MaxValue };
@@ -48,12 +47,20 @@ namespace _2530_Final_Project___Rougelike
         // Methods
         private void NewPlayerCharacter(string name)
         {
+            CharacterRepresentation = '@'; 
+            Name = name;
+            Color = ConsoleColor.White;
+            Attack = 5;
+            Defense = 5;
+            MinDamage =0;
+            MaxDamage = 0;
+
             Level = 1;
             MaxHP = 25;
             CurrentHP = MaxHP;
 
             XP = 0;
-            NextLevel = 100;
+            NextLevel = levelIntervals[Level - 1];
 
             LockPickSkill = 10;
         }
@@ -63,6 +70,7 @@ namespace _2530_Final_Project___Rougelike
             Level++;
 
             MaxHP += levelHPProgression[Level];
+            CurrentHP = MaxHP;
             Attack += levelAttackProgression[Level];
             Defense += levelDefenseProgression[Level];
             LockPickSkill += levelLockpick[Level];
@@ -199,7 +207,7 @@ namespace _2530_Final_Project___Rougelike
 
         internal void CheckXPLevel()
         {
-            if (XP > NextLevel)
+            while (XP > NextLevel)
             {
                 LevelUp();
             }

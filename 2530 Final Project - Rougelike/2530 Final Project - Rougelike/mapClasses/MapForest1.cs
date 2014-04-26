@@ -24,6 +24,7 @@ namespace _2530_Final_Project___Rougelike
         private void AddCharacters()
         {
             MapCharacters.Add(new TestMonster(5,10));
+            MapCharacters.Add(new TestMonster(6, 10));
             MapCharacters.Add(new RandomGuy(5,15));
         }
 

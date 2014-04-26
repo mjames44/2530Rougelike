@@ -50,17 +50,8 @@ namespace _2530_Final_Project___Rougelike
         }
 
         // Constructor
-        public Character(char cr, string name, ConsoleColor color, 
-            int atk, int def, int arm, int min, int max)
+        public Character()
         {
-            CharacterRepresentation = cr;
-            Name = name;
-            Color = color;
-            Attack = atk;
-            Defense = def;
-            Armor = arm;
-            MinDamage = min;
-            MaxDamage = max;
         }
 
         // Methods

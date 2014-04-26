@@ -48,7 +48,31 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 503:
                     Program.newMap = new MapCastle(0);
-                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    break;
+                case 504:
+                    Program.newMap = new MapCityArmorySmith(0, TileInfo);
+                    Program.CheckSpace = typeof(MapCityArmorySmith).GetMethod("CheckSpace");
+                    break;
+                case 505:
+                    Program.newMap = new MapCityArmorySmith(1, TileInfo);
+                    Program.CheckSpace = typeof(MapCityArmorySmith).GetMethod("CheckSpace");
+                    break;
+                case 506:
+                    Program.newMap = new MapCityHouse1(0, TileInfo);
+                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    break;
+                case 507:
+                    Program.newMap = new MapCityHouse2(0, TileInfo);
+                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    break;
+                case 508:
+                    Program.newMap = new MapCityBarracks(0, TileInfo);
+                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    break;
+                case 509:
+                    Program.newMap = new MapCityStables(0, TileInfo);
+                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
                     break;
             }
         }
@@ -65,6 +89,27 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 2:
                     StartingPosition = new int[] { 48, 1 };
+                    break;
+                case 3:
+                    StartingPosition = new int[] { 10, 33 };
+                    break;
+                case 4:
+                    StartingPosition = new int[] { 17, 33 };
+                    break;
+                case 5:
+                    StartingPosition = new int[] { 24, 36 };
+                    break;
+                case 6:
+                    StartingPosition = new int[] { 34, 13 };
+                    break;
+                case 7:
+                    StartingPosition = new int[] { 64, 33 };
+                    break;
+                case 8:
+                    StartingPosition = new int[] { 80, 11 };
+                    break;
+                case 9:
+                    StartingPosition = new int[] { 10, 33 };
                     break;
             }
         }

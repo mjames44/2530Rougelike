@@ -11,10 +11,7 @@ namespace _2530_Final_Project___Rougelike
         public string[] SpeechArray { get; protected set; }
         protected int count;
 
-        public NonPlayerCharacter(int x, int y, char cr, string name, ConsoleColor color,
-            int atk, int def, int arm, int min, int max)
-            : base(cr, name, color,
-                atk, def, arm, min, max) 
+        public NonPlayerCharacter(int x, int y)
         {
             X = x;
             Y = y;

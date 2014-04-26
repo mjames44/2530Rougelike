@@ -10,10 +10,7 @@ namespace _2530_Final_Project___Rougelike
     {
         public int XP { get; protected set; }
 
-        public Monster(int x, int y, char cr, string name, ConsoleColor color,
-            int atk, int def, int arm, int min, int max)
-            : base(cr, name, color,
-                atk, def, arm, min, max)
+        public Monster(int x, int y)
         {
             X = x;
             Y = y;

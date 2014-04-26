@@ -122,8 +122,7 @@ namespace _2530_Final_Project___Rougelike
             currentMap = new MapForest1(0);
             newMap = currentMap;
             CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
-
-
+            
             InitializeConsole();
             InitializePlayChar();
             InitializeMap(currentMap);
@@ -257,6 +256,19 @@ namespace _2530_Final_Project___Rougelike
             return false;
         }
 
+        internal static void MonsterDeath(int index)
+        {
+            Monster tempMonster = (Monster)characterList[index];
+            AwardXP(tempMonster.XP);
+            tempMonster.DropItem();
+
+            Console.ForegroundColor = currentMap.TileInfo[currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX]].Color;
+            Console.SetCursorPosition(tempMonster.PreviousX, tempMonster.PreviousY);
+            Console.Write(SelectTile(currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX],
+                currentMap));
+
+            characterList.RemoveAt(index);
+        }
 
         private static void TryOpenDoor()
         {
@@ -472,7 +484,7 @@ namespace _2530_Final_Project___Rougelike
                         currentMap));
                 }
 
-                Console.ForegroundColor = pc.Color;
+                Console.ForegroundColor = el.Color;
                 Console.SetCursorPosition(el.X, el.Y);
                 Console.Write(el.CharacterRepresentation);
 
@@ -720,19 +732,5 @@ namespace _2530_Final_Project___Rougelike
         }
         #endregion
 
-
-        internal static void MonsterDeath(int index)
-        {
-            Monster tempMonster = (Monster)characterList[index];
-            AwardXP(tempMonster.XP);
-            tempMonster.DropItem();
-
-            Console.ForegroundColor = currentMap.TileInfo[currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX]].Color;
-            Console.SetCursorPosition(tempMonster.PreviousX, tempMonster.PreviousY);
-            Console.Write(SelectTile(currentMap.MapSpace[tempMonster.PreviousY][tempMonster.PreviousX],
-                currentMap));
-
-            characterList.RemoveAt(index);
-        }
     }
 }
