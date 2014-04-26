@@ -8,6 +8,7 @@ namespace _2530_Final_Project___Rougelike.ItemClasses
 {
     class CornDog : Item
     {
-        public CornDog() : base("Corndog", 0, 9001, 0, 5, 'd', ConsoleColor.Yellow);
+        public CornDog()
+            : base("Corndog", 0, 9001, 0, 5, 'd', ConsoleColor.Yellow) { }
     }
 }
