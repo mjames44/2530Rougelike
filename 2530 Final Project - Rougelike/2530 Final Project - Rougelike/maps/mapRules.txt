@@ -70,12 +70,28 @@ Value	Name		Character			Unicode
 
 
 1001 - 1500 - Dirk's Area
-1001		Secret gate
-1002		Treasure Chest
+1001	Secret gate
+1002	Treasure Chest
 300		Abandoned House Door
-1003		Abandoned House 
-1004		Abandoned House Door Switch
-1005		Secret Gate Switch 
+1003	Abandoned House 
+1004	Abandoned House Door Switch
+1005	Secret Gate Switch 
+1006	Forest 1 to Town
+1007	Forest 2 to Town	
+1008	Forest 2 to Mountain (Main Path)
+1009	Forets 2 to Mountain (Small)
+1010	Forest 2 to Forest 3
+1011	Forest 2 to Forest 4
+1012	Lake to Mountain (Main Path)
+1013	Lake to Mountain (Small)
+1014	Lake to Forest 3
+1015	Forest 3 to Lake
+1016	Forest 3 to Forest 2
+1017	Forest 4 to Forest 2
+1018	Forest 4 to Dark Castle
+1019	Abandoned House to Forest 2
+1020	Item in Forest 2
+
 
 1501 - 2000 - Patrick's Area
 1501  Mountain -> Forest 2

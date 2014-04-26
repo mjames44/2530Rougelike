@@ -55,28 +55,7 @@
     <Compile Include="ItemClasses\NullItem.cs" />
     <Compile Include="ItemClasses\RustyDagger.cs" />
     <Compile Include="ItemClasses\WoodenHelmet.cs" />
-    <Compile Include="mapClasses\MapCastleSubmaps.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapCityBarracks.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapCityStables.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapCitySubmaps.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapCityHouse2.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="mapClasses\MapDarkCastle.cs" />
-    <Compile Include="mapClasses\MapCityArmorySmith.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapCityHouse1.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="mapClasses\MapTower4.cs" />
     <Compile Include="mapClasses\MapTower3.cs" />
     <Compile Include="mapClasses\MapTower2.cs" />
@@ -132,11 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="maps\mapCityArmorySmith.csv" />
-    <None Include="maps\mapCityBarracks.csv" />
-    <None Include="maps\mapCityHouse1.csv" />
-    <None Include="maps\mapCityHouse2.csv" />
-    <None Include="maps\mapCityStables.csv" />
+    <None Include="maps\mapAbandonedHouse.csv" />
+    <None Include="maps\mapForest2.csv" />
+    <None Include="maps\mapForest3.csv" />
+    <None Include="maps\mapForest4.csv" />
+    <None Include="maps\mapLake.csv" />
     <None Include="maps\mapTower4.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -165,12 +144,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapCave.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="maps\mapForest2.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="maps\mapForest3.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapMountain.csv">
