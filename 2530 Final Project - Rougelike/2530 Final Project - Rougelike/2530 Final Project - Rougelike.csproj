@@ -49,7 +49,8 @@
   <ItemGroup>
     <Compile Include="characterClasses\NonPlayerCharacter.cs" />
     <Compile Include="characterClasses\RandomGuy.cs" />
-    <Compile Include="characterClasses\TestMonster - Copy.cs" />
+    <Compile Include="characterClasses\Goblin.cs" />
+    <Compile Include="characterClasses\Troll.cs" />
     <Compile Include="characterClasses\TestMonster.cs" />
     <Compile Include="ItemClasses\HealingPotion.cs" />
     <Compile Include="ItemClasses\Item.cs" />
