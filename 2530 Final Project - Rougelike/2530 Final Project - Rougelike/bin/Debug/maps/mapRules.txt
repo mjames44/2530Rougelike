@@ -1,0 +1,130 @@
+Map Rules
+
+These are the rules for building maps for our project.
+
+* This can and will change.
+
+1. Always edit the maps.xls file in Libreoffice Calc.  This allows the conditional formatting to work properly.
+2. The map must be at MOST 100 wide by 40 tall. (100, CV) (Let's call this standard size)
+3. All rows need to be the number of columns.
+4. Closed doors have an opening difficulty of their map value - 100.  //Unimplemented...
+5. After editing a map, save the sheet as .csv file.
+6. Messages can be 52 characters wide and 5 lines long.
+
+The integer codes for map objects are
+
+* Non-Trigger *
+Value	Name		Character			Unicode
+0		open space	'.'
+1		Wall		//Wall character...	9618
+2		Black Space ' '
+3		Up stairs	'>'
+4		Down stairs	'<'
+5		Tree		// Tree Character	9650
+6		Water		// Water Character	9617 
+11		Yellow Flower	// Y Flower Character	8903
+12		Blue Flower	// B Flower Character 	8720
+13		Pink Flower	// P Flower Character	8859
+100		Open Door	'-'
+101-300 Closed door	'+'
+
+* Trigger *
+501 - 1000 Mike's Area
+// City
+501		Town gate -> Forest 1	'.'
+502		Town gate -> Forest 2	'.'
+503		Town gate -> Castle	'.'
+504		Black Smith		'-'
+505		Armory			'-'
+506		Villager House 1	'-'
+507		Villager House 2	'-'
+508		Barracks		'-'
+509		Stables			'-'
+511		Door Armory -> CityMain		'.'
+512		Door Smith -> CityMain		'.'
+512		Door House1 -> CityMain		'.'
+513		Door House2 -> CityMain		'.'
+514		Door Barracks -> CityMain	'.'
+515		Door Stables -> CityMain	'.'
+
+// Castle
+551		Castle -> City		'.'
+552		Castle -> CastleInside1	'-'
+553		Castle DrawBridge		'='
+554		Castle -> Guard Tower L	'-'
+555		Castle -> Guard Tower R	'-'
+571		Guard Tower L -> Castle '-'
+572		Guard Tower L -> GuardTower L2	'>'
+573		Guard Tower L2 -> GuardTower L	'<'
+574		Guard Tower L2 -> GuardTower L3 '>'
+575		Guard Tower L3 -> GuardTower L2	'<'
+575		Guard Tower L3 -> GuardTower L4	'>'
+576		Guard Tower Treasure Room Door	'+'
+577		Guard Tower L4 -> GuardTower L3 '<'
+591		Guard Tower R -> Castle			'-'
+592		Guard Tower R -> GuardTower R2	'>'
+593		Guard Tower R2 -> GuardTower R	'<'
+594		Guard Tower R2 -> GuardTower R3	'>'
+595		Guard Tower R3 -> GuardTower R2	'<'	
+595		Guard Tower R3 -> GuardTower R4	'>'
+
+
+1001 - 1500 - Dirk's Area
+1001	Secret gate
+1002	Treasure Chest
+300		Abandoned House Door
+1003	Abandoned House 
+1004	Abandoned House Door Switch
+1005	Secret Gate Switch 
+1006	Forest 1 to Town
+1007	Forest 2 to Town	
+1008	Forest 2 to Mountain (Main Path)
+1009	Forets 2 to Mountain (Small)
+1010	Forest 2 to Forest 3
+1011	Forest 2 to Forest 4
+1012	Lake to Mountain (Main Path)
+1013	Lake to Mountain (Small)
+1014	Lake to Forest 3
+1015	Forest 3 to Lake
+1016	Forest 3 to Forest 2
+1017	Forest 4 to Forest 2
+1018	Forest 4 to Dark Castle
+1019	Abandoned House to Forest 2
+1020	Item in Forest 2
+
+
+1501 - 2000 - Patrick's Area
+1501  Mountain -> Forest 2
+1502  Mountain -> Cave
+1503  Mountain -> Lake
+1504  Dark Castle -> Forest?
+1505  Entrance to dark castle main floor from outside
+1506  Secret passage to inside dark castle dungeon
+1507  Dark Castle main floor to outside
+1508  Dark Castle Main Floor to Tower 1
+1509  Mountain path to Forest2 samll
+1510  Dark Castle Main Floor to Tower 2
+1511  Dark Castle Main Floor to Tower 3
+1512  Dark Castle Main Floor to Tower 4
+1513  Dark Castle Main Floor to Dungeon
+1514  Dungeon to Dark Castle Main Floor
+1515  Secret passage from Dungeon to outside Dark Castle
+1516  Tower1 to Dark Castle main Floor
+1517  Tower2 to Dark Castle main Floor
+1518  Tower3 to Dark Castle main Floor
+1519  Tower4 to Dark Castle main Floor
+
+
+
+
+
+
+
+Notes 4/16/2014
+Assignments for the weekend
+Dirk Forest 2, Forest 3, Forest 4, and Lake
+Rick Mountain, Dark Castle inside/outside
+Mike Castle inside/outside, refactor/fix code
+
+Plan for Monsters on Monday
+
