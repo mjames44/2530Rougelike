@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Goblin : Monster, NonPlayer
+    class TestMonster : Monster, NonPlayer
     {   
-        public Goblin(int x, int y) : base(x,y)
+        public TestMonster(int x, int y) : base(x,y)
         {
-            HP = 15;
-            XP = 10;
+            HP = 20;
+            XP = 500;
 
-            CharacterRepresentation = 'G';
-            Name = "Goblin";
+            CharacterRepresentation = 'm';
+            Name = "Test Monster";
             Color = ConsoleColor.Green;
-            Attack = 2;
+            Attack = 1;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 3;
+            MaxDamage = 1;
         }
 
         public void Move()
