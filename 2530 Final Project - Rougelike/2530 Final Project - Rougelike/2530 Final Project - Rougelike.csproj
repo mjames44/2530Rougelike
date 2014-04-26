@@ -111,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="maps\Abandoned House.csv" />
+    <None Include="maps\mapAbandonedHouse.csv" />
     <None Include="maps\mapForest2.csv" />
     <None Include="maps\mapForest3.csv" />
     <None Include="maps\mapForest4.csv" />
