@@ -23,6 +23,7 @@ namespace _2530_Final_Project___Rougelike
         {
             TileInfo[0].Color = ConsoleColor.DarkYellow;
             TileInfo[1].Color = ConsoleColor.Gray;
+            TileInfo[99].Color = TileInfo[0].Color;
 
             TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));
             TileInfo.Add(12, new Tile(ConsoleColor.Blue, '%'));
