@@ -16,7 +16,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> {1501,1502,1503,1509 });// tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1501,1502,1503,1509, 1520 });// tiles that lead to other  places
         }
         private void AddCharacters()
         {
@@ -38,6 +38,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo.Add(1502, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1503, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1509, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(1520, new Tile(ConsoleColor.White, '.'));
         }
 
         public override void CheckSpace(int mapValue)
@@ -60,6 +61,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapLake(0); //going into position
                     Game.CheckSpace = typeof(MapLake).GetMethod("CheckSpace");
                     break;
+                case 1520:
+                    Game.newMap = new MapLake(1); //going into position
+                    Game.CheckSpace = typeof(MapLake).GetMethod("CheckSpace");
+                    break;
                 //case 1509:
                 //    Program.newMap = new MapForest2(2); //going into position
                 //    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
@@ -72,19 +77,19 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 38, 28 };//start position from forest 2 to mountain
+                    StartingPosition = new int[] { 37, 28 };//start position from forest 2 to mountain
                     break;
                 case 1:
                     StartingPosition = new int[] { 2, 58 };//start position from cave to mountain
                     break;
                 case 2:
-                    StartingPosition = new int[] { 32, 98 };//start position from lake to mountain
+                    StartingPosition = new int[] { 32, 97 };//start position from lake to mountain
                     break;
                 case 3:
-                    StartingPosition = new int[] { 38, 40 };//start position from forest 2 (small path) to mountain
+                    StartingPosition = new int[] { 37, 40 };//start position from forest 2 (small path) to mountain
                     break;
                 case 4:
-                    StartingPosition = new int[] { 38, 40 };//start position from Lake (small path) to mountain
+                    StartingPosition = new int[] { 17, 97 };//start position from Lake (small path) to mountain
                     break;
             }
         }
