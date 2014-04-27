@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace _2530_Final_Project___Rougelike.mapClasses
+namespace _2530_Final_Project___Rougelike
 {
     class MapForest4 : Map
     {
