@@ -20,6 +20,7 @@ namespace _2530_Final_Project___Rougelike.characterClasses
         
         
 
+
         public int HP { get; set; }
     }
 }
