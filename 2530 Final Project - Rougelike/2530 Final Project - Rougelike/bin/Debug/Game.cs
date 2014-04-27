@@ -219,7 +219,8 @@ namespace _2530_Final_Project___Rougelike
 
         private static void MoveCharacter(ConsoleKey key)
         {
-            pc.PreviousPosition = pc.Position;
+            int[] storageArray = pc.Position;
+            
             List<int[]> occupiedPositions = new List<int[]>();
 
             if (key == ConsoleKey.DownArrow && CanMoveHere(currentMap.MapSpace[pc.Y + 1][pc.X]))
@@ -240,6 +241,14 @@ namespace _2530_Final_Project___Rougelike
             else if (key == ConsoleKey.LeftArrow && CanMoveHere(currentMap.MapSpace[pc.Y][pc.X - 1]))
                 if (!SpaceOccupied(pc.Y, pc.X - 1, pc))
                     pc.X--;
+
+            if (!(pc.Position == storageArray))
+            {
+                pc.PreviousPosition = storageArray;
+                pc.CharacterMoved = true;
+            }
+            else
+                pc.CharacterMoved = false;
 
             foreach (Character el in characterList)
             {
@@ -501,20 +510,24 @@ namespace _2530_Final_Project___Rougelike
         {
             foreach (Character el in characterList)
             {
-                if (currentMap == newMap)
+                if (el.CharacterMoved)
                 {
-                    Console.ForegroundColor = currentMap.TileInfo[currentMap.MapSpace[el.PreviousY][el.PreviousX]].Color;
-                    Console.SetCursorPosition(el.PreviousX, el.PreviousY);
-                    Console.Write(SelectTile(currentMap.MapSpace[el.PreviousY][el.PreviousX],
-                        currentMap));
+                    if (currentMap == newMap)
+                    {
+                        Console.ForegroundColor = currentMap.
+                            TileInfo[currentMap.MapSpace[el.PreviousY][el.PreviousX]].Color;
+                        Console.SetCursorPosition(el.PreviousX, el.PreviousY);
+                        Console.Write(SelectTile(currentMap.MapSpace[el.PreviousY][el.PreviousX],
+                            currentMap));
+                    }
+
+                    Console.ForegroundColor = el.Color;
+                    Console.SetCursorPosition(el.X, el.Y);
+                    Console.Write(el.CharacterRepresentation);
+
+                    // Sends the cursor off into no mans land, so it doens't overwrite stuff.
+                    Console.CursorTop = 41;
                 }
-
-                Console.ForegroundColor = el.Color;
-                Console.SetCursorPosition(el.X, el.Y);
-                Console.Write(el.CharacterRepresentation);
-
-                // Sends the cursor off into no mans land, so it doens't overwrite stuff.
-                Console.CursorTop = 41;
             }
         }
 
@@ -526,7 +539,7 @@ namespace _2530_Final_Project___Rougelike
          * - Then writes out the characters and any message that may be wating to be written.
          *  */
         internal static void DrawMap()
-        { 
+        {
             DrawMap(currentMap);
         }
 
@@ -596,8 +609,6 @@ namespace _2530_Final_Project___Rougelike
             return ' ';
         }
 
-
-
         #region Message Methods
         public static void ShowMessage()
         {
@@ -606,6 +617,8 @@ namespace _2530_Final_Project___Rougelike
 
         public static void ShowMessage(int? i)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+
             if (Message != oldMessage)
             {
                 oldMessage = Message;
