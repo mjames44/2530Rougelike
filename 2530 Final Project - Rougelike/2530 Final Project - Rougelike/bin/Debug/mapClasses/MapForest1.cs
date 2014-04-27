@@ -21,6 +21,7 @@ namespace _2530_Final_Project___Rougelike
             AddTiles();
             AddCharacters();
             StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
+
         }
 
         private void AddCharacters()
@@ -29,6 +30,7 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Goblin(70, 10));
             MapCharacters.Add(new Troll(27, 27));
             MapCharacters.Add(new Goblin(53, 35));
+            MapCharacters.Add(new RandomGuy(5,15));
         }
 
         protected override void AddTiles()
@@ -62,7 +64,6 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1005 :
                     MapSpace[34][15] = 1003;
-                    Game.DrawMap();
                     break;
                 case 1003 :
                     Game.newMap = new MapAbandonedHouse(0);
@@ -80,7 +81,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 5, 5 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 1,78 };
+                    StartingPosition = new int[] { 78, 2 };
                     break;
                 case 3:
                     StartingPosition = new int[] { 33, 15 };

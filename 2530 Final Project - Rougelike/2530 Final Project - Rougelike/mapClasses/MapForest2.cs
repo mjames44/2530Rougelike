@@ -42,20 +42,20 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             switch (mapValue)
             {
                 case 1007:
-                    Program.newMap = new MapCityMain(1);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(1);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
                 case 1020:
-                    Program.AddItem(woodenHelmet);
+                    Game.AddItem(woodenHelmet);
                     MapSpace[3][59] = 0;
                     break;
                 case 1008:
-                    Program.newMap = new MapMountain(0);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(0);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
                 case 1009:
-                    Program.newMap = new MapMountain(3);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(3);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
              /*   case 1010:
                     Program.newMap = new MapForest3(1);
