@@ -25,6 +25,7 @@ Value	Name		Character			Unicode
 11		Yellow Flower	// Y Flower Character	8903
 12		Blue Flower	// B Flower Character 	8720
 13		Pink Flower	// P Flower Character	8859
+99		Border Wall	'.'
 100		Open Door	'-'
 101-300 Closed door	'+'
 
@@ -112,18 +113,4 @@ Value	Name		Character			Unicode
 1517  Tower2 to Dark Castle main Floor
 1518  Tower3 to Dark Castle main Floor
 1519  Tower4 to Dark Castle main Floor
-
-
-
-
-
-
-
-Notes 4/16/2014
-Assignments for the weekend
-Dirk Forest 2, Forest 3, Forest 4, and Lake
-Rick Mountain, Dark Castle inside/outside
-Mike Castle inside/outside, refactor/fix code
-
-Plan for Monsters on Monday
 
