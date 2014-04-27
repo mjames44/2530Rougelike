@@ -14,10 +14,17 @@ namespace _2530_Final_Project___Rougelike.mapClasses
 
             ReadMap();
             AddTiles();
+        //  AddCharacters();
             StandableTiles.AddRange(new List<int> { 1019 });
 
         }
+        
+        protected override void AddTiles()
+        {
+            TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
+        }
 
+<<<<<<< HEAD
           protected override void AddTiles()
           {
           }
@@ -29,5 +36,16 @@ namespace _2530_Final_Project___Rougelike.mapClasses
           protected override void SetStartingPosition(int entryPoint)
           {
           }
+=======
+        public override void CheckSpace(int mapValue)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void SetStartingPosition(int entryPoint)
+        {
+            throw new NotImplementedException();
+        }
+>>>>>>> 0b72d760e46a2a46b5e79292f0464779719c02c8
     }
 }

@@ -7,22 +7,31 @@ using System.Threading.Tasks;
 namespace _2530_Final_Project___Rougelike
 {
     class Ogre : Monster, NonPlayer
-    {
-        public Ogre(int x, int y)
-            : base(x, y)
+    {   
+        public Ogre(int x, int y) : base(x,y)
         {
-            HP = 20;
-            XP = 500;
+            HP = 35;
+            XP = 55;
 
-            CharacterRepresentation = 'm';
-            Name = "Test Monster";
-            Color = ConsoleColor.Green;
-            Attack = 1;
+            CharacterRepresentation = 'O';
+            Name = "Ogre";
+            Color = ConsoleColor.DarkGreen;
+            Attack = 7;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 1;
+            MaxDamage = 8;
         }
+
+        public void Move()
+        {
+        }
+
+        public override Character Interact(Character otherChar)
+        {
+            return this;
+        }
+
         public override void DropItem()
         {
         }
