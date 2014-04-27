@@ -15,10 +15,21 @@ namespace _2530_Final_Project___Rougelike
             FileName = "mapDarkCastleMainFloor.csv";
 
             ReadMap();
+            AddCharacters();
             AddTiles();
             StandableTiles.AddRange(new List<int> {1507,1508,1510,1511,1512,1513 });// trigger tiles that lead to other places
         }
 
+        private void AddCharacters()
+        {
+            MapCharacters.Add(new Dragon(57, 25));
+            MapCharacters.Add(new Ogre(16, 15));
+            MapCharacters.Add(new Ogre(24, 27));
+            MapCharacters.Add(new Demon(38, 33));
+
+
+
+        }
         protected override void AddTiles()
         {
 
