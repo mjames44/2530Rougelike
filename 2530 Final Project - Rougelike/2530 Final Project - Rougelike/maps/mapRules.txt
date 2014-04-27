@@ -73,7 +73,6 @@ Value	Name		Character			Unicode
 1001	Secret gate
 1002	Treasure Chest
 300		Abandoned House Door
-1003	Abandoned House 
 1004	Abandoned House Door Switch
 1005	Secret Gate Switch 
 1006	Forest 1 to Town

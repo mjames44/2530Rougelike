@@ -20,7 +20,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
+            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005 });
 
         }
 

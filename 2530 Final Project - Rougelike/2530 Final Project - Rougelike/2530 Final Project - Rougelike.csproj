@@ -64,6 +64,7 @@
     <Compile Include="ItemClasses\Raiper.cs" />
     <Compile Include="ItemClasses\RustyDagger.cs" />
     <Compile Include="ItemClasses\WoodenHelmet.cs" />
+    <Compile Include="mapClasses\MapAbandonedHouse.cs" />
     <Compile Include="mapClasses\MapCastleSubmaps.cs" />
     <Compile Include="mapClasses\MapCityArmorySmith.cs" />
     <Compile Include="mapClasses\MapCityBarracks.cs" />
