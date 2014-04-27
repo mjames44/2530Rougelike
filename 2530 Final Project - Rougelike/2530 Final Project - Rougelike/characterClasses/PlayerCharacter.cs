@@ -215,6 +215,11 @@ namespace _2530_Final_Project___Rougelike
 
         public void Death()
         {
+            if (CurrentHP <= 0)
+            {
+                Game.Message = "Oh dear you died!";
+                Game.ShowMessage(0);
+            }
         }
     }
 }

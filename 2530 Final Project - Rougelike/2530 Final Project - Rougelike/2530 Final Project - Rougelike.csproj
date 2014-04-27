@@ -84,6 +84,7 @@
     <Compile Include="characterClasses\Ogre.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\OldManAtTheLake.cs" />
     <Compile Include="characterClasses\Orc.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>

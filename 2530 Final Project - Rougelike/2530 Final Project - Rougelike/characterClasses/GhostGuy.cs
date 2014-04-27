@@ -13,7 +13,7 @@ namespace _2530_Final_Project___Rougelike
             : base(x, y)
         {
             CharacterRepresentation = 'g';
-            Name = "Old Man";
+            Name = "Marly";
             Color = ConsoleColor.Gray;
             talkCount = 0;
             SpeechArray = new string[] { "It is Dangerous to go alone take this. *gives stevo a corndog", "Good Luck", "All right you can have this too.*gives stevo fruitcake" };
