@@ -80,13 +80,11 @@
     <Compile Include="ItemClasses\RustyDagger.cs" />
     <Compile Include="ItemClasses\WoodenHelmet.cs" />
     <Compile Include="mapClasses\MapAbandonedHouse.cs" />
-    <Compile Include="mapClasses\MapCastleSubmaps.cs" />
     <Compile Include="mapClasses\MapCityArmorySmith.cs" />
     <Compile Include="mapClasses\MapCityBarracks.cs" />
     <Compile Include="mapClasses\MapCityHouse1.cs" />
     <Compile Include="mapClasses\MapCityHouse2.cs" />
     <Compile Include="mapClasses\MapCityStables.cs" />
-    <Compile Include="mapClasses\MapCitySubmaps.cs" />
     <Compile Include="mapClasses\MapDarkCastle.cs" />
     <Compile Include="mapClasses\MapTower4.cs" />
     <Compile Include="mapClasses\MapTower3.cs" />
