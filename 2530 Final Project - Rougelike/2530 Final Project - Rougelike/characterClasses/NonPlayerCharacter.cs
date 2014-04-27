@@ -34,6 +34,8 @@ namespace _2530_Final_Project___Rougelike
             {
                 base.Move(space);
             }
+            else
+                CharacterMoved = false;
         }
     }
 }

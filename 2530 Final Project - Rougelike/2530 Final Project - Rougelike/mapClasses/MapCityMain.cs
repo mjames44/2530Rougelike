@@ -46,6 +46,9 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapForest1(1);
                     Game.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
                     break;
+                case 502:
+                    Game.newMap = new MapForest2(0);
+                    Game.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
                 case 503:
                     Game.newMap = new MapCastle(0);
                     Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
@@ -85,7 +88,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 37,78 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 0, 0 };
+                    StartingPosition = new int[] { 13,97 };
                     break;
                 case 2:
                     StartingPosition = new int[] { 1,48 };

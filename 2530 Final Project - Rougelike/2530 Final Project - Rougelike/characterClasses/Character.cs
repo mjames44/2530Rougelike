@@ -19,7 +19,7 @@ namespace _2530_Final_Project___Rougelike
         public int Armor { get; set; }
         public int MinDamage { get; set; }
         public int MaxDamage { get; set; }
-
+        public bool CharacterMoved { get; set; }
         public int PreviousX { get; set; }
         public int PreviousY { get; set; }
 
@@ -52,6 +52,7 @@ namespace _2530_Final_Project___Rougelike
         // Constructor
         public Character()
         {
+            CharacterMoved = true;
         }
 
         // Methods
@@ -68,9 +69,16 @@ namespace _2530_Final_Project___Rougelike
 
         public virtual void Move(int[] space)
         {
-            PreviousPosition = Position;
+            int[] storageArray = Position;
 
-            Position = space;
+            if (space != Position)
+            {
+                Position = space;
+                CharacterMoved = true;
+                PreviousPosition = storageArray;
+            }
+            else
+                CharacterMoved = false;
         }
 
         internal int[] NextSpace(int[][] mapSpace, List<int> standableTiles)

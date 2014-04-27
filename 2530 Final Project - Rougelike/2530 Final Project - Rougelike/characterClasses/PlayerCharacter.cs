@@ -35,7 +35,7 @@ namespace _2530_Final_Project___Rougelike
             levelDefenseProgression = new int[] { 2, 1, 2, 2, 3, 3 };
             levelLockpick = new int[] { 10, 10, 15, 20, 20, 25 };
 
-            levelIntervals = new int[] { 0, 100, 200, 400, 800, 1600, Int16.MaxValue };
+            levelIntervals = new int[] {100, 200, 400, 800, 1600, Int16.MaxValue };
 
             infoLeft = 105;
             infoTop = 2;
