@@ -20,26 +20,16 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-<<<<<<< Updated upstream
-            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005 });
-=======
             StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
->>>>>>> Stashed changes
 
         }
 
         private void AddCharacters()
         {
-<<<<<<< Updated upstream
-            MapCharacters.Add(new TestMonster(5,10));
-            MapCharacters.Add(new TestMonster(6, 10));
-=======
             MapCharacters.Add(new Troll(70, 27));
             MapCharacters.Add(new Goblin(70, 10));
             MapCharacters.Add(new Troll(27, 27));
             MapCharacters.Add(new Goblin(53, 35));
->>>>>>> Stashed changes
-            MapCharacters.Add(new RandomGuy(5,15));
         }
 
         protected override void AddTiles()
@@ -70,17 +60,10 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1004 :
                     MapSpace[29][53] = 0;
-<<<<<<< Updated upstream
-                    break;
-                case 1005 :
-                    MapSpace[34][15] = 1003;
-=======
-                    Program.DrawMap();
                     break;
                 case 1005 :
                     MapSpace[34][15] = 1003;
                     Program.DrawMap();
->>>>>>> Stashed changes
                     break;
                 case 1003 :
                     Program.newMap = new MapAbandonedHouse(0);
@@ -101,11 +84,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 78,1 };
                     break;
                 case 3:
-<<<<<<< Updated upstream
                     StartingPosition = new int[] { 33, 15 };
-=======
-                    StartingPosition = new int[] { 15, 33 };
->>>>>>> Stashed changes
                     break;
             }
         }
