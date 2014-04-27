@@ -48,10 +48,10 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
 
-                //case 1504 ://to MapForest4
-                //    Program.newMap = new MapForest4(0);
-                //    Program.CheckSpace = typeof(MapForest4).GetMethod("CheckSpace");
-                //    break;
+                case 1504 ://to MapForest4
+                    Game.newMap = new MapForest4(1);
+                    Game.CheckSpace = typeof(MapForest4).GetMethod("CheckSpace");
+                    break;
                 case 1505://to MapDarkCastleMainFloor
                     Game.newMap = new MapDarkCastleMainFloor(0);
                     Game.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
@@ -69,7 +69,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 33, 1 };//start position from forest 4 to Dark Castle
+                    StartingPosition = new int[] { 33, 2 };//start position from forest 4 to Dark Castle
                     break;
                 case 1:
                     StartingPosition = new int[] { 20, 53 };//start position from Dark Castle Main Room to Dark Castle

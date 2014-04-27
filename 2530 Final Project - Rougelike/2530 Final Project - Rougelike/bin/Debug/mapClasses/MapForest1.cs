@@ -83,7 +83,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 5, 5 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 78, 2 };
+                    StartingPosition = new int[] { 2, 78 };
                     break;
                 case 3:
                     StartingPosition = new int[] { 33, 15 };
