@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class TestMonster : Monster, NonPlayer
-    {   
-        public TestMonster(int x, int y) : base(x,y)
+    class Ogre : Monster, NonPlayer
+    {
+        public Ogre(int x, int y)
+            : base(x, y)
         {
             HP = 20;
             XP = 500;
@@ -22,16 +23,6 @@ namespace _2530_Final_Project___Rougelike
             MinDamage = 1;
             MaxDamage = 1;
         }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
-        }
-
         public override void DropItem()
         {
         }

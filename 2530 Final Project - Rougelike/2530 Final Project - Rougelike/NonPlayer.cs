@@ -9,6 +9,6 @@ namespace _2530_Final_Project___Rougelike
     interface NonPlayer
     {
         int HP { get; set; }
-        void Move();
+        
     }
 }

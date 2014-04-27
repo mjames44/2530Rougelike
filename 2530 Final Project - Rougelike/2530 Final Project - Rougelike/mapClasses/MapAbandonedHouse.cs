@@ -18,7 +18,16 @@ namespace _2530_Final_Project___Rougelike.mapClasses
 
         }
 
+          protected override void AddTiles()
+          {
+          }
 
+          public override void CheckSpace(int mapValue)
+          {
+          }
 
+          protected override void SetStartingPosition(int entryPoint)
+          {
+          }
     }
 }

@@ -31,8 +31,8 @@ namespace _2530_Final_Project___Rougelike
             }
             set
             {
-                X = value[0];
-                Y = value[1];
+                X = value[1];
+                Y = value[0];
             }
         }
 
@@ -55,7 +55,6 @@ namespace _2530_Final_Project___Rougelike
         }
 
         // Methods
-        public abstract Character Interact(Character otherChar);
 
         protected int GetDamage()
         {
@@ -65,6 +64,55 @@ namespace _2530_Final_Project___Rougelike
                 return (int)(rand.Next() % (MaxDamage - MinDamage)) - (0 - MinDamage);
             else
                 return 0;
+        }
+
+        public virtual void Move(int[] space)
+        {
+            PreviousPosition = Position;
+
+            Position = space;
+        }
+
+        internal int[] NextSpace(int[][] mapSpace, List<int> standableTiles)
+        {
+            Random rand = new Random(DateTime.Now.Millisecond);
+
+            int moveDirection = rand.Next() % 8;
+
+            switch (moveDirection)
+            {
+                case 0:
+                    if (standableTiles.Contains(mapSpace[Y - 1][X]))
+                        return new int[] { Y - 1, X };
+                    break;
+                case 1:
+                    if (standableTiles.Contains(mapSpace[Y + 1][X]))
+                        return new int[] { Y + 1, X };
+                    break;
+                case 2:
+                    if (standableTiles.Contains(mapSpace[Y][X - 1]))
+                        return new int[] { Y, X - 1 };
+                    break;
+                case 3:
+                    if (standableTiles.Contains(mapSpace[Y][X + 1]))
+                        return new int[] { Y, X + 1 };
+                    break;
+                case 4:
+                    if (standableTiles.Contains(mapSpace[Y - 1][X - 1]))
+                        return new int[] { Y - 1, X - 1 };
+                    break;
+                case 5:
+                    if (standableTiles.Contains(mapSpace[Y + 1][X - 1]))
+                        return new int[] { Y + 1, X + 1 };
+                    break;
+                case 6:
+                    if (standableTiles.Contains(mapSpace[Y - 1][X + 1]))
+                        return new int[] { Y - 1, X + 1 };
+                    break;
+            }
+
+            return new int[] { Y + 1, X + 1 };
+
         }
     }
 }
