@@ -7,7 +7,7 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapCityArmorySmith : MapCitySubmaps
+    class MapCityArmorySmith : Map
     {
         public MapCityArmorySmith(int ep, Dictionary<int, Tile> tileInfo)
             : base(ep, tileInfo)
