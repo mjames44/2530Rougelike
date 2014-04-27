@@ -7,10 +7,10 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapCityHouse1 : MapCitySubmaps
+    class MapCityHouse1 : Map
     {
         public MapCityHouse1(int ep, Dictionary<int,Tile> tileInfo)
-            : base(ep, tileInfo)
+            : base(ep)
         {
             FileName = "mapCityHouse1.csv";
 

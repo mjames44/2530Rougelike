@@ -24,7 +24,20 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
         }
 
-      public override void CheckSpace(int mapValue)
+<<<<<<< HEAD
+          protected override void AddTiles()
+          {
+          }
+
+          public override void CheckSpace(int mapValue)
+          {
+          }
+
+          protected override void SetStartingPosition(int entryPoint)
+          {
+          }
+=======
+        public override void CheckSpace(int mapValue)
         {
             throw new NotImplementedException();
         }
@@ -33,5 +46,6 @@ namespace _2530_Final_Project___Rougelike.mapClasses
         {
             throw new NotImplementedException();
         }
+>>>>>>> 0b72d760e46a2a46b5e79292f0464779719c02c8
     }
 }
