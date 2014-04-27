@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _2530_Final_Project___Rougelike.mapClasses;
 
-namespace _2530_Final_Project___Rougelike
+namespace _2530_Final_Project___Rougelike.mapClasses
 {
-    class MapForest1 : Map
+    class MapForest2 : Map
     {
-        RustyDagger dagger = new RustyDagger();
         HealingPotion healthPot = new HealingPotion();
+        RustyDagger dagger = new RustyDagger();
 
-
-        public MapForest1(int ep) : base(ep)
+        public MapForest2(int ep)
+            : base(ep)
         {
-            FileName = "mapForest1.csv";
+            FileName = "mapForest2.csv";
 
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
+            StandableTiles.AddRange(new List<int> { 1007, 1008, 1009, 1020, 1010, 1011 });
 
         }
 
@@ -30,7 +29,7 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Goblin(70, 10));
             MapCharacters.Add(new Troll(27, 27));
             MapCharacters.Add(new Goblin(53, 35));
-            MapCharacters.Add(new RandomGuy(5,15));
+            MapCharacters.Add(new RandomGuy(5, 15));
         }
 
         protected override void AddTiles()
@@ -51,21 +50,21 @@ namespace _2530_Final_Project___Rougelike
                     Program.newMap = new MapCityMain(0);
                     Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
-                case 2001 :
+                case 2001:
                     Program.AddItem(dagger);
                     MapSpace[9][6] = 0;
                     break;
-                case 1002 :
+                case 1002:
                     Program.AddItem(healthPot);
                     MapSpace[37][53] = 0;
                     break;
-                case 1004 :
+                case 1004:
                     MapSpace[29][53] = 0;
                     break;
-                case 1005 :
+                case 1005:
                     MapSpace[34][15] = 1003;
                     break;
-                case 1003 :
+                case 1003:
                     Program.newMap = new MapAbandonedHouse(0);
                     Program.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
                     break;
@@ -81,7 +80,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 5, 5 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 78, 2 };
+                    StartingPosition = new int[] { 78, 1 };
                     break;
                 case 3:
                     StartingPosition = new int[] { 33, 15 };
