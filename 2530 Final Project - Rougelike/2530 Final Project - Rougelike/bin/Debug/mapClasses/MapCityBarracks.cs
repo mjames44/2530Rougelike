@@ -7,15 +7,15 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapCityBarracks : Map
+    class MapCityBarracks : MapCityMain
     {
-        public MapCityBarracks(int ep, Dictionary<int, Tile> tileInfo)
+        public MapCityBarracks(int ep)
             : base(ep)
         {
             FileName = "mapCityBarracks.csv";
 
             ReadMap();
-            AddTiles();
+            base.AddTiles();
             StandableTiles.AddRange(new List<int> { 514 });
         }
 
@@ -29,7 +29,7 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 514:
-                    Game.newMap = new MapCityMain(7);
+                    Game.newMap = new MapCityMain(6);
                     Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
             }

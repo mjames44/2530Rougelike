@@ -65,7 +65,7 @@ namespace _2530_Final_Project___Rougelike
                 #region Map
                 if (currentMap != newMap)
                 {
-                    SaveMap();
+                    currentMap.SaveMap(pcName);
 
                     InitializeMap(newMap);
 
@@ -437,22 +437,7 @@ namespace _2530_Final_Project___Rougelike
             return false;
         }
 
-        private static void SaveMap()
-        {
-            using (StreamWriter sw = new StreamWriter("maps/" + pcName + currentMap.FileName))
-            {
-                for (int row = 0; row < currentMap.MapSpace.Length; row++)
-                {
-                    for (int col = 0; col < currentMap.MapSpace[row].Length; col++)
-                    {
-                        if (col != currentMap.MapSpace[row].Length - 1)
-                            sw.Write(currentMap.MapSpace[row][col] + ",");
-                        else
-                            sw.Write(currentMap.MapSpace[row][col] + "\n");
-                    }
-                }
-            }
-        }
+        
 
         private static Dictionary<int, List<int[]>> AnalyzeArray(Map theMap)
         {
@@ -728,17 +713,11 @@ namespace _2530_Final_Project___Rougelike
 
                 ShowMessage(0);
             }
-
-
         }
 
         private static void RemoveItem()
         {
             bool loopDone = false;
-
-
-
-
 
             while (!loopDone)
             {

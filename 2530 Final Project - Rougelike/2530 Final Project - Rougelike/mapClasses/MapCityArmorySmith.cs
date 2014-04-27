@@ -7,16 +7,16 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapCityArmorySmith : Map
+    class MapCityArmorySmith : MapCityMain
     {
-        public MapCityArmorySmith(int ep, Dictionary<int, Tile> tileInfo)
+        public MapCityArmorySmith(int ep)
             : base(ep)
         {
             FileName = "mapCityArmorySmith.csv";
 
             ReadMap();
-            AddTiles();
-            StandableTiles.AddRange(new List<int> {511, 512});
+            base.AddTiles(); 
+            StandableTiles.AddRange(new List<int> { 511, 512 });
         }
 
         protected override void AddTiles()
@@ -45,10 +45,10 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 29, 42 };
+                    StartingPosition = new int[] { 29, 43 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 29, 56 };
+                    StartingPosition = new int[] { 29, 57 };
                     break;
             }
         }

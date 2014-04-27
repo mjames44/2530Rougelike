@@ -10,23 +10,12 @@ namespace _2530_Final_Project___Rougelike
     abstract class Map
     {
         // Fields
-        private Dictionary<int, Tile> tileInfo;
 
         // Properties
         public int[] StartingPosition { get; protected set; }
         public int[][] MapSpace { get; protected set; }
         public List<int> StandableTiles { get; protected set; }
-        public Dictionary<int, Tile> TileInfo 
-        {
-            get
-            {
-                return tileInfo;
-            }
-            protected set
-            {
-                tileInfo = value;
-            } 
-        }
+        public Dictionary<int, Tile> TileInfo { get; set; }
         public string FileName { get; protected set; }
         public List<Character> MapCharacters { get; protected set; }
 
@@ -93,7 +82,7 @@ namespace _2530_Final_Project___Rougelike
 
         private void BuildTiles()
         {
-            tileInfo = new Dictionary<int, Tile>();
+            TileInfo = new Dictionary<int, Tile>();
 
             TileInfo.Add(0, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1, new Tile(ConsoleColor.Red, (char)9618));
@@ -121,5 +110,22 @@ namespace _2530_Final_Project___Rougelike
          * assigned to the player charcter on entry into the map.
          *  */
         protected abstract void SetStartingPosition(int entryPoint);
+
+        public void SaveMap(string name)
+        {
+            using (StreamWriter sw = new StreamWriter("maps/" + name + FileName))
+            {
+                for (int row = 0; row < MapSpace.Length; row++)
+                {
+                    for (int col = 0; col < MapSpace[row].Length; col++)
+                    {
+                        if (col != MapSpace[row].Length - 1)
+                            sw.Write(MapSpace[row][col] + ",");
+                        else
+                            sw.Write(MapSpace[row][col] + "\n");
+                    }
+                }
+            }
+        }
     }
 }

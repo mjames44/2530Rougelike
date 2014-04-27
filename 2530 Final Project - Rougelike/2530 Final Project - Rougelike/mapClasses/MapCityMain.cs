@@ -56,28 +56,28 @@ namespace _2530_Final_Project___Rougelike
                     Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 504:
-                    Game.newMap = new MapCityArmorySmith(0, TileInfo);
+                    Game.newMap = new MapCityArmorySmith(0);
                     Game.CheckSpace = typeof(MapCityArmorySmith).GetMethod("CheckSpace");
                     break;
                 case 505:
-                    Game.newMap = new MapCityArmorySmith(1, TileInfo);
+                    Game.newMap = new MapCityArmorySmith(1);
                     Game.CheckSpace = typeof(MapCityArmorySmith).GetMethod("CheckSpace");
                     break;
                 case 506:
-                    Game.newMap = new MapCityHouse1(0, TileInfo);
-                    Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityHouse1(0);
+                    Game.CheckSpace = typeof(MapCityHouse1).GetMethod("CheckSpace");
                     break;
                 case 507:
-                    Game.newMap = new MapCityHouse2(0, TileInfo);
-                    Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityBarracks(0);
+                    Game.CheckSpace = typeof(MapCityBarracks).GetMethod("CheckSpace");
                     break;
                 case 508:
-                    Game.newMap = new MapCityBarracks(0, TileInfo);
-                    Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityHouse2(0);
+                    Game.CheckSpace = typeof(MapCityHouse2).GetMethod("CheckSpace");
                     break;
                 case 509:
-                    Game.newMap = new MapCityStables(0, TileInfo);
-                    Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityStables(0);
+                    Game.CheckSpace = typeof(MapCityStables).GetMethod("CheckSpace");
                     break;
             }
         }
@@ -93,7 +93,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 13,97 };
                     break;
                 case 2:
-                    StartingPosition = new int[] { 1,48 };
+                    StartingPosition = new int[] { 2,48 };
                     break;
                 case 3:
                     StartingPosition = new int[] { 33, 10};
@@ -105,16 +105,13 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 36, 24 };
                     break;
                 case 6:
-                    StartingPosition = new int[] { 13, 34};
+                    StartingPosition = new int[] { 13, 35};
                     break;
                 case 7:
-                    StartingPosition = new int[] { 64, 33 };
+                    StartingPosition = new int[] { 22, 88 };
                     break;
                 case 8:
-                    StartingPosition = new int[] { 80, 11 };
-                    break;
-                case 9:
-                    StartingPosition = new int[] { 10, 33 };
+                    StartingPosition = new int[] { 11, 80 };
                     break;
             }
         }
