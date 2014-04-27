@@ -22,6 +22,7 @@ namespace _2530_Final_Project___Rougelike
             MinDamage = 1;
             MaxDamage = 3;
         }
+
         public override void DropItem()
         {
         }

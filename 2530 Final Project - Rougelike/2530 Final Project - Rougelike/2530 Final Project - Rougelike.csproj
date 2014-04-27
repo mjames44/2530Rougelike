@@ -102,7 +102,9 @@
     <Compile Include="ItemClasses\Chainmail.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\CornDog.cs" />
+    <Compile Include="ItemClasses\CornDog.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="ItemClasses\FruitCake.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
