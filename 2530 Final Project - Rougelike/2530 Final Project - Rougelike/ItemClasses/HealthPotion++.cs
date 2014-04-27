@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2530_Final_Project___Rougelike.ItemClasses
+namespace _2530_Final_Project___Rougelike
 {
     class HealthPotion__ : Item
     {
