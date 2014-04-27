@@ -9,25 +9,31 @@ namespace _2530_Final_Project___Rougelike
     abstract class NonPlayerCharacter : Character
     {
         public string[] SpeechArray { get; protected set; }
-        protected int count;
+        protected int talkCount;
+        protected int moveCount;
 
         public NonPlayerCharacter(int x, int y)
         {
             X = x;
             Y = y;
 
-            count = 0;
+            talkCount = 0;
         }
 
         public void Talk()
         {
-            count++;
+            talkCount++;
 
-            Program.Message = String.Format("{0}: {1}", Name, SpeechArray[count % SpeechArray.Length]);
+            Program.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount % SpeechArray.Length]);
             Program.ShowMessage(0);
         }
-
-        // Doesn't interact with others, can be interacted with.
-        public override Character Interact(Character otherChar) { return this; }
+        
+        public override void Move(int[] space)
+        {
+            if (moveCount++ % 3 == 0)
+            {
+                base.Move(space);
+            }
+        }
     }
 }

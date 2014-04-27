@@ -6,30 +6,21 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Demon : Monster, NonPlayer
+    class DarkDwarf : Monster, NonPlayer
     {   
-        public Demon(int x, int y) : base(x,y)
+        public DarkDwarf(int x, int y) : base(x,y)
         {
-            HP = 50;
-            XP = 70;
+            HP = 20;
+            XP = 40;
 
             CharacterRepresentation = 'D';
-            Name = "Demon";
-            Color = ConsoleColor.DarkRed;
-            Attack = 15;
+            Name = "Dark Dwarf";
+            Color = ConsoleColor.DarkYellow;
+            Attack = 3;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 20;
-        }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
+            MaxDamage = 8;
         }
 
         public override void DropItem()

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _2530_Final_Project___Rougelike.mapClasses;
 
 namespace _2530_Final_Project___Rougelike
 {
     class MapForest1 : Map
     {
         RustyDagger dagger = new RustyDagger();
+        HealingPotion healthPot = new HealingPotion();
+
 
         public MapForest1(int ep) : base(ep)
         {
@@ -17,7 +20,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> { 1006, 2001 });
+            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
 
         }
 
@@ -32,11 +35,10 @@ namespace _2530_Final_Project___Rougelike
 
         protected override void AddTiles()
         {
-            TileInfo.Add(1001, new Tile(ConsoleColor.White, '.'));
-            TileInfo.Add(1002, new Tile(ConsoleColor.White, '.'));
-            TileInfo.Add(1003, new Tile(ConsoleColor.White, '.'));
-            TileInfo.Add(1004, new Tile(ConsoleColor.White, '.'));
-            TileInfo.Add(1005, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(1002, new Tile(healthPot.Color, healthPot.CharacterRepresentation));
+            TileInfo.Add(1003, TileInfo[100]);
+            TileInfo.Add(1004, new Tile(ConsoleColor.White, '*'));
+            TileInfo.Add(1005, new Tile(ConsoleColor.White, '*'));
             TileInfo.Add(1006, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(2001, new Tile(dagger.Color, dagger.CharacterRepresentation));
         }
@@ -53,6 +55,21 @@ namespace _2530_Final_Project___Rougelike
                     Program.AddItem(dagger);
                     MapSpace[9][6] = 0;
                     break;
+                case 1002 :
+                    Program.AddItem(healthPot);
+                    MapSpace[37][53] = 0;
+                    break;
+                case 1004 :
+                    MapSpace[29][53] = 0;
+                    break;
+                case 1005 :
+                    MapSpace[34][15] = 1003;
+                    break;
+                case 1003 :
+                    Program.newMap = new MapAbandonedHouse(0);
+                    Program.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
+                    break;
+
             }
         }
 
@@ -65,6 +82,9 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1:
                     StartingPosition = new int[] { 78,1 };
+                    break;
+                case 3:
+                    StartingPosition = new int[] { 33, 15 };
                     break;
             }
         }

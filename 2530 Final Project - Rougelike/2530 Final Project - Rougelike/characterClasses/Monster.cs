@@ -18,7 +18,17 @@ namespace _2530_Final_Project___Rougelike
 
         public int HP { get; set; }
 
-        public void Move() { }
         public abstract void DropItem();
+
+        internal PlayerCharacter AttackPlayer(PlayerCharacter player)
+        {
+            int attackDamage = Attack + GetDamage() - (player.Defense + player.Armor);
+
+            player.CurrentHP -= attackDamage;
+
+            Program.Message = String.Format("{0} hit you for {1} damage.", player.Name, attackDamage);
+
+            return player;
+        }
     }
 }

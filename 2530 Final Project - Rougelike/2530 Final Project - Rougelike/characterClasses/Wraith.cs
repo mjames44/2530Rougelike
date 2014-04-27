@@ -9,6 +9,7 @@ namespace _2530_Final_Project___Rougelike
     class Wraith : Monster, NonPlayer
     {   
         public Wraith(int x, int y) : base(x,y)
+
         {
             HP = 40;
             XP = 50;
@@ -21,15 +22,6 @@ namespace _2530_Final_Project___Rougelike
             Armor = 1;
             MinDamage = 1;
             MaxDamage = 15;
-        }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
         }
 
         public override void DropItem()

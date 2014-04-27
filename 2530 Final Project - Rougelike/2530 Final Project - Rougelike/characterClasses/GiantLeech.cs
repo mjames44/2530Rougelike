@@ -9,6 +9,7 @@ namespace _2530_Final_Project___Rougelike
     class GiantLeech : Monster, NonPlayer
     {   
         public GiantLeech(int x, int y) : base(x,y)
+
         {
             HP = 30;
             XP = 60;
@@ -22,16 +23,6 @@ namespace _2530_Final_Project___Rougelike
             MinDamage = 1;
             MaxDamage = 12;
         }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
-        }
-
         public override void DropItem()
         {
         }

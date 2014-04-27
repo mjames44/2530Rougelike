@@ -9,6 +9,7 @@ namespace _2530_Final_Project___Rougelike
     class Ghost : Monster, NonPlayer
     {   
         public Ghost(int x, int y) : base(x,y)
+
         {
             HP = 15;
             XP = 20;
@@ -21,15 +22,6 @@ namespace _2530_Final_Project___Rougelike
             Armor = 1;
             MinDamage = 1;
             MaxDamage = 4;
-        }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
         }
 
         public override void DropItem()

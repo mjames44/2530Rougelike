@@ -176,7 +176,7 @@ namespace _2530_Final_Project___Rougelike
             UpdateInventory();
         }
 
-        public override Character Interact(Character otherChar)
+        public Character Interact(Character otherChar)
         {
             if (otherChar is Monster)
             {
