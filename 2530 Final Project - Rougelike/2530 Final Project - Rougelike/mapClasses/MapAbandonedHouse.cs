@@ -18,31 +18,15 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             StandableTiles.AddRange(new List<int> { 1019 });
 
         }
-        
-        protected override void AddTiles()
+        public override void CheckSpace(int mapValue)
         {
-            TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
-        }
-
-      public override void CheckSpace(int mapValue)
-        {
-            switch (mapValue)
-            {
-                case 1019:
-                    Program.newMap = new MapForest1(3);
-                    Program.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
-                    break;
-            }
+            throw new NotImplementedException();
         }
 
         protected override void SetStartingPosition(int entryPoint)
         {
-          switch(entryPoint)
-            {
-                case 0:
-                    StartingPosition = new int[] {5, 1};
-                break;
-            }
+            throw new NotImplementedException();
         }
+
     }
 }
