@@ -20,13 +20,13 @@ namespace _2530_Final_Project___Rougelike
         }
         private void AddCharacters()
         {
-            //MapCharacters.Add(new Troll(70, 27));
-            //MapCharacters.Add(new Troll(89, 32));
-            //MapCharacters.Add(new Troll(21, 31));
-            //MapCharacters.Add(new DarkDwarf(51, 14));
-            //MapCharacters.Add(new DarkDwarf(58, 3));            
-            //MapCharacters.Add(new DarkDwarf(13, 4));
-            //MapCharacters.Add(new Goblin (25, 26));
+            MapCharacters.Add(new Troll(70, 27));
+            MapCharacters.Add(new Troll(89, 32));
+            MapCharacters.Add(new Troll(21, 31));
+            MapCharacters.Add(new DarkDwarf(51, 14));
+            MapCharacters.Add(new DarkDwarf(58, 3));            
+            MapCharacters.Add(new DarkDwarf(13, 4));
+            MapCharacters.Add(new Goblin (25, 26));
             
         }
         protected override void AddTiles()
@@ -45,14 +45,11 @@ namespace _2530_Final_Project___Rougelike
         {
             switch (mapValue)
             {
-                /*case 551 :
-                    Program.newMap = new MapCityMain(0);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
-                    break;*/
-                //case 1501 :
-                //    Program.newMap = new MapForest2(1);
-                //    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
-                //    break;
+
+                case 1501 :
+                    Game.newMap = new MapForest2(1);
+                    Game.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                    break;
                 case 1502:
                     Game.newMap = new MapCave(0);
                     Game.CheckSpace = typeof(MapCave).GetMethod("CheckSpace");
@@ -65,10 +62,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapLake(1); //going into position
                     Game.CheckSpace = typeof(MapLake).GetMethod("CheckSpace");
                     break;
-                //case 1509:
-                //    Program.newMap = new MapForest2(2); //going into position
-                //    Program.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
-                //    break;
+                case 1509:
+                    Game.newMap = new MapForest2(3); //going into position
+                    Game.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                    break;
             }
         }
 
