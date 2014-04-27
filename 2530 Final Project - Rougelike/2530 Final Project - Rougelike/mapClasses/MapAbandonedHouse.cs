@@ -24,7 +24,7 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
         }
 
-        public override void CheckSpace(int mapValue)
+      public override void CheckSpace(int mapValue)
         {
             switch (mapValue)
             {

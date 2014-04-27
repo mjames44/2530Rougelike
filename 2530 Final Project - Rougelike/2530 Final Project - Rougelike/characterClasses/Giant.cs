@@ -26,12 +26,6 @@ namespace _2530_Final_Project___Rougelike
         public void Move()
         {
         }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
-        }
-
         public override void DropItem()
         {
         }

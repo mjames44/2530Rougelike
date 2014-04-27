@@ -57,7 +57,6 @@ namespace _2530_Final_Project___Rougelike
                 spacecheck(currentMap.MapSpace[pc.Y][pc.X]);
 
                 checkCharacters(); // Who died?
-
                 DrawCharacters();
                 #endregion Character
 
@@ -220,6 +219,7 @@ namespace _2530_Final_Project___Rougelike
         private static void MoveCharacter(ConsoleKey key)
         {
             pc.PreviousPosition = pc.Position;
+            List<int[]> occupiedPositions = new List<int[]>();
 
             if (key == ConsoleKey.DownArrow && CanMoveHere(currentMap.MapSpace[pc.Y + 1][pc.X]))
             {
@@ -239,6 +239,23 @@ namespace _2530_Final_Project___Rougelike
             else if (key == ConsoleKey.LeftArrow && CanMoveHere(currentMap.MapSpace[pc.Y][pc.X - 1]))
                 if (!SpaceOccupied(pc.Y, pc.X - 1, pc))
                     pc.X--;
+
+            foreach (Character el in characterList)
+            {
+                occupiedPositions.Add(el.Position);
+                occupiedPositions.Add(el.PreviousPosition);
+            }
+
+            foreach (Character el in characterList)
+            {
+                if (el.GetType() !=  pc.GetType())
+                {
+                    int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles);
+
+                    if (!SpaceOccupied(nextSpace[0], nextSpace[1], el))
+                        el.Move(nextSpace);
+                }
+            }
         }
 
         private static bool SpaceOccupied(int y, int x, Character callingCharacter)
@@ -247,7 +264,14 @@ namespace _2530_Final_Project___Rougelike
             {
                 if (x == characterList[i].X && y == characterList[i].Y)
                 {
-                    characterList[i] = callingCharacter.Interact(characterList[i]);
+                    if (callingCharacter is Monster && characterList[i] is PlayerCharacter)
+                    {
+                        Monster theMonster = (Monster)callingCharacter;
+
+                        pc = theMonster.AttackPlayer(pc);
+                    }
+                    else if (callingCharacter is PlayerCharacter)
+                        pc.Interact(characterList[i]);
 
                     return true;
                 }

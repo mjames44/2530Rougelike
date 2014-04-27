@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 namespace _2530_Final_Project___Rougelike
 {
     class GiantLeech : Monster, NonPlayer
+<<<<<<< HEAD
+    {
+        public GiantLeech(int x, int y)
+            : base(x, y)
+=======
     {   
         public GiantLeech(int x, int y) : base(x,y)
+>>>>>>> 0b72d760e46a2a46b5e79292f0464779719c02c8
         {
             HP = 30;
             XP = 60;
@@ -22,16 +28,6 @@ namespace _2530_Final_Project___Rougelike
             MinDamage = 1;
             MaxDamage = 12;
         }
-
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
-        }
-
         public override void DropItem()
         {
         }
