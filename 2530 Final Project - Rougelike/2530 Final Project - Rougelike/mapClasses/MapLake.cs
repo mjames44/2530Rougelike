@@ -47,10 +47,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapMountain(2);
                     Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
-                //case 1013:
-                //    Program.newMap = new MapMountain(4); //going into position
-                //    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
-                //    break;
+                case 1013:
+                    Game.newMap = new MapMountain(4); //going into position
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    break;
                 //case 1014:
                 //    Program.newMap = new MapForest3(2); //going into position
                 //    Program.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
@@ -63,10 +63,10 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 32, 1 };//start position from Mountain to lake
+                    StartingPosition = new int[] { 32, 2 };//start position from Mountain to lake
                     break;
                 case 1:
-                    StartingPosition = new int[] { 58, 2 };//start position from Mountain (small path) to lake
+                    StartingPosition = new int[] { 17, 1 };//start position from Mountain (small path) to lake
                     break;
                 case 2:
                     StartingPosition = new int[] { 32, 3 };//start position from Forest 3 to lake

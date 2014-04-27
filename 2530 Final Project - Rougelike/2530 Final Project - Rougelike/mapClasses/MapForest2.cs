@@ -57,13 +57,14 @@ namespace _2530_Final_Project___Rougelike.mapClasses
                     Game.newMap = new MapMountain(3);
                     Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
-             /*   case 1010:
+                case 1010:
                     Game.newMap = new MapForest3(1);
                     Game.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
+                    break;
                 case 1011:
                     Game.newMap = new MapForest4(0);
                     Game.CheckSpace = typeof(MapForest4).GetMethod("CheckSpace");
-                    break;*/
+                    break;
             }
         }
 
