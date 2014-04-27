@@ -86,6 +86,7 @@
     <Compile Include="mapClasses\MapCityHouse2.cs" />
     <Compile Include="mapClasses\MapCityStables.cs" />
     <Compile Include="mapClasses\MapDarkCastle.cs" />
+    <Compile Include="mapClasses\MapForest2.cs" />
     <Compile Include="mapClasses\MapTower4.cs" />
     <Compile Include="mapClasses\MapTower3.cs" />
     <Compile Include="mapClasses\MapTower2.cs" />

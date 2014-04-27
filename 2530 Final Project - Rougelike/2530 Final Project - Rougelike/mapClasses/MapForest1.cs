@@ -61,11 +61,9 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1004 :
                     MapSpace[29][53] = 0;
-                    Program.DrawMap();
                     break;
                 case 1005 :
                     MapSpace[34][15] = 1003;
-                    Program.DrawMap();
                     break;
                 case 1003 :
                     Program.newMap = new MapAbandonedHouse(0);
@@ -86,7 +84,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 78,1 };
                     break;
                 case 3:
-                    StartingPosition = new int[] { 15, 33 };
+                    StartingPosition = new int[] { 33, 15 };
                     break;
             }
         }
