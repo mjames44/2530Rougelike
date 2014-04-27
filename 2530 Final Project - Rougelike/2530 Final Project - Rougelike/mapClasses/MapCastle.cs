@@ -54,13 +54,13 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0: // From city
-                    StartingPosition = new int[] { 47, 38 };
+                    StartingPosition = new int[] { 38, 47 };
                     break;
                 case 1: // Tower Left
-                    StartingPosition = new int[] { 87, 18 };
+                    StartingPosition = new int[] { 18, 87 };
                     break;
                 case 3: // Palace
-                    StartingPosition = new int[] { 47, 5 };
+                    StartingPosition = new int[] { 5, 47 };
                     break;
             }
         }

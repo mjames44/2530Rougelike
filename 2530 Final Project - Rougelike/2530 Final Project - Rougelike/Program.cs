@@ -252,7 +252,7 @@ namespace _2530_Final_Project___Rougelike
                 {
                     int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles);
 
-                    if (!SpaceOccupied(nextSpace[0], nextSpace[1], el))
+                    if (!SpaceOccupied(nextSpace[0], nextSpace[1], el) && CanMoveHere(currentMap.MapSpace[nextSpace[0]][nextSpace[1]]))
                         el.Move(nextSpace);
                 }
             }
