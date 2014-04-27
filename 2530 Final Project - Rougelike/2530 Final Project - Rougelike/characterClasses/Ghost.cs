@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 namespace _2530_Final_Project___Rougelike
 {
     class Ghost : Monster, NonPlayer
-<<<<<<< HEAD
-    {
-        public Ghost(int x, int y)
-            : base(x, y)
-=======
     {   
         public Ghost(int x, int y) : base(x,y)
->>>>>>> 0b72d760e46a2a46b5e79292f0464779719c02c8
+
         {
             HP = 15;
             XP = 20;

@@ -118,15 +118,9 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-<<<<<<< HEAD
-            currentMap = new MapLevel0(0);
+            currentMap = new MapForest1(0);
             newMap = currentMap;
-            CheckSpace = typeof(MapLevel0).GetMethod("CheckSpace");
-=======
-            currentMap = new MapCave(0);
-            newMap = currentMap;
-            CheckSpace = typeof(MapCave).GetMethod("CheckSpace");
->>>>>>> 0b72d760e46a2a46b5e79292f0464779719c02c8
+            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
             
             InitializeConsole();
             InitializePlayChar();
@@ -278,7 +272,7 @@ namespace _2530_Final_Project___Rougelike
                     }
                     else if (callingCharacter is PlayerCharacter)
                         pc.Interact(characterList[i]);
-                        
+
                     return true;
                 }
             }
