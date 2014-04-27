@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     class MapCityBarracks : Map
     {
         public MapCityBarracks(int ep, Dictionary<int, Tile> tileInfo)
-            : base(ep, tileInfo)
+            : base(ep)
         {
             FileName = "mapCityBarracks.csv";
 

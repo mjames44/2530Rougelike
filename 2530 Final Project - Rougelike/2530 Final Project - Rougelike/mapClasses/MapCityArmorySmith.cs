@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     class MapCityArmorySmith : Map
     {
         public MapCityArmorySmith(int ep, Dictionary<int, Tile> tileInfo)
-            : base(ep, tileInfo)
+            : base(ep)
         {
             FileName = "mapCityArmorySmith.csv";
 

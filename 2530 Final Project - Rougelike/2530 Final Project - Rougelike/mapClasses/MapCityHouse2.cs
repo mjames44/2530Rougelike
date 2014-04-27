@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     class MapCityHouse2 : Map
     {
         public MapCityHouse2(int ep, Dictionary<int, Tile> tileInfo)
-            : base(ep, tileInfo)
+            : base(ep)
         {
             FileName = "mapCityHouse2.csv";
 
