@@ -20,7 +20,7 @@ namespace _2530_Final_Project___Rougelike
             talkCount = 0;
         }
 
-        public void Talk()
+        public virtual void Talk()
         {
             talkCount++;
 

@@ -26,6 +26,8 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Ogre(16, 15));
             MapCharacters.Add(new Ogre(24, 27));
             MapCharacters.Add(new Demon(38, 33));
+            MapCharacters.Add(new Demon(45, 6));
+            MapCharacters.Add(new Wraith(83, 15));
 
 
 
