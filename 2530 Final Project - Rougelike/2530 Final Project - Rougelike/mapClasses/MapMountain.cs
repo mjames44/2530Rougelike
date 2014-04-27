@@ -83,6 +83,9 @@ namespace _2530_Final_Project___Rougelike
                 case 3:
                     StartingPosition = new int[] { 40, 38 };//start position from forest 2 (small path) to mountain
                     break;
+                case 4:
+                    StartingPosition = new int[] { 40, 38 };//start position from Lake (small path) to mountain
+                    break;
             }
         }
     }
