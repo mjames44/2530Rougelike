@@ -48,8 +48,8 @@ namespace _2530_Final_Project___Rougelike
             {
 
                 case 1504://triggers to go to map mountain
-                    Program.newMap = new MapMountain(1);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(1);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
                 
             }

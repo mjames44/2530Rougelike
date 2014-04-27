@@ -29,8 +29,8 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 512 :
-                    Program.newMap = new MapCityMain(5);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(5);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
             }
         }

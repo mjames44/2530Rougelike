@@ -47,28 +47,28 @@ namespace _2530_Final_Project___Rougelike
             {
 
                 case 1507://triggers to go to map Dark Castle
-                    Program.newMap = new MapDarkCastle(1);
-                    Program.CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastle(1);
+                    Game.CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
                     break;
                 case 1508://triggers to go to map Tower 1
-                    Program.newMap = new MapTower1(0);
-                    Program.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
+                    Game.newMap = new MapTower1(0);
+                    Game.CheckSpace = typeof(MapTower1).GetMethod("CheckSpace");
                     break;
                 case 1510://triggers to go to map Tower 2
-                    Program.newMap = new MapTower2(0);
-                    Program.CheckSpace = typeof(MapTower2).GetMethod("CheckSpace");
+                    Game.newMap = new MapTower2(0);
+                    Game.CheckSpace = typeof(MapTower2).GetMethod("CheckSpace");
                     break;
                 case 1511://triggers to go to map Tower 3
-                    Program.newMap = new MapTower3(0);
-                    Program.CheckSpace = typeof(MapTower3).GetMethod("CheckSpace");
+                    Game.newMap = new MapTower3(0);
+                    Game.CheckSpace = typeof(MapTower3).GetMethod("CheckSpace");
                     break;
                 case 1512://triggers to go to map Tower 4
-                    Program.newMap = new MapTower4(0);
-                    Program.CheckSpace = typeof(MapTower4).GetMethod("CheckSpace");
+                    Game.newMap = new MapTower4(0);
+                    Game.CheckSpace = typeof(MapTower4).GetMethod("CheckSpace");
                     break;
                 case 1513://triggers to go to map Dungeon
-                    Program.newMap = new MapDungeon(0); //going into position
-                    Program.CheckSpace = typeof(MapDungeon).GetMethod("CheckSpace");
+                    Game.newMap = new MapDungeon(0); //going into position
+                    Game.CheckSpace = typeof(MapDungeon).GetMethod("CheckSpace");
                     break;
  
             }

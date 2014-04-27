@@ -47,15 +47,15 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             switch (mapValue)
             {
                 case 1006:
-                    Program.newMap = new MapCityMain(0);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(0);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
                 case 2001:
-                    Program.AddItem(dagger);
+                    Game.AddItem(dagger);
                     MapSpace[9][6] = 0;
                     break;
                 case 1002:
-                    Program.AddItem(healthPot);
+                    Game.AddItem(healthPot);
                     MapSpace[37][53] = 0;
                     break;
                 case 1004:
@@ -65,8 +65,8 @@ namespace _2530_Final_Project___Rougelike.mapClasses
                     MapSpace[34][15] = 1003;
                     break;
                 case 1003:
-                    Program.newMap = new MapAbandonedHouse(0);
-                    Program.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
+                    Game.newMap = new MapAbandonedHouse(0);
+                    Game.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
                     break;
 
             }

@@ -51,7 +51,7 @@ namespace _2530_Final_Project___Rougelike
 
             try
             {
-                using (StreamReader sr = new StreamReader("maps/" + Program.pcName + FileName))
+                using (StreamReader sr = new StreamReader("maps/" + Game.pcName + FileName))
                 {
                     while ((tempString = sr.ReadLine()) != null)
                     {

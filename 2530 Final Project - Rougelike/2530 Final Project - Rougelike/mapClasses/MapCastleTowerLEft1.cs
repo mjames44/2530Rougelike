@@ -44,12 +44,12 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 571:
-                    Program.newMap = new MapCastle(1);
-                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapCastle(1);
+                    Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 572:
-                    Program.newMap = new MapCastleTowerLeft2(0);
-                    Program.CheckSpace = typeof(MapCastleTowerLeft2).GetMethod("CheckSpace");
+                    Game.newMap = new MapCastleTowerLeft2(0);
+                    Game.CheckSpace = typeof(MapCastleTowerLeft2).GetMethod("CheckSpace");
                     break;
             }
         }

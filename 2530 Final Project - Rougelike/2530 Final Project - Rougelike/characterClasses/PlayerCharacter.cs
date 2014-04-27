@@ -200,7 +200,7 @@ namespace _2530_Final_Project___Rougelike
 
             monster.HP -= attackDamage;
 
-            Program.Message = String.Format("You hit the {0} for {1} damage.", monster.Name, attackDamage);
+            Game.Message = String.Format("You hit the {0} for {1} damage.", monster.Name, attackDamage);
 
             return monster;
         }

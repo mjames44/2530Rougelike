@@ -26,7 +26,7 @@ namespace _2530_Final_Project___Rougelike
 
             player.CurrentHP -= attackDamage;
 
-            Program.Message = String.Format("{0} hit you for {1} damage.", player.Name, attackDamage);
+            Game.Message = String.Format("{0} hit you for {1} damage.", player.Name, attackDamage);
 
             return player;
         }

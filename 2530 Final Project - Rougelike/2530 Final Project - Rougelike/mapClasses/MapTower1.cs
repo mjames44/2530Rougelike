@@ -31,8 +31,8 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 1516://Trigger to go to map Dark Castle Main Floor
-                    Program.newMap = new MapDarkCastleMainFloor(1);
-                    Program.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastleMainFloor(1);
+                    Game.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
                     break;
             
  

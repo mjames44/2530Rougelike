@@ -32,12 +32,12 @@ namespace _2530_Final_Project___Rougelike
             {
 
                 case 1514://Trigger to go to map Dark Castle Main Floor
-                    Program.newMap = new MapDarkCastleMainFloor(5);
-                    Program.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastleMainFloor(5);
+                    Game.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
                     break;
                 case 1515://Trigger to go to map Dark Castle
-                    Program.newMap = new MapDarkCastle(2); //going into position
-                    Program.CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastle(2); //going into position
+                    Game.CheckSpace = typeof(MapDarkCastle).GetMethod("CheckSpace");
                     break;
             }
         }

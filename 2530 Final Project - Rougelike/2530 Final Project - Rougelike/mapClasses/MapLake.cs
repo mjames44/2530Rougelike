@@ -44,8 +44,8 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                  case 1012:
-                    Program.newMap = new MapMountain(2);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(2);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
                 //case 1013:
                 //    Program.newMap = new MapMountain(4); //going into position
