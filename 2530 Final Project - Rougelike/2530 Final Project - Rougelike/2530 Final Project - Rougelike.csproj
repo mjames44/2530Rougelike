@@ -62,6 +62,7 @@
     <Compile Include="characterClasses\Ghost.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\GhostGuy.cs" />
     <Compile Include="characterClasses\Giant.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
