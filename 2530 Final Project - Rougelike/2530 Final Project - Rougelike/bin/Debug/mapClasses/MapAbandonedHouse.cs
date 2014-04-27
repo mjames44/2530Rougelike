@@ -15,7 +15,7 @@ namespace _2530_Final_Project___Rougelike.mapClasses
 
             ReadMap();
             AddTiles();
-            //  AddCharacters();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 1019 });
 
         }
@@ -25,7 +25,12 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
         }
 
-      public override void CheckSpace(int mapValue)
+        private void AddCharacters()
+        {
+            MapCharacters.Add(new GhostGuy(4, 4));
+        }
+        
+        public override void CheckSpace(int mapValue)
         {
             switch (mapValue)
             {
@@ -41,7 +46,7 @@ namespace _2530_Final_Project___Rougelike.mapClasses
           switch(entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] {5, 1};
+                    StartingPosition = new int[] {1, 5};
                 break;
             }
         }
