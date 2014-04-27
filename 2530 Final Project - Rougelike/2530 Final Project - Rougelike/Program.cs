@@ -242,17 +242,12 @@ namespace _2530_Final_Project___Rougelike
 
             foreach (Character el in characterList)
             {
-                occupiedPositions.Add(el.Position);
-                occupiedPositions.Add(el.PreviousPosition);
-            }
-
-            foreach (Character el in characterList)
-            {
                 if (el.GetType() != pc.GetType())
                 {
                     int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles);
 
-                    if (!SpaceOccupied(nextSpace[0], nextSpace[1], el))
+                    if (!SpaceOccupied(nextSpace[0], nextSpace[1], el) &&
+                        CanMoveHere(currentMap.MapSpace[nextSpace[0]][nextSpace[1]]))
                         el.Move(nextSpace);
                 }
             }
@@ -525,7 +520,7 @@ namespace _2530_Final_Project___Rougelike
          * - Then writes out the characters and any message that may be wating to be written.
          *  */
         internal static void DrawMap()
-        { 
+        {
             DrawMap(currentMap);
         }
 
