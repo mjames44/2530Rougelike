@@ -24,15 +24,6 @@ namespace _2530_Final_Project___Rougelike
             MaxDamage = 20;
         }
 
-        public void Move()
-        {
-        }
-
-        public override Character Interact(Character otherChar)
-        {
-            return this;
-        }
-
         public override void DropItem()
         {
         }

@@ -121,7 +121,7 @@ namespace _2530_Final_Project___Rougelike
             currentMap = new MapForest1(0);
             newMap = currentMap;
             CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
-            
+
             InitializeConsole();
             InitializePlayChar();
             InitializeMap(currentMap);
@@ -248,7 +248,7 @@ namespace _2530_Final_Project___Rougelike
 
             foreach (Character el in characterList)
             {
-                if (el.GetType() !=  pc.GetType())
+                if (el.GetType() != pc.GetType())
                 {
                     int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles);
 
@@ -524,6 +524,11 @@ namespace _2530_Final_Project___Rougelike
          * - Reads the contents of the current currentMap.MapSpace Array, then adds the result to a stringbuilder for output.
          * - Then writes out the characters and any message that may be wating to be written.
          *  */
+        internal static void DrawMap()
+        { 
+            DrawMap(currentMap);
+        }
+
         private static void DrawMap(Map theMap)
         {
             // Need to clear the console, so the character draw methods will draw correctly
