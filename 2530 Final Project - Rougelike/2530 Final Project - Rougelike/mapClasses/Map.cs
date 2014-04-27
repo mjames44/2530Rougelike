@@ -102,6 +102,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo.Add(4, new Tile(ConsoleColor.White, '<'));
             TileInfo.Add(5, new Tile(ConsoleColor.Green, (char)9650));
             TileInfo.Add(6, new Tile(ConsoleColor.Blue, (char)9617));
+            TileInfo.Add(99, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(100, new Tile(ConsoleColor.White, '-'));
             for (int i = 101; i <= 300; i++)
                 TileInfo.Add(i, new Tile(ConsoleColor.White, '+'));

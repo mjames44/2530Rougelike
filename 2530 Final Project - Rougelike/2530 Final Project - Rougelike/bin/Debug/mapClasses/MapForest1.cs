@@ -21,7 +21,6 @@ namespace _2530_Final_Project___Rougelike
             AddTiles();
             AddCharacters();
             StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
-
         }
 
         private void AddCharacters()
@@ -81,7 +80,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 5, 5 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 78,1 };
+                    StartingPosition = new int[] { 1,78 };
                     break;
                 case 3:
                     StartingPosition = new int[] { 33, 15 };
