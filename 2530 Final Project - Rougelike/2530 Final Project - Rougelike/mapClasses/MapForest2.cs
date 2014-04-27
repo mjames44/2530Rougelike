@@ -42,27 +42,27 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             switch (mapValue)
             {
                 case 1007:
-                    Program.newMap = new MapCityMain(1);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(1);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
                 case 1020:
-                    Program.AddItem(woodenHelmet);
+                    Game.AddItem(woodenHelmet);
                     MapSpace[3][59] = 0;
                     break;
                 case 1008:
-                    Program.newMap = new MapMountain(0);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(0);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
                 case 1009:
-                    Program.newMap = new MapMountain(3);
-                    Program.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
+                    Game.newMap = new MapMountain(3);
+                    Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
              /*   case 1010:
-                    Program.newMap = new MapForest3(1);
-                    Program.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
+                    Game.newMap = new MapForest3(1);
+                    Game.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
                 case 1011:
-                    Program.newMap = new MapForest4(0);
-                    Program.CheckSpace = typeof(MapForest4).GetMethod("CheckSpace");
+                    Game.newMap = new MapForest4(0);
+                    Game.CheckSpace = typeof(MapForest4).GetMethod("CheckSpace");
                     break;*/
             }
         }
@@ -72,13 +72,19 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 2, 12 };
+                    StartingPosition = new int[] { 12, 2 };
                     break;
                 case 1:
-                    StartingPosition = new int[] { 78, 1 };
+                    StartingPosition = new int[] { 2, 28 };
                     break;
                 case 3:
-                    StartingPosition = new int[] { 33, 15 };
+                    StartingPosition = new int[] { 2, 40 };
+                    break;
+                case 4:
+                    StartingPosition = new int[] { 27, 97 };
+                    break;
+                case 5:
+                    StartingPosition = new int[] { 38, 18 };
                     break;
             }
         }
