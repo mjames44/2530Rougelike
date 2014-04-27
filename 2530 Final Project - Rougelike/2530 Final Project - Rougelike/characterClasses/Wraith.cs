@@ -8,7 +8,6 @@ namespace _2530_Final_Project___Rougelike
 {
     class Wraith : Monster, NonPlayer
     {
-
         public Wraith(int x, int y) : base(x,y)
 
         {

@@ -18,25 +18,6 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             StandableTiles.AddRange(new List<int> { 1019 });
 
         }
-        
-        protected override void AddTiles()
-        {
-            TileInfo.Add(1019, new Tile(ConsoleColor.White, '.'));          
-        }
-
-
-          protected override void AddTiles()
-          {
-          }
-
-          public override void CheckSpace(int mapValue)
-          {
-          }
-
-          protected override void SetStartingPosition(int entryPoint)
-          {
-          }
-
         public override void CheckSpace(int mapValue)
         {
             throw new NotImplementedException();

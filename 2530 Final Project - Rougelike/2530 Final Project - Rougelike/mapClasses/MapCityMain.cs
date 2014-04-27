@@ -48,7 +48,7 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 503:
                     Program.newMap = new MapCastle(0);
-                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 504:
                     Program.newMap = new MapCityArmorySmith(0, TileInfo);
@@ -60,19 +60,19 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 506:
                     Program.newMap = new MapCityHouse1(0, TileInfo);
-                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 507:
                     Program.newMap = new MapCityHouse2(0, TileInfo);
-                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 508:
                     Program.newMap = new MapCityBarracks(0, TileInfo);
-                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
                 case 509:
                     Program.newMap = new MapCityStables(0, TileInfo);
-                    Program.CheckSpace = typeof(MapCastleSubmaps).GetMethod("CheckSpace");
+                    Program.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
                     break;
             }
         }
