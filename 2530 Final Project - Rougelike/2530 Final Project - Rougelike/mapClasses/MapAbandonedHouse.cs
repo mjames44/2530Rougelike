@@ -26,12 +26,23 @@ namespace _2530_Final_Project___Rougelike.mapClasses
 
         public override void CheckSpace(int mapValue)
         {
-            throw new NotImplementedException();
+            switch (mapValue)
+            {
+                case 1019:
+                    Program.newMap = new MapForest1(3);
+                    Program.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
+                    break;
+            }
         }
 
         protected override void SetStartingPosition(int entryPoint)
         {
-            throw new NotImplementedException();
+          switch(entryPoint)
+            {
+                case 0:
+                    StartingPosition = new int[] {5, 1};
+                break;
+            }
         }
     }
 }

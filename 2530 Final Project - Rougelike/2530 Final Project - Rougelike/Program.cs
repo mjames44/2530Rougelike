@@ -119,9 +119,9 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapCave(0);
+            currentMap = new MapForest1(0);
             newMap = currentMap;
-            CheckSpace = typeof(MapCave).GetMethod("CheckSpace");
+            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
             
             InitializeConsole();
             InitializePlayChar();
@@ -500,6 +500,12 @@ namespace _2530_Final_Project___Rougelike
          * - Reads the contents of the current currentMap.MapSpace Array, then adds the result to a stringbuilder for output.
          * - Then writes out the characters and any message that may be wating to be written.
          *  */
+
+        internal static void DrawMap()
+        {
+            DrawMap(currentMap);
+        }
+
         private static void DrawMap(Map theMap)
         {
             // Need to clear the console, so the character draw methods will draw correctly
