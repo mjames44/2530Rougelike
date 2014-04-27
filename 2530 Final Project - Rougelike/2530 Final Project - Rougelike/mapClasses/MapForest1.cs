@@ -61,9 +61,11 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1004 :
                     MapSpace[29][53] = 0;
+                    Game.DrawMap();
                     break;
                 case 1005 :
                     MapSpace[34][15] = 1003;
+                    Game.DrawMap();
                     break;
                 case 1003 :
                     Game.newMap = new MapAbandonedHouse(0);
