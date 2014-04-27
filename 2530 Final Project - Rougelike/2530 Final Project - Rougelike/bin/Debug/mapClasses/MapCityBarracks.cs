@@ -7,28 +7,29 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapCityStables : Map
+    class MapCityBarracks : Map
     {
-        public MapCityStables(int ep, Dictionary<int, Tile> tileInfo)
+        public MapCityBarracks(int ep, Dictionary<int, Tile> tileInfo)
             : base(ep)
         {
-            FileName = "mapCityStables.csv";
+            FileName = "mapCityBarracks.csv";
 
             ReadMap();
             AddTiles();
-            StandableTiles.AddRange(new List<int> { 551 });
+            StandableTiles.AddRange(new List<int> { 514 });
         }
 
         protected override void AddTiles()
         {
+            TileInfo.Add(514, new Tile(ConsoleColor.White, '.'));
         }
 
         public override void CheckSpace(int mapValue)
         {
             switch (mapValue)
             {
-                case 551:
-                    Game.newMap = new MapCityMain(8);
+                case 514:
+                    Game.newMap = new MapCityMain(7);
                     Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
             }
@@ -39,7 +40,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 5, 5 };
+                    StartingPosition = new int[] { 17, 61 };
                     break;
             }
         }

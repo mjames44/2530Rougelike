@@ -22,6 +22,24 @@ namespace _2530_Final_Project___Rougelike
         protected override void AddTiles()
         {
             TileInfo.Add(513, new Tile(ConsoleColor.White, '.'));
+
+            for (int i = 0; i < 300; i++)
+            {
+                if (TileInfo.Keys.Contains(i + 400))
+                {
+                    TileInfo.Add(i + 400, new Tile(ConsoleColor.DarkGray, TileInfo[i].CharacterRepresentation));
+                }
+            }
+
+            TileInfo.Add(901, new Tile(ConsoleColor.DarkGray, '-'));
+            TileInfo.Add(902, new Tile(ConsoleColor.DarkGray, '-'));
+            TileInfo.Add(903, new Tile(ConsoleColor.DarkGray, '-'));
+            TileInfo.Add(904, new Tile(ConsoleColor.DarkGray, '.'));
+            TileInfo.Add(905, new Tile(ConsoleColor.DarkGray, '.'));
+            TileInfo.Add(906, new Tile(ConsoleColor.DarkGray, '.'));
+            TileInfo.Add(907, new Tile(ConsoleColor.DarkGray, '.'));
+            TileInfo.Add(908, new Tile(ConsoleColor.DarkGray, '.'));
+            TileInfo.Add(909, new Tile(ConsoleColor.DarkGray, '.'));
         }
 
         public override void CheckSpace(int mapValue)
