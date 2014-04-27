@@ -40,7 +40,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 61, 17 };
+                    StartingPosition = new int[] { 17, 61 };
                     break;
             }
         }
