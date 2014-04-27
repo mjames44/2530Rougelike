@@ -24,7 +24,6 @@ namespace _2530_Final_Project___Rougelike
         {
             MapCharacters.Add(new Wraith(5, 2));
 
-
         }
         protected override void AddTiles()
         {

@@ -28,6 +28,8 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Demon(38, 33));
             MapCharacters.Add(new Demon(45, 6));
             MapCharacters.Add(new Wraith(83, 15));
+            MapCharacters.Add(new GiantLeech(57, 7));
+            MapCharacters.Add(new Bat(60, 33));
 
 
 

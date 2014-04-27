@@ -15,8 +15,25 @@ namespace _2530_Final_Project___Rougelike
             FileName = "mapDungeon.csv";
 
             ReadMap();
+            AddCharacters();
             AddTiles();
             StandableTiles.AddRange(new List<int> {1514,1515});// tiles that lead to other  places
+        }
+
+        private void AddCharacters()
+        {
+            MapCharacters.Add(new Troll(70, 26));
+            MapCharacters.Add(new Goblin(65, 11));
+            MapCharacters.Add(new Troll(27, 27));
+            MapCharacters.Add(new Goblin(53, 35));
+            MapCharacters.Add(new Demon(5, 25));
+            MapCharacters.Add(new Bat(4, 4));
+            MapCharacters.Add(new Ghost(52, 15));
+            MapCharacters.Add(new Bat(70, 35));
+            MapCharacters.Add(new Wraith(35, 5));
+            MapCharacters.Add(new Giant(94, 18));
+            MapCharacters.Add(new Bat(80, 5));
+            MapCharacters.Add(new Princess(5, 38));
         }
 
         protected override void AddTiles()
