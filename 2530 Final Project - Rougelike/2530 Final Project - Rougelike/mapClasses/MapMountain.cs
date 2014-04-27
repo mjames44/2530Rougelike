@@ -15,9 +15,20 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> {1501,1502,1503,1509 });// tiles that lead to other  places
         }
-
+        private void AddCharacters()
+        {
+            MapCharacters.Add(new Troll(70, 27));
+            MapCharacters.Add(new Troll(89, 32));
+            MapCharacters.Add(new Troll(21, 31));
+            MapCharacters.Add(new DarkDwarf(51, 14));
+            MapCharacters.Add(new DarkDwarf(58, 3));            
+            MapCharacters.Add(new DarkDwarf(13, 4));
+            MapCharacters.Add(new Goblin (25, 26));
+            
+        }
         protected override void AddTiles()
         {
             TileInfo.Add(11, new Tile(ConsoleColor.Yellow, '*'));// add new tiles
