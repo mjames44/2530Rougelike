@@ -26,8 +26,10 @@ namespace _2530_Final_Project___Rougelike
 
         private void AddCharacters()
         {
-            MapCharacters.Add(new TestMonster(5,10));
-            MapCharacters.Add(new TestMonster(6, 10));
+            MapCharacters.Add(new Troll(70, 27));
+            MapCharacters.Add(new Goblin(70, 10));
+            MapCharacters.Add(new Troll(27, 27));
+            MapCharacters.Add(new Goblin(53, 35));
             MapCharacters.Add(new RandomGuy(5,15));
         }
 

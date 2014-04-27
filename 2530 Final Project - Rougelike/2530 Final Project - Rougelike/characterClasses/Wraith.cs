@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class TestMonster : Monster, NonPlayer
+    class Wraith : Monster, NonPlayer
     {   
-        public TestMonster(int x, int y) : base(x,y)
+        public Wraith(int x, int y) : base(x,y)
         {
-            HP = 20;
-            XP = 500;
+            HP = 40;
+            XP = 50;
 
-            CharacterRepresentation = 'm';
-            Name = "Test Monster";
-            Color = ConsoleColor.Green;
-            Attack = 1;
+            CharacterRepresentation = 'W';
+            Name = "Wraith";
+            Color = ConsoleColor.DarkYellow;
+            Attack = 12;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 1;
+            MaxDamage = 15;
         }
 
         public void Move()
