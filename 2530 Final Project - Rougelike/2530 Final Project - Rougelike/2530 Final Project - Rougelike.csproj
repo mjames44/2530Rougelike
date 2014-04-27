@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="characterClasses\Dragon.cs" />
     <Compile Include="characterClasses\NonPlayerCharacter.cs" />
     <Compile Include="characterClasses\RandomGuy.cs" />
     <Compile Include="characterClasses\Goblin.cs" />

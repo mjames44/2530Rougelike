@@ -119,9 +119,9 @@ namespace _2530_Final_Project___Rougelike
          * */
         private static void InitializeGame()
         {
-            currentMap = new MapCave(0);
+            currentMap = new MapForest1(0);
             newMap = currentMap;
-            CheckSpace = typeof(MapCave).GetMethod("CheckSpace");
+            CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
             
             InitializeConsole();
             InitializePlayChar();

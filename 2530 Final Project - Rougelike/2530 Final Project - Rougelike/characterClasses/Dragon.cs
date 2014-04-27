@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class GiantLeech : Monster, NonPlayer
-    {   
-        public GiantLeech(int x, int y) : base(x,y)
+    class Dragon : Monster, NonPlayer
+    {
+        public Dragon(int x, int y)
+            : base(x, y)
         {
-            HP = 30;
-            XP = 60;
+            HP = 80;
+            XP = 90;
 
-            CharacterRepresentation = 'L';
-            Name = "Giant Leech";
+            CharacterRepresentation = 'D';
+            Name = "Dragon";
             Color = ConsoleColor.Cyan;
-            Attack = 9;
+            Attack = 20;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 12;
+            MaxDamage = 20;
         }
 
         public void Move()
