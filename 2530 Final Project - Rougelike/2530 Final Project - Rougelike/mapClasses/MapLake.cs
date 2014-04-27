@@ -51,10 +51,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapMountain(4); //going into position
                     Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
-                //case 1014:
-                //    Program.newMap = new MapForest3(2); //going into position
-                //    Program.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
-                //    break;
+                case 1014:
+                    Game.newMap = new MapForest3(0); //going into position
+                    Game.CheckSpace = typeof(MapForest3).GetMethod("CheckSpace");
+                    break;
             }
         }
 
@@ -69,7 +69,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 17, 1 };//start position from Mountain (small path) to lake
                     break;
                 case 2:
-                    StartingPosition = new int[] { 32, 3 };//start position from Forest 3 to lake
+                    StartingPosition = new int[] { 38, 87 };//start position from Forest 3 to lake
                     break;
 
             }
