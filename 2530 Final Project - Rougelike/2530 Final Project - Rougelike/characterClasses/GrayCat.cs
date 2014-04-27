@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class BrownCat : NonPlayerCharacter, NonPlayer
+    class GrayCat : NonPlayerCharacter, NonPlayer
     {
-        public BrownCat(int x, int y)
+        public GrayCat(int x, int y)
             : base(x, y)
         {
             CharacterRepresentation = 'h';

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class RandomGuy : NonPlayerCharacter, NonPlayer
+    class Dog : NonPlayerCharacter, NonPlayer
     {
-        public RandomGuy(int x, int y) : base(x,y)
+        public Dog(int x, int y) : base(x,y)
         {
             CharacterRepresentation = 'd';
             Name = "Dog";

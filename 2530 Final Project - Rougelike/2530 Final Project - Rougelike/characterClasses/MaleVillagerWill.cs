@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MaleVillagerWill : NonPlayerCharacter, NonPlayer
+    class MaleVillagerWill : Villager, NonPlayer
     {
         public MaleVillagerWill(int x, int y)
             : base(x, y)
