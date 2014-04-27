@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Program
+    class Class1
     {
-        static void Main(string[] args)
-        {
-            Game theGame = new Game(new MapForest1(0));
-        }
     }
 }

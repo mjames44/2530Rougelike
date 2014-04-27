@@ -30,8 +30,8 @@ namespace _2530_Final_Project___Rougelike.mapClasses
             switch (mapValue)
             {
                 case 1019:
-                    Program.newMap = new MapForest1(3);
-                    Program.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
+                    Game.newMap = new MapForest1(3);
+                    Game.CheckSpace = typeof(MapForest1).GetMethod("CheckSpace");
                     break;
             }
         }

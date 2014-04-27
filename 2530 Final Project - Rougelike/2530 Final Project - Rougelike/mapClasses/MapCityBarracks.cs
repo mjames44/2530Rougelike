@@ -29,8 +29,8 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 514:
-                    Program.newMap = new MapCityMain(7);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(7);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
             }
         }
@@ -40,7 +40,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 61, 17 };
+                    StartingPosition = new int[] { 17, 61 };
                     break;
             }
         }

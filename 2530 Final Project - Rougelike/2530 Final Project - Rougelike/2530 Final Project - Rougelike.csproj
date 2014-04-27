@@ -99,6 +99,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="characterClasses\Wraith.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ItemClasses\Chainmail.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -214,9 +215,10 @@
     <Compile Include="NonPlayer.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Program.cs">
+    <Compile Include="Game.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

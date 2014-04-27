@@ -39,12 +39,12 @@ namespace _2530_Final_Project___Rougelike
             switch (mapValue)
             {
                 case 551:
-                    Program.newMap = new MapCityMain(2);
-                    Program.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
+                    Game.newMap = new MapCityMain(2);
+                    Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
                 case 555:
-                    Program.newMap = new MapCastleTowerLeft1(0);
-                    Program.CheckSpace = typeof(MapCastleTowerLeft1).GetMethod("CheckSpace");
+                    Game.newMap = new MapCastleTowerLeft1(0);
+                    Game.CheckSpace = typeof(MapCastleTowerLeft1).GetMethod("CheckSpace");
                     break;
             }
         }
@@ -54,13 +54,13 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0: // From city
-                    StartingPosition = new int[] { 47, 38 };
+                    StartingPosition = new int[] { 38, 47 };
                     break;
                 case 1: // Tower Left
-                    StartingPosition = new int[] { 87, 18 };
+                    StartingPosition = new int[] { 18, 87 };
                     break;
                 case 3: // Palace
-                    StartingPosition = new int[] { 47, 5 };
+                    StartingPosition = new int[] { 5, 47 };
                     break;
             }
         }

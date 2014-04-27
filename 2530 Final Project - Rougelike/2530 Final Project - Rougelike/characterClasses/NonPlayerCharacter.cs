@@ -24,8 +24,8 @@ namespace _2530_Final_Project___Rougelike
         {
             talkCount++;
 
-            Program.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount % SpeechArray.Length]);
-            Program.ShowMessage(0);
+            Game.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount % SpeechArray.Length]);
+            Game.ShowMessage(0);
         }
         
         public override void Move(int[] space)
