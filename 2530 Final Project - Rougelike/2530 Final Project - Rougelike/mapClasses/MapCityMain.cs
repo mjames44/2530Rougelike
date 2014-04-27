@@ -49,6 +49,7 @@ namespace _2530_Final_Project___Rougelike
                 case 502:
                     Game.newMap = new MapForest2(0);
                     Game.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                    break;
                 case 503:
                     Game.newMap = new MapCastle(0);
                     Game.CheckSpace = typeof(MapCastle).GetMethod("CheckSpace");
