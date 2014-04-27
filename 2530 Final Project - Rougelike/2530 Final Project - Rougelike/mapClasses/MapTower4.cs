@@ -44,7 +44,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 6, 4 };//start position from DarkCastle Main Floor to Tower 1
+                    StartingPosition = new int[] { 4, 6 };//start position from DarkCastle Main Floor to Tower 1
                     break;
 
             }

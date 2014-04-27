@@ -69,13 +69,13 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 1, 33 };//start position from forest 4 to Dark Castle
+                    StartingPosition = new int[] { 33, 1 };//start position from forest 4 to Dark Castle
                     break;
                 case 1:
-                    StartingPosition = new int[] { 53, 20 };//start position from Dark Castle Main Room to Dark Castle
+                    StartingPosition = new int[] { 20, 53 };//start position from Dark Castle Main Room to Dark Castle
                     break;
                 case 2:
-                    StartingPosition = new int[] { 88, 21 };//start position from Dungeon secret passage to Dark Castle 
+                    StartingPosition = new int[] { 21, 88 };//start position from Dungeon secret passage to Dark Castle 
                     break;
 
             }

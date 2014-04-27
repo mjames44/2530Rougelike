@@ -60,7 +60,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 50, 38 };//start position in cave
+                    StartingPosition = new int[] { 38, 50 };//start position in cave
                     break;
                 
             }

@@ -17,17 +17,17 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> {1012,1013,1014});// tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1012,1013,1014});// tiles that lead to other places
         }
         private void AddCharacters()
         {
-            MapCharacters.Add(new Troll(70, 27));
-            MapCharacters.Add(new Troll(89, 32));
-            MapCharacters.Add(new Troll(21, 31));
-            MapCharacters.Add(new DarkDwarf(51, 14));
-            MapCharacters.Add(new DarkDwarf(58, 3));            
-            MapCharacters.Add(new DarkDwarf(13, 4));
-            MapCharacters.Add(new Goblin (25, 26));
+            //MapCharacters.Add(new Troll(70, 27));
+           // MapCharacters.Add(new Troll(89, 32));
+           // MapCharacters.Add(new Troll(21, 31));
+           // MapCharacters.Add(new DarkDwarf(51, 14));
+           // MapCharacters.Add(new DarkDwarf(58, 3));            
+           // MapCharacters.Add(new DarkDwarf(13, 4));
+          //  MapCharacters.Add(new Goblin (25, 26));
             
         }
         protected override void AddTiles()
@@ -63,13 +63,13 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 28, 38 };//start position from Mountain to lake
+                    StartingPosition = new int[] { 32, 1 };//start position from Mountain to lake
                     break;
                 case 1:
                     StartingPosition = new int[] { 58, 2 };//start position from Mountain (small path) to lake
                     break;
                 case 2:
-                    StartingPosition = new int[] { 98, 32 };//start position from Forest 3 to lake
+                    StartingPosition = new int[] { 32, 3 };//start position from Forest 3 to lake
                     break;
 
             }
