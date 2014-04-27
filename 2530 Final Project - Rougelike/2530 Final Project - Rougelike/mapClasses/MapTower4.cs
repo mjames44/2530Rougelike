@@ -15,8 +15,15 @@ namespace _2530_Final_Project___Rougelike
             FileName = "mapTower4.csv";
 
             ReadMap();
+            AddCharacters();
             AddTiles();
             StandableTiles.AddRange(new List<int> {1519});// trigger tiles that lead to other  places
+        }
+
+        private void AddCharacters()
+        {
+            MapCharacters.Add(new Wraith(5, 2));
+
         }
 
         protected override void AddTiles()
