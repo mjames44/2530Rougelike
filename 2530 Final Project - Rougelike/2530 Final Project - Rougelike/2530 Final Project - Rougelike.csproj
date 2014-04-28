@@ -169,7 +169,7 @@
     <Compile Include="ItemClasses\NullItem.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\Rapier.cs">
+    <Compile Include="ItemClasses\Rapier.cs" />
     <Compile Include="ItemClasses\CappysSheild.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
