@@ -7,9 +7,9 @@ using System.IO;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MapDungeon : Map
+    class MapDarkCastleDungeon : Map
     {
-        public MapDungeon(int ep)
+        public MapDarkCastleDungeon(int ep)
             : base(ep)
         {
             FileName = "mapDungeon.csv";
@@ -38,8 +38,8 @@ namespace _2530_Final_Project___Rougelike
 
         protected override void AddTiles()
         {
-            TileInfo.Add(1514, new Tile(ConsoleColor.White, '#'));
-            TileInfo.Add(1515, new Tile(ConsoleColor.White, '?'));
+            TileInfo.Add(1514, new Tile(ConsoleColor.White, '<'));
+            TileInfo.Add(1515, new Tile(ConsoleColor.White, '>'));
 
         }
 

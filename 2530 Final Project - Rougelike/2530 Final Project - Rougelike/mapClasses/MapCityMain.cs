@@ -18,6 +18,31 @@ namespace _2530_Final_Project___Rougelike
             AddTiles();
             AddCharacters();
             StandableTiles.AddRange(new List<int> { 501, 502, 503, 504, 505, 506, 507, 508, 509 });
+
+            if (Game.PlayerTalkedToKing)
+            {
+                PostKingMapUpdate();
+            }
+        }
+
+        private void PostKingMapUpdate()
+        {
+            MapSpace[32][10] = 504;
+            MapSpace[32][17] = 505;
+            MapSpace[35][24] = 506;
+            MapSpace[13][34] = 507;
+            MapSpace[14][34] = 507;
+            MapSpace[21][88] = 508;
+            MapSpace[10][79] = 509;
+            MapSpace[11][79] = 509;
+
+            for (int i = 8; i < 17; i++)
+            {
+                MapSpace[i][98] = 502;
+                MapSpace[i][97] = 0;
+                MapSpace[i][99] = 99;
+            }
+
         }
 
         private void AddCharacters()

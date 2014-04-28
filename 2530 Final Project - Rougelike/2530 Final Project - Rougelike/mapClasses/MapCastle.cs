@@ -42,6 +42,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapCityMain(2);
                     Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
+                case 552:
+                    Game.newMap = new MapCastlePalace(0);
+                    Game.CheckSpace = typeof(MapCastlePalace).GetMethod("CheckSpace");
+                    break;
                 case 555:
                     Game.newMap = new MapCastleTowerLeft1(0);
                     Game.CheckSpace = typeof(MapCastleTowerLeft1).GetMethod("CheckSpace");
@@ -60,7 +64,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 18, 87 };
                     break;
                 case 3: // Palace
-                    StartingPosition = new int[] { 5, 47 };
+                    StartingPosition = new int[] { 6, 47 };
                     break;
             }
         }

@@ -38,11 +38,11 @@ namespace _2530_Final_Project___Rougelike
         {
 
             TileInfo.Add(1507, new Tile(ConsoleColor.White, '.'));
-            TileInfo.Add(1508, new Tile(ConsoleColor.White, '#'));
-            TileInfo.Add(1510, new Tile(ConsoleColor.White, '#'));
-            TileInfo.Add(1511, new Tile(ConsoleColor.White, '#'));
-            TileInfo.Add(1512, new Tile(ConsoleColor.White, '#'));
-            TileInfo.Add(1513, new Tile(ConsoleColor.White, '#'));
+            TileInfo.Add(1508, new Tile(ConsoleColor.White, '>'));
+            TileInfo.Add(1510, new Tile(ConsoleColor.White, '>'));
+            TileInfo.Add(1511, new Tile(ConsoleColor.White, '>'));
+            TileInfo.Add(1512, new Tile(ConsoleColor.White, '>'));
+            TileInfo.Add(1513, new Tile(ConsoleColor.White, '<'));
         }
 
         public override void CheckSpace(int mapValue)
@@ -71,8 +71,8 @@ namespace _2530_Final_Project___Rougelike
                     Game.CheckSpace = typeof(MapTower4).GetMethod("CheckSpace");
                     break;
                 case 1513://triggers to go to map Dungeon
-                    Game.newMap = new MapDungeon(0); //going into position
-                    Game.CheckSpace = typeof(MapDungeon).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastleDungeon(0); //going into position
+                    Game.CheckSpace = typeof(MapDarkCastleDungeon).GetMethod("CheckSpace");
                     break;
  
             }

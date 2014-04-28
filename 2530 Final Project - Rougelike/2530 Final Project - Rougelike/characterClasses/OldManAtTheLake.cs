@@ -16,7 +16,12 @@ namespace _2530_Final_Project___Rougelike
             Name = "Old Man Franks";
             Color = ConsoleColor.DarkGreen;
             talkCount = 0;
-            SpeechArray = new string[] { "You will will need to travel to the Dark Castle so find what you seek.", "The corndog is more powerful than it apears.", "Don't eat the fruitcake." };
+            SpeechArray = new string[] { 
+                "You will will need to travel to the Dark Castle so find what you seek.", 
+                "Head South through the forest.",
+                "The Castle is due south of here.",
+                "The corndog is more powerful than it apears.",
+                "Don't eat the fruitcake." };
         }
 
         public override void Move(int[] space)

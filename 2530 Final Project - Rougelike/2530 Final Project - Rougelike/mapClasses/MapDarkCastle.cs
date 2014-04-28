@@ -64,8 +64,8 @@ namespace _2530_Final_Project___Rougelike
                     Game.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
                     break;
                 case 1506://secret passage to MapDungeon
-                    Game.newMap = new MapDungeon(1); //going into position
-                    Game.CheckSpace = typeof(MapDungeon).GetMethod("CheckSpace");
+                    Game.newMap = new MapDarkCastleDungeon(1); //going into position
+                    Game.CheckSpace = typeof(MapDarkCastleDungeon).GetMethod("CheckSpace");
                     break;
 
             }

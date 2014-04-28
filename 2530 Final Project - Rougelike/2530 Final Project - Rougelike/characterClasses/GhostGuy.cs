@@ -16,16 +16,17 @@ namespace _2530_Final_Project___Rougelike
             Name = "Marly";
             Color = ConsoleColor.Gray;
             talkCount = 0;
-            SpeechArray = new string[] { "It is Dangerous to go alone take this. *gives stevo a corndog", "Good Luck", "All right you can have this too.*gives stevo fruitcake" };
+            SpeechArray = new string[] { String.Format("It is Dangerous to go alone take this. \n\n*gives {0} a corndog*", Game.pcName), "Good Luck", "All right you can have this too.*gives stevo fruitcake" };
         }
 
         public override void Talk()
         {
-            if (talkCount == 0)
+            if (!Game.PlayerTalkedToGhostGuy)
             {
                 Game.AddItem(new CornDog());
                 Game.Message = String.Format("{0}: {1}\n", Name, SpeechArray[0]);
                 Game.ShowMessage(0);
+                Game.PlayerTalkedToGhostGuy = true;
             }
             else if (talkCount == 10)
             {

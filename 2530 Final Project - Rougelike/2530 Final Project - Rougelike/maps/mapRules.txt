@@ -25,6 +25,11 @@ Value	Name		Character			Unicode
 11		Yellow Flower	// Y Flower Character	8903
 12		Blue Flower	// B Flower Character 	8720
 13		Pink Flower	// P Flower Character	8859
+21		Castle Pillar	// Wall Character	9618
+22		Palace Floor	'.'
+23		Throne Side	'*'
+24		Throne Back	'='
+25		Throne Floor	'.'
 99		Border Wall	'.'
 100		Open Door	'-'
 101-300 Closed door	'+'
@@ -55,10 +60,11 @@ Value	Name		Character			Unicode
 
 // Castle
 551		Castle -> City		'.'
-552		Castle -> CastleInside1	'-'
+552		Castle -> CastlePalace	'-'
 553		Castle DrawBridge		'='
 554		Castle -> Guard Tower L	'-'
 555		Castle -> Guard Tower R	'-'
+556		CastlePalace -> Castle	'.'
 571		Guard Tower L -> Castle '-'
 572		Guard Tower L -> GuardTower L2	'>'
 573		Guard Tower L2 -> GuardTower L	'<'

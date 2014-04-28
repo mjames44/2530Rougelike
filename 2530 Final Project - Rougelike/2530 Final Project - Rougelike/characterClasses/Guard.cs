@@ -11,7 +11,7 @@ namespace _2530_Final_Project___Rougelike
         public Guard(int x, int y)
             : base(x, y)
         {
-            CharacterRepresentation = 'g';
+            CharacterRepresentation = 'G';
             Name = "Guard";
             Color = ConsoleColor.DarkBlue;
 

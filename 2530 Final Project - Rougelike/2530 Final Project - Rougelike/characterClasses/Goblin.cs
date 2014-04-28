@@ -16,7 +16,7 @@ namespace _2530_Final_Project___Rougelike
             CharacterRepresentation = 'G';
             Name = "Goblin";
             Color = ConsoleColor.Green;
-            Attack = 2;
+            Attack = 4;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;

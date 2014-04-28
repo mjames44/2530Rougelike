@@ -31,7 +31,6 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Goblin(70, 10));
             MapCharacters.Add(new Troll(27, 27));
             MapCharacters.Add(new Goblin(53, 35));
-            MapCharacters.Add(new RandomGuy(5, 15));
         }
 
         protected override void AddTiles()
@@ -69,8 +68,8 @@ namespace _2530_Final_Project___Rougelike
                     Game.DrawMap();
                     break;
                 case 1003:
-                    Game.newMap = new MapAbandonedHouse(0);
-                    Game.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
+                    Game.newMap = new MapForest1AbandonedHouse(0);
+                    Game.CheckSpace = typeof(MapForest1AbandonedHouse).GetMethod("CheckSpace");
                     break;
 
             }

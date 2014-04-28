@@ -10,7 +10,12 @@ namespace _2530_Final_Project___Rougelike
     {
         static void Main(string[] args)
         {
-            Game theGame = new Game(new MapCityMain(0));
+            Console.Clear();
+
+            Console.WriteLine("Please name your hero.");
+            string name = Console.ReadLine().Split(' ')[0];
+
+            Game theGame = new Game(new MapForest1(0), name);
         }
     }
 }

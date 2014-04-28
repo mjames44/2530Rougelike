@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike.mapClasses
 {
-    class MapAbandonedHouse : Map
+    class MapForest1AbandonedHouse : Map
     {
-        public MapAbandonedHouse(int ep)
+        public MapForest1AbandonedHouse(int ep)
             : base(ep)
         {
-            FileName = "mapAbandonedHouse.csv";
+            FileName = "mapForest1AbandonedHouse.csv";
 
             ReadMap();
             AddTiles();

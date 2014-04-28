@@ -32,6 +32,7 @@ namespace _2530_Final_Project___Rougelike
         static SpaceChecker spacecheck;
 
         internal static Boolean PlayerTalkedToKing {get; set;}
+        internal static Boolean PlayerTalkedToGhostGuy { get; set; }
 
         public static bool Done; // Keeps the game going until the player inputs 'Q' or dies.
         public static string Message { get; set; } // The output message for feedback to the user.
@@ -42,7 +43,7 @@ namespace _2530_Final_Project___Rougelike
         #endregion
 
         #region Main Method
-        public Game(Map mapName)
+        public Game(Map mapName, string name)
         {
             currentMap = mapName;
 
@@ -53,7 +54,7 @@ namespace _2530_Final_Project___Rougelike
             maxMessageWidth = 100;
 
             // Sets up the game for the first time.
-            InitializeGame();
+            InitializeGame(name);
 
             while (!Done)
             {
@@ -85,36 +86,6 @@ namespace _2530_Final_Project___Rougelike
             }
         }
 
-        private static void checkCharacters()
-        {
-            List<int> deadMonsters = new List<int>();
-
-            for (int i = 0; i < characterList.Count; i++)
-            {
-                if (characterList.ElementAt(i) is Monster)
-                {
-                    Monster tempMonster = (Monster)characterList.ElementAt(i);
-                    if (tempMonster.HP <= 0)
-                        deadMonsters.Add(i);
-                }
-                else if (characterList.ElementAt(i) is PlayerCharacter)
-                {
-                    if (pc.CurrentHP <= 0)
-                    {
-                        pc.Death();
-                        break;
-                    }
-                }
-            }
-
-            foreach (int el in deadMonsters)
-            {
-                MonsterDeath(el);
-            }
-
-            pc.WriteInfo();
-        }
-
         #endregion
 
         #region Initialize Methods
@@ -123,14 +94,15 @@ namespace _2530_Final_Project___Rougelike
          * Creates a new game from default values.
          * Will eventually be one of two options, the other being to load from a saved game.
          * */
-        private static void InitializeGame()
+        private static void InitializeGame(string name)
         {
             newMap = currentMap;
             CheckSpace = currentMap.GetType().GetMethod("CheckSpace");
             PlayerTalkedToKing = false;
+            PlayerTalkedToGhostGuy = false;
 
             InitializeConsole();
-            InitializePlayChar();
+            InitializePlayChar(name);
             InitializeMap(currentMap);
 
             Console.CursorVisible = false;
@@ -151,9 +123,9 @@ namespace _2530_Final_Project___Rougelike
             }
         }
 
-        private static void InitializePlayChar()
+        private static void InitializePlayChar(string name)
         {
-            pc = new PlayerCharacter("Stevo");
+            pc = new PlayerCharacter(name);
             characterList = new List<Character>();
             characterList.Add(pc);
 
@@ -184,6 +156,36 @@ namespace _2530_Final_Project___Rougelike
         #endregion
 
         #region Update Methods
+        private static void checkCharacters()
+        {
+            List<int> deadMonsters = new List<int>();
+
+            for (int i = 0; i < characterList.Count; i++)
+            {
+                if (characterList.ElementAt(i) is Monster)
+                {
+                    Monster tempMonster = (Monster)characterList.ElementAt(i);
+                    if (tempMonster.HP <= 0)
+                        deadMonsters.Add(i);
+                }
+                else if (characterList.ElementAt(i) is PlayerCharacter)
+                {
+                    if (pc.CurrentHP <= 0)
+                    {
+                        pc.Death();
+                        break;
+                    }
+                }
+            }
+
+            foreach (int el in deadMonsters)
+            {
+                MonsterDeath(el);
+            }
+
+            pc.WriteInfo();
+        }
+
         private static void KeyboardInput(ConsoleKeyInfo keyPressed)
         {
             switch (keyPressed.Key)

@@ -16,7 +16,10 @@ namespace _2530_Final_Project___Rougelike
             Name = "Lulabell";
             Color = ConsoleColor.Magenta;
             talkCount = 0;
-            SpeechArray = new string[] { "My husband is not here.    ", "I sent him to the lake to bring us back some fish for dinner.         ", "He has a secret hiding spot where he keeps his sword. It is in the North West part of the cave." };
+            SpeechArray = new string[] { 
+                "My husband is not here.    ", 
+                "I sent him to the lake to bring us back some fish for dinner.         ", 
+                "He has a secret hiding spot where he keeps his sword. \nIt is in the North West part of the cave." };
         }
 
         public override void Move(int[] space)

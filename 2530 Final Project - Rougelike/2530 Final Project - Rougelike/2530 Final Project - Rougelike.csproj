@@ -44,6 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="characterClasses\Advisor.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\GuardCaptain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\King.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="characterClasses\Bat.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -71,7 +80,9 @@
     <Compile Include="characterClasses\Ghost.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\GhostGuy.cs" />
+    <Compile Include="characterClasses\GhostGuy.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="characterClasses\Giant.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -93,8 +104,12 @@
     <Compile Include="characterClasses\Ogre.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\CaveWife.cs" />
-    <Compile Include="characterClasses\OldManAtTheLake.cs" />
+    <Compile Include="characterClasses\CaveWife.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\OldManAtTheLake.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="characterClasses\Orc.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -143,13 +158,19 @@
     <Compile Include="characterClasses\Troll.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\Wraith.cs" />
+    <Compile Include="characterClasses\Wraith.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="ItemClasses\Chainmail.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\CornDog.cs" />
-    <Compile Include="ItemClasses\NullItem.cs" />
+    <Compile Include="ItemClasses\CornDog.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ItemClasses\NullItem.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="ItemClasses\TitaniumArmor.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -171,7 +192,9 @@
     <Compile Include="ItemClasses\Keys.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\Rapier.cs" />
+    <Compile Include="ItemClasses\Rapier.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="ItemClasses\CappysSheild.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -184,7 +207,10 @@
     <Compile Include="ItemClasses\WoodenHelmet.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="mapClasses\MapAbandonedHouse.cs">
+    <Compile Include="mapClasses\MapForest1AbandonedHouse.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapCastlePalace.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="mapClasses\MapCityArmorySmith.cs">
@@ -235,7 +261,7 @@
     <Compile Include="mapClasses\MapDarkCastleMainFloor.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="mapClasses\MapDungeon.cs">
+    <Compile Include="mapClasses\MapDarkCastleDungeon.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="mapClasses\Map.cs">
@@ -284,7 +310,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="maps\mapAbandonedHouse.csv">
+    <None Include="maps\mapForest1AbandonedHouse.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\mapCastlePalace.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="maps\mapCityArmorySmith.csv">
