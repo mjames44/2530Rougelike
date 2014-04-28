@@ -9,6 +9,8 @@ namespace _2530_Final_Project___Rougelike
 {
     class MapTower2 : Map
     {
+        TitaniumArmor TArmor = new TitaniumArmor();
+
         public MapTower2(int ep)
             : base(ep)
         {
@@ -17,7 +19,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddCharacters();
             AddTiles();
-            StandableTiles.AddRange(new List<int> {1517});// trigger tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1517, 1527});// trigger tiles that lead to other  places
         }
 
         private void AddCharacters()
@@ -30,6 +32,7 @@ namespace _2530_Final_Project___Rougelike
         {
 
             TileInfo.Add(1517, new Tile(ConsoleColor.White, '#'));
+            TileInfo.Add(1527, new Tile(TArmor.Color, TArmor.CharacterRepresentation));
 
         }
 
@@ -40,6 +43,10 @@ namespace _2530_Final_Project___Rougelike
                 case 1517://Trigger to go to map Dark Castle Main Floor
                     Game.newMap = new MapDarkCastleMainFloor(2);
                     Game.CheckSpace = typeof(MapDarkCastleMainFloor).GetMethod("CheckSpace");
+                    break;
+                case 1527:
+                    Game.AddItem(TArmor);
+                    MapSpace[8][9] = 0;
                     break;
             
  
