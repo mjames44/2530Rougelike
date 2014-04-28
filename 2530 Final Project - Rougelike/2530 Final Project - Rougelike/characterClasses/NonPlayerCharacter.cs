@@ -23,9 +23,7 @@ namespace _2530_Final_Project___Rougelike
 
         public virtual void Talk()
         {
-            talkCount++;
-
-            Game.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount % SpeechArray.Length]);
+            Game.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount++ % SpeechArray.Length]);
             Game.ShowMessage(0);
         }
         
@@ -33,12 +31,14 @@ namespace _2530_Final_Project___Rougelike
         {
 
 
-            if (moveCount++ % (countMod ?? 3) == 0)
+            if (moveCount % (countMod ?? 3) == 0)
             {
                 base.Move(space);
             }
             else
                 CharacterMoved = false;
+
+            moveCount++;
         }
     }
 }
