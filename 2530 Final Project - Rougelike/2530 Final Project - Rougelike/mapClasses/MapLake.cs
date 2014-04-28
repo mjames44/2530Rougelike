@@ -21,13 +21,13 @@ namespace _2530_Final_Project___Rougelike
         }
         private void AddCharacters()
         {
-           // MapCharacters.Add(new Troll(70, 27));
-            //MapCharacters.Add(new Troll(89, 32));
-            //MapCharacters.Add(new Troll(21, 31));
-            //MapCharacters.Add(new DarkDwarf(51, 14));
-            //MapCharacters.Add(new DarkDwarf(58, 3));            
-            //MapCharacters.Add(new DarkDwarf(13, 4));
-            //MapCharacters.Add(new Goblin (25, 26));
+            MapCharacters.Add(new Troll(3, 8));
+            MapCharacters.Add(new Troll(5, 21));
+            MapCharacters.Add(new Troll(17, 36));
+            MapCharacters.Add(new DarkDwarf(38, 34));
+            MapCharacters.Add(new DarkDwarf(44, 31));            
+            MapCharacters.Add(new DarkDwarf(68, 33));
+            MapCharacters.Add(new Goblin (85, 35));
             MapCharacters.Add(new OldManAtTheLake(41, 23));
             
         }

@@ -14,14 +14,22 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
-            //AddCharacters();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 1017, 1018 });
 
         }
 
         private void AddCharacters()
         {
-            
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
+            MapCharacters.Add(new Giant(6, 8));
         }
 
         protected override void AddTiles()
