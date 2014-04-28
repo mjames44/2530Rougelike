@@ -20,15 +20,20 @@ namespace _2530_Final_Project___Rougelike
 
         public abstract void DropItem();
 
-        internal PlayerCharacter AttackPlayer(PlayerCharacter player)
+        internal int AttackPlayer(PlayerCharacter player)
         {
             int attackDamage = Attack + GetDamage() - (player.Defense + player.Armor);
 
-            player.CurrentHP -= attackDamage;
+            if (attackDamage > 0)
+            {
 
-            Game.Message = String.Format("{0} hit you for {1} damage.", player.Name, attackDamage);
+                Game.Message = String.Format("{0} hit you for {1} damage.", Name, attackDamage);
 
-            return player;
+                return attackDamage;
+            }
+            else
+                return 0;
+            
         }
     }
 }
