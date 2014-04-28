@@ -93,6 +93,7 @@
     <Compile Include="characterClasses\Ogre.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\CaveWife.cs" />
     <Compile Include="characterClasses\OldManAtTheLake.cs" />
     <Compile Include="characterClasses\Orc.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -171,6 +172,9 @@
     </Compile>
     <Compile Include="ItemClasses\Rapier.cs" />
     <Compile Include="ItemClasses\CappysSheild.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ItemClasses\ExcaliburSword.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ItemClasses\Raiper.cs">

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class CappySheild : Item
+    class Excalibur : Item
     {
-        public CappySheild() : base("Captain America's Sheild", 2, 5, 100, 0, 'A', ConsoleColor.Red) { }
+        public Excalibur() : base("Excalbur sword", 10, 30, 10, 0, 'E', ConsoleColor.Gray) { }
     }
 }

@@ -9,6 +9,8 @@ namespace _2530_Final_Project___Rougelike
 {
     class MapCave : Map
     {
+        Excalibur ExcaliburSword = new Excalibur();
+
         public MapCave(int ep) : base (ep)
         {
             FileName = "mapCave.csv";
@@ -16,7 +18,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddCharacters();
             AddTiles();
-            StandableTiles.AddRange(new List<int> { 20, 21, 1504});// tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> { 20, 21, 1504, 1526});// tiles that lead to other  places
         }
 
         private void AddCharacters()
@@ -30,6 +32,7 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new DarkDwarf (25, 37));
             MapCharacters.Add(new Bat(50, 27));
             MapCharacters.Add(new Bat(54, 23));
+            MapCharacters.Add(new CaveWife(80, 18));
 
         }
         protected override void AddTiles()
@@ -39,6 +42,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo[2].Color = ConsoleColor.Red;
             TileInfo[2].CharacterRepresentation = (char)9618;
             TileInfo.Add(1504, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(1526, new Tile(ExcaliburSword.Color, ExcaliburSword.CharacterRepresentation));
 
         }
 
@@ -51,6 +55,10 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapMountain(1);
                     Game.CheckSpace = typeof(MapMountain).GetMethod("CheckSpace");
                     break;
+                case 1526:
+                    Game.AddItem(ExcaliburSword);
+                    MapSpace[8][26] = 20;
+                    break;
                 
             }
         }
@@ -60,7 +68,7 @@ namespace _2530_Final_Project___Rougelike
             switch (entryPoint)
             {
                 case 0:
-                    StartingPosition = new int[] { 38, 50 };//start position in cave
+                    StartingPosition = new int[] { 38, 48 };//start position in cave
                     break;
                 
             }
