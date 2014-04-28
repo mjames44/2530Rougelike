@@ -8,6 +8,6 @@ namespace _2530_Final_Project___Rougelike
 {
     class TitaniumArmor : Item
     {
-        public TitaniumArmor() : base("Titanium Armor", 0, 5, 100, 0, 'T', ConsoleColor.Yellow) { }
+        public TitaniumArmor() : base("Titanium Armor", 0, 5, 50, 0, 'T', ConsoleColor.Yellow) { }
     }
 }
