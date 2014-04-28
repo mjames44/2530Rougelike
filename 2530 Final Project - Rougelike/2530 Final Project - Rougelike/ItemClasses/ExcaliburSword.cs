@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Program
+    class Excalibur : Item
     {
-        static void Main(string[] args)
-        {
-            Game theGame = new Game(new MapForest1(0));
-        }
+        public Excalibur() : base("Excalbur sword", 10, 30, 10, 0, 'E', ConsoleColor.Gray) { }
     }
 }
