@@ -204,12 +204,18 @@
     <Compile Include="mapClasses\MapDarkCastle.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="mapClasses\MapForest1.cs" />
+    <Compile Include="mapClasses\MapForest1.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="mapClasses\MapForest2.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="mapClasses\MapForest3.cs" />
-    <Compile Include="mapClasses\MapForest4.cs" />
+    <Compile Include="mapClasses\MapForest3.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="mapClasses\MapForest4.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="mapClasses\MapLake.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
