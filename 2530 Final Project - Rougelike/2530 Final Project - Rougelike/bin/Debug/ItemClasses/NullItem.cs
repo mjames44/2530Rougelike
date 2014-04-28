@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Keys : Item  
+    class NullItem : Item
     {
-        public Keys() : base("Key", 0, 0, 0, 0, 'k', ConsoleColor.Yellow) { }
+        public NullItem() : base("", 0, 0, 0, 0,' ', ConsoleColor.Black) { }
     }
 }
