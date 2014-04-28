@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Keys : Item  
+    interface NonPlayer
     {
-        public Keys() : base("Key", 0, 0, 0, 0, 'k', ConsoleColor.Yellow) { }
+        int HP { get; set; }
+        
     }
 }
