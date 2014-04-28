@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     {   
         public Troll(int x, int y) : base(x,y)
         {
-            HP = 25;
+            HP = 35;
             XP = 30;
 
             CharacterRepresentation = 'T';
@@ -20,7 +20,7 @@ namespace _2530_Final_Project___Rougelike
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 5;
+            MaxDamage = 9;
         }
 
         public override void DropItem()
