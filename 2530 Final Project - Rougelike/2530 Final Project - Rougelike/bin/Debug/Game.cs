@@ -47,7 +47,7 @@ namespace _2530_Final_Project___Rougelike
 
             maxMessageCounter = 10;
             messagePosition = 43;
-            maxMessageWidth = 125;
+            maxMessageWidth = 100;
 
             // Sets up the game for the first time.
             InitializeGame();
