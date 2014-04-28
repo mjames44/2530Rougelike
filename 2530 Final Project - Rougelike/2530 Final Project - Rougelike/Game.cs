@@ -31,6 +31,8 @@ namespace _2530_Final_Project___Rougelike
         static Map currentMap;  // Stores the current map object.
         static SpaceChecker spacecheck;
 
+        internal static Boolean PlayerTalkedToKing {get; set;}
+
         public static string Message { get; set; } // The output message for feedback to the user.
         public static MethodInfo CheckSpace;
         public static Map newMap;
@@ -45,7 +47,7 @@ namespace _2530_Final_Project___Rougelike
 
             maxMessageCounter = 10;
             messagePosition = 43;
-            maxMessageWidth = 52;
+            maxMessageWidth = 125;
 
             // Sets up the game for the first time.
             InitializeGame();
@@ -122,6 +124,7 @@ namespace _2530_Final_Project___Rougelike
         {
             newMap = currentMap;
             CheckSpace = currentMap.GetType().GetMethod("CheckSpace");
+            PlayerTalkedToKing = false;
 
             InitializeConsole();
             InitializePlayChar();
@@ -537,6 +540,8 @@ namespace _2530_Final_Project___Rougelike
 
             Dictionary<int, List<int[]>> whatIsWhere = AnalyzeArray(theMap);
 
+            currentMap.TileInfo.OrderBy(s => s.Key);
+
             Console.Clear();
 
             foreach (int el in whatIsWhere.Keys)
@@ -602,10 +607,13 @@ namespace _2530_Final_Project___Rougelike
 
         public static void ShowMessage(int? i)
         {
+
+
             Console.ForegroundColor = ConsoleColor.White;
 
             if (Message != oldMessage)
             {
+
                 oldMessage = Message;
 
                 WipeMessage();

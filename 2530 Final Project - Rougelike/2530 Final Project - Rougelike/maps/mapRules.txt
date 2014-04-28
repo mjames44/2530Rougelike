@@ -48,6 +48,11 @@ Value	Name		Character			Unicode
 514		Door Barracks -> CityMain	'.'
 515		Door Stables -> CityMain	'.'
 
+521		Smith Sword			'|'
+522		Armory Helmet			'H'
+523		Smith Healing Potion	'p'
+524		Armory Healing Potion	'p'
+
 // Castle
 551		Castle -> City		'.'
 552		Castle -> CastleInside1	'-'

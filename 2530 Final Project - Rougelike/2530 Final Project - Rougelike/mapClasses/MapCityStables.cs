@@ -15,14 +15,28 @@ namespace _2530_Final_Project___Rougelike
             FileName = "mapCityStables.csv";
 
             ReadMap();
-            
+
             base.AddTiles();
             StandableTiles.AddRange(new List<int> { 515 });
+            AddCharacters();
         }
 
         protected override void AddTiles()
         {
-            TileInfo.Add(515, new Tile(ConsoleColor.White, ','));
+            TileInfo.Add(515, new Tile(ConsoleColor.White, '.'));
+        }
+
+        public void AddCharacters()
+        {
+            MapCharacters = new List<Character>();
+
+            MapCharacters.Add(new Horse(49, 10));
+            MapCharacters.Add(new Horse(46, 13));
+            MapCharacters.Add(new Horse(49, 19));
+            MapCharacters.Add(new Horse(47, 22));
+            MapCharacters.Add(new Goat(46, 27));
+            MapCharacters.Add(new Goat(48, 30));
+            MapCharacters.Add(new FemaleVillager(53, 15, "Beca"));
         }
 
         public override void CheckSpace(int mapValue)

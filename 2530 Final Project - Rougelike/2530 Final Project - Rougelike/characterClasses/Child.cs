@@ -8,11 +8,11 @@ namespace _2530_Final_Project___Rougelike
 {
     class Child : Villager, NonPlayer
     {
-        public Child(int x, int y)
+        public Child(int x, int y, string name)
             : base(x, y)
         {
-            CharacterRepresentation = 'c';
-            Name = "Child";
+            CharacterRepresentation = name[0];
+            Name = name;
 
             SpeechArray = new string[]{
                 "Hey!",
@@ -20,6 +20,5 @@ namespace _2530_Final_Project___Rougelike
                 "Save the Princess!"};
         }
 
-        public int HP { get; set; }
     }
 }

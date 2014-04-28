@@ -19,5 +19,9 @@ namespace _2530_Final_Project___Rougelike
         }
 
         public int HP { get; set; }
+
+        public override void Move(int[] space)
+        {
+        }
     }
 }

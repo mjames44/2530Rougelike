@@ -47,6 +47,15 @@
     <Compile Include="characterClasses\Bat.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\Goat.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\BarracksCaptain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\Horse.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="characterClasses\Character.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -106,10 +115,10 @@
     <Compile Include="characterClasses\Dog.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\MaleVillagerWill.cs">
+    <Compile Include="characterClasses\MaleVillager.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\FemaleVillagerShauna.cs">
+    <Compile Include="characterClasses\FemaleVillager.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="characterClasses\Child.cs">
@@ -160,7 +169,7 @@
     <Compile Include="ItemClasses\NullItem.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\Raiper.cs">
+    <Compile Include="ItemClasses\Rapier.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ItemClasses\RustyDagger.cs">

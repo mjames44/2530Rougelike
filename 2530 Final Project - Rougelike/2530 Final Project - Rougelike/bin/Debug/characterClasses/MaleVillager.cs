@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class MaleVillagerWill : Villager, NonPlayer
+    class MaleVillager : Villager, NonPlayer
     {
-        public MaleVillagerWill(int x, int y)
+        public MaleVillager(int x, int y, string name)
             : base(x, y)
         {
-            CharacterRepresentation = 'g';
-            Name = "Will";
-            Color = ConsoleColor.White;
+            CharacterRepresentation = name[0];
+            Name = name;
+            Color = ConsoleColor.Blue;
 
             SpeechArray = new string[]{
                 "Hello!",
@@ -21,6 +21,5 @@ namespace _2530_Final_Project___Rougelike
                 "Terrible news that."};
         }
 
-        public int HP { get; set; }
     }
 }
