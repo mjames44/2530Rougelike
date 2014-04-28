@@ -15,7 +15,7 @@ namespace _2530_Final_Project___Rougelike
             Name = "Princess Buttercup";
             Color = ConsoleColor.White;
 
-            SpeechArray = new string[]{"Oops! I didn't mean to turn you into a Toad!","My Hero!","You deserve a kiss!"};
+            SpeechArray = new string[] { "My Hero!", "You deserve a kiss!", "Oops! I didn't mean to turn you into a Toad!" };
         }
 
         public int HP { get; set; }

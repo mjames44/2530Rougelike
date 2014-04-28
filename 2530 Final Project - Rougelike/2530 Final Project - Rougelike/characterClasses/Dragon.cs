@@ -11,17 +11,17 @@ namespace _2530_Final_Project___Rougelike
         public Dragon(int x, int y)
             : base(x, y)
         {
-            HP = 80;
+            HP = 180;
             XP = 90;
 
             CharacterRepresentation = 'D';
             Name = "Dragon";
             Color = ConsoleColor.Cyan;
-            Attack = 20;
+            Attack = 40;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 20;
+            MaxDamage = 40;
         }
 
         public override void DropItem()

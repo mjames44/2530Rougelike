@@ -59,10 +59,10 @@
     <Compile Include="characterClasses\Character.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\DarkDwarf.cs">
+    <Compile Include="characterClasses\Demon.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\Demon.cs">
+    <Compile Include="characterClasses\DarkDwarf.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="characterClasses\Dragon.cs">
