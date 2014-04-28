@@ -46,7 +46,7 @@ namespace _2530_Final_Project___Rougelike
                     break;
                 case 1527:
                     Game.AddItem(TArmor);
-                    MapSpace[9][8] = 0;
+                    MapSpace[8][9] = 0;
                     break;
             
  
