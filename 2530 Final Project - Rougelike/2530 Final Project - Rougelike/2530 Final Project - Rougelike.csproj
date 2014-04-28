@@ -47,6 +47,15 @@
     <Compile Include="characterClasses\Bat.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\Goat.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\BarracksCaptain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="characterClasses\Horse.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="characterClasses\Character.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -84,6 +93,7 @@
     <Compile Include="characterClasses\Ogre.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="characterClasses\CaveWife.cs" />
     <Compile Include="characterClasses\OldManAtTheLake.cs" />
     <Compile Include="characterClasses\Orc.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -106,10 +116,10 @@
     <Compile Include="characterClasses\Dog.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\MaleVillagerWill.cs">
+    <Compile Include="characterClasses\MaleVillager.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="characterClasses\FemaleVillagerShauna.cs">
+    <Compile Include="characterClasses\FemaleVillager.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="characterClasses\Child.cs">
@@ -160,10 +170,11 @@
     <Compile Include="ItemClasses\NullItem.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="ItemClasses\Rapier.cs" />
     <Compile Include="ItemClasses\CappysSheild.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ItemClasses\Raiper.cs">
+    <Compile Include="ItemClasses\ExcaliburSword.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ItemClasses\RustyDagger.cs">
@@ -193,6 +204,7 @@
     <Compile Include="mapClasses\MapDarkCastle.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="mapClasses\MapForest1.cs" />
     <Compile Include="mapClasses\MapForest2.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -247,9 +259,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="mapClasses\MapLevel0.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="mapClasses\MapForest1.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="NonPlayer.cs">

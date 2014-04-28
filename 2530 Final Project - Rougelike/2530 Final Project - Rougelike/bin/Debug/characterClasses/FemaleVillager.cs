@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Child : Villager, NonPlayer
+    class FemaleVillager : Villager, NonPlayer
     {
-        public Child(int x, int y, string name)
+        public FemaleVillager(int x, int y, string name)
             : base(x, y)
         {
             CharacterRepresentation = name[0];
             Name = name;
 
             SpeechArray = new string[]{
-                "Hey!",
-                "Hi!",
-                "Save the Princess!"};
+                "Hello.", 
+                "Oh our poor Princess.",
+                "Welcome to our town."};
         }
 
     }

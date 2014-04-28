@@ -16,7 +16,17 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             base.AddTiles();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 513 });
+        }
+
+        private void AddCharacters()
+        {
+            MapCharacters = new List<Character>();
+
+            MapCharacters.Add(new FemaleVillager(47, 15,"Penny"));
+            MapCharacters.Add(new Child(54, 24,"maisy"));
+            MapCharacters.Add(new Child(56, 16,"mario"));
         }
 
         protected override void AddTiles()

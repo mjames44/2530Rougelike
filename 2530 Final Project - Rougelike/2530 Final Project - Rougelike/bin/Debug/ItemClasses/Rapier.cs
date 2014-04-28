@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Program
+    class Rapier : Item
     {
-        static void Main(string[] args)
-        {
-            Game theGame = new Game(new MapForest1(0));
-        }
+        public Rapier() : base("Rapier", 2, 8, 5, 0, 'R', ConsoleColor.Gray) { }
     }
 }

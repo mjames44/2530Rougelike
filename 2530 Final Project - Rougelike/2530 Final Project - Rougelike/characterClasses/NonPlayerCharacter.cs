@@ -11,6 +11,7 @@ namespace _2530_Final_Project___Rougelike
         public string[] SpeechArray { get; protected set; }
         protected int talkCount;
         protected int moveCount;
+        protected int? countMod;
 
         public NonPlayerCharacter(int x, int y)
         {
@@ -22,20 +23,22 @@ namespace _2530_Final_Project___Rougelike
 
         public virtual void Talk()
         {
-            talkCount++;
-
-            Game.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount % SpeechArray.Length]);
+            Game.Message = String.Format("{0}: {1}", Name, SpeechArray[talkCount++ % SpeechArray.Length]);
             Game.ShowMessage(0);
         }
         
         public override void Move(int[] space)
         {
-            if (moveCount++ % 3 == 0)
+
+
+            if (moveCount % (countMod ?? 3) == 0)
             {
                 base.Move(space);
             }
             else
                 CharacterMoved = false;
+
+            moveCount++;
         }
     }
 }

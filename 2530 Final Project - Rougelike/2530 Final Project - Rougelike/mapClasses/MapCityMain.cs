@@ -16,7 +16,19 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 501, 502, 503, 504, 505, 506, 507, 508, 509 });
+        }
+
+        private void AddCharacters()
+        {
+            MapCharacters = new List<Character>();
+
+            MapCharacters.Add(new BrownCat(72, 34));
+            MapCharacters.Add(new BrownCat(80, 4));
+            MapCharacters.Add(new GrayCat(8, 37));
+            MapCharacters.Add(new Dog(22, 25));
+            MapCharacters.Add(new Dog(19, 8));
         }
 
         protected override void AddTiles()

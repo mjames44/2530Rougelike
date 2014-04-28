@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class FemaleVillagerShauna : Villager, NonPlayer
+    class FemaleVillager : Villager, NonPlayer
     {
-        public FemaleVillagerShauna(int x, int y)
+        public FemaleVillager(int x, int y, string name)
             : base(x, y)
         {
-            Name = "Shauna";
+            CharacterRepresentation = name[0];
+            Name = name;
 
             SpeechArray = new string[]{
                 "Hello.", 
@@ -19,6 +20,5 @@ namespace _2530_Final_Project___Rougelike
                 "Welcome to our town."};
         }
 
-        public int HP { get; set; }
     }
 }

@@ -13,14 +13,15 @@ namespace _2530_Final_Project___Rougelike
         HealingPotion healthPot = new HealingPotion();
 
 
-        public MapForest1(int ep) : base(ep)
+        public MapForest1(int ep)
+            : base(ep)
         {
             FileName = "mapForest1.csv";
 
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003});
+            StandableTiles.AddRange(new List<int> { 1006, 2001, 1004, 1005, 1002, 1003 });
 
         }
 
@@ -51,23 +52,23 @@ namespace _2530_Final_Project___Rougelike
                     Game.newMap = new MapCityMain(0);
                     Game.CheckSpace = typeof(MapCityMain).GetMethod("CheckSpace");
                     break;
-                case 2001 :
+                case 2001:
                     Game.AddItem(dagger);
                     MapSpace[9][6] = 0;
                     break;
-                case 1002 :
+                case 1002:
                     Game.AddItem(healthPot);
                     MapSpace[37][53] = 0;
                     break;
-                case 1004 :
+                case 1004:
                     MapSpace[29][53] = 0;
                     Game.DrawMap();
                     break;
-                case 1005 :
+                case 1005:
                     MapSpace[34][15] = 1003;
                     Game.DrawMap();
                     break;
-                case 1003 :
+                case 1003:
                     Game.newMap = new MapAbandonedHouse(0);
                     Game.CheckSpace = typeof(MapAbandonedHouse).GetMethod("CheckSpace");
                     break;
