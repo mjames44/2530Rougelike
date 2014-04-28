@@ -24,7 +24,7 @@ namespace _2530_Final_Project___Rougelike
         public int XP { get; set; }
         public int NextLevel { get; private set; }
         public int Level { get; private set; }
-        public int CurrentHP { get; set; }
+        public int CurrentHP { get; private set; }
         public int MaxHP { get; protected set; }
 
         // Constructors
@@ -35,7 +35,7 @@ namespace _2530_Final_Project___Rougelike
             levelDefenseProgression = new int[] { 2, 1, 2, 2, 3, 3 };
             levelLockpick = new int[] { 10, 10, 15, 20, 20, 25 };
 
-            levelIntervals = new int[] {100, 200, 400, 800, 1600, Int16.MaxValue };
+            levelIntervals = new int[] { 100, 200, 400, 800, 1600, Int16.MaxValue };
 
             infoLeft = 105;
             infoTop = 2;
@@ -47,12 +47,12 @@ namespace _2530_Final_Project___Rougelike
         // Methods
         private void NewPlayerCharacter(string name)
         {
-            CharacterRepresentation = '@'; 
+            CharacterRepresentation = '@';
             Name = name;
             Color = ConsoleColor.White;
             Attack = 5;
             Defense = 5;
-            MinDamage =0;
+            MinDamage = 0;
             MaxDamage = 0;
 
             Level = 1;
@@ -180,7 +180,7 @@ namespace _2530_Final_Project___Rougelike
         {
             if (otherChar is Monster)
             {
-                Monster monster = (Monster)otherChar; 
+                Monster monster = (Monster)otherChar;
                 monster = AttackMonster(monster);
 
                 return monster;
@@ -202,6 +202,8 @@ namespace _2530_Final_Project___Rougelike
 
             Game.Message = String.Format("You hit the {0} for {1} damage.", monster.Name, attackDamage);
 
+            CurrentHP -= monster.AttackPlayer(this);
+
             return monster;
         }
 
@@ -218,6 +220,8 @@ namespace _2530_Final_Project___Rougelike
             if (CurrentHP <= 0)
             {
                 Game.Message = "Oh dear you died!";
+                Game.Done = true;
+
                 Game.ShowMessage(0);
             }
         }

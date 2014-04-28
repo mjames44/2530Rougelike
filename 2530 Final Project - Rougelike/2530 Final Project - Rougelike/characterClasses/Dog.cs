@@ -12,7 +12,7 @@ namespace _2530_Final_Project___Rougelike
         {
             CharacterRepresentation = 'd';
             Name = "Dog";
-            Color = ConsoleColor.White;
+            Color = ConsoleColor.DarkYellow;
 
             SpeechArray = new string[]{"Woof Woof!", "Arf!","*Pant* *Pant*"};
         }

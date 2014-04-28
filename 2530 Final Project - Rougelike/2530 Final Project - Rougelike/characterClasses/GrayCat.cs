@@ -13,7 +13,7 @@ namespace _2530_Final_Project___Rougelike
         {
             CharacterRepresentation = 'm';
             Name = "Gray Cat";
-            Color = ConsoleColor.DarkYellow;
+            Color = ConsoleColor.Gray;
 
             SpeechArray = new string[] { "Meow!", "Mew!", "Purrrrrr...." };
         }
