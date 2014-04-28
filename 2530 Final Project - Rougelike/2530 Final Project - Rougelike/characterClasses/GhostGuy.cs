@@ -16,7 +16,8 @@ namespace _2530_Final_Project___Rougelike
             Name = "Marly";
             Color = ConsoleColor.Gray;
             talkCount = 0;
-            SpeechArray = new string[] { String.Format("It is Dangerous to go alone take this. \n\n*gives {0} a corndog*", Game.pcName), "Good Luck", "All right you can have this too.*gives stevo fruitcake" };
+            SpeechArray = new string[] { String.Format("It is Dangerous to go alone take this. \n\n*gives {0} a corndog*", Game.pcName), 
+                "Good Luck", "All right you can have this too. \n\n*gives you a fruitcake*" };
         }
 
         public override void Talk()
