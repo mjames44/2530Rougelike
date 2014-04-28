@@ -405,6 +405,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HelpFile.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="maps\mapRules.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

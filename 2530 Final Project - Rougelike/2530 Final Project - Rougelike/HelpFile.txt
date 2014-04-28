@@ -1,0 +1,13 @@
+﻿Help Screen
+
+Controls
+
+			? - Shows the Help Screen
+			o - open locked doors
+			Q - quit game
+			i - show inventory (use items, equip weapons armor)
+			r - remove weapons/armor
+
+To interact with other characters or attack monsters, simply run into them.
+
+Have fun!

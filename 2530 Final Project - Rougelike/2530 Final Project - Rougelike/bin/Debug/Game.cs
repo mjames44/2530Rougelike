@@ -210,12 +210,12 @@ namespace _2530_Final_Project___Rougelike
                 case 'Q': // Quit
                     Done = true;
                     break;
-                case 'T': // List tiles in current map
-                    foreach (int el in currentMap.TileInfo.Keys)
-                    {
-                        Console.WriteLine("{0}\t{1}", el, currentMap.TileInfo[el].CharacterRepresentation);
-                    }
-                    break;
+                //case 'T': // List tiles in current map
+                //    foreach (int el in currentMap.TileInfo.Keys)
+                //    {
+                //        Console.WriteLine("{0}\t{1}", el, currentMap.TileInfo[el].CharacterRepresentation);
+                //    }
+                //    break;
                 case 'i': // show inventory
                     ShowInventory();
                     break;
@@ -420,8 +420,13 @@ namespace _2530_Final_Project___Rougelike
         {
             Console.Clear();
 
-            Console.WriteLine("This is the help screen.");
-            Console.WriteLine("press Q to return to the game");
+            using (StreamReader sr = new StreamReader("Helpfile.txt"))
+            {
+                Console.WriteLine(sr.ReadToEnd());
+
+            }
+
+            Console.WriteLine("\n\n\npress Q to return to the game");
 
             ConsoleKey input = ConsoleKey.A;
 
