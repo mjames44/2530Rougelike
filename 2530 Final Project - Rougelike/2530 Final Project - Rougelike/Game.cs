@@ -21,7 +21,7 @@ namespace _2530_Final_Project___Rougelike
         #region Fields
         static PlayerCharacter pc; // Player character object represting the player
         static List<Character> characterList; // A list of all current characters, player, non-player, and monsters
-        static bool done; // Keeps the game going until the player inputs 'Q'.
+        
         static string oldMessage; // The previous message
         static int messageCounter; // A counter of how long messages stay on the screen.
         static int maxMessageCounter; // The reset value for the counter above.
@@ -33,6 +33,7 @@ namespace _2530_Final_Project___Rougelike
 
         internal static Boolean PlayerTalkedToKing {get; set;}
 
+        public static bool Done; // Keeps the game going until the player inputs 'Q' or dies.
         public static string Message { get; set; } // The output message for feedback to the user.
         public static MethodInfo CheckSpace;
         public static Map newMap;
@@ -45,6 +46,8 @@ namespace _2530_Final_Project___Rougelike
         {
             currentMap = mapName;
 
+            Done = false;
+
             maxMessageCounter = 10;
             messagePosition = 43;
             maxMessageWidth = 100;
@@ -52,7 +55,7 @@ namespace _2530_Final_Project___Rougelike
             // Sets up the game for the first time.
             InitializeGame();
 
-            while (!done)
+            while (!Done)
             {
                 #region Listen for input, update characters, update maps, execute all other updates
                 #region Character
@@ -203,7 +206,7 @@ namespace _2530_Final_Project___Rougelike
                     TryOpenDoor();
                     break;
                 case 'Q': // Quit
-                    done = true;
+                    Done = true;
                     break;
                 case 'T': // List tiles in current map
                     foreach (int el in currentMap.TileInfo.Keys)
@@ -277,13 +280,7 @@ namespace _2530_Final_Project___Rougelike
             {
                 if (x == characterList[i].X && y == characterList[i].Y)
                 {
-                    if (callingCharacter is Monster && characterList[i] is PlayerCharacter)
-                    {
-                        Monster theMonster = (Monster)callingCharacter;
-
-                        pc = theMonster.AttackPlayer(pc);
-                    }
-                    else if (callingCharacter is PlayerCharacter)
+                    if (callingCharacter is PlayerCharacter)
                         pc.Interact(characterList[i]);
 
                     return true;
