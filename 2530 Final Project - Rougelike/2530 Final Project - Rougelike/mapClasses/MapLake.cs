@@ -17,7 +17,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> {1012,1013,1014});// tiles that lead to other places
+            StandableTiles.AddRange(new List<int> {1012,1013,1014, 1021});// tiles that lead to other places
         }
         private void AddCharacters()
         {
@@ -37,6 +37,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo.Add(1012, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1013, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1014, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(1021, new Tile(ConsoleColor.DarkYellow, '='));
             
         }
 
@@ -67,7 +68,7 @@ namespace _2530_Final_Project___Rougelike
                     StartingPosition = new int[] { 32, 2 };//start position from Mountain to lake
                     break;
                 case 1:
-                    StartingPosition = new int[] { 17, 1 };//start position from Mountain (small path) to lake
+                    StartingPosition = new int[] { 16, 1 };//start position from Mountain (small path) to lake
                     break;
                 case 2:
                     StartingPosition = new int[] { 38, 87 };//start position from Forest 3 to lake

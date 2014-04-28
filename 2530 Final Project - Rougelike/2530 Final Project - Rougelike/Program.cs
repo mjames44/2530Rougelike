@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     {
         static void Main(string[] args)
         {
-            Game theGame = new Game(new MapForest1(0));
+            Game theGame = new Game(new MapLake(0));
         }
     }
 }

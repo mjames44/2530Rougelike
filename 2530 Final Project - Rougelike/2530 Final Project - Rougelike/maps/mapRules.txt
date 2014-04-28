@@ -96,6 +96,7 @@ Value	Name		Character			Unicode
 1018	Forest 4 to Dark Castle
 1019	Abandoned House to Forest 2
 1020	Item in Forest 2
+1021	Bridge over Lake
 
 
 1501 - 2000 - Patrick's Area
