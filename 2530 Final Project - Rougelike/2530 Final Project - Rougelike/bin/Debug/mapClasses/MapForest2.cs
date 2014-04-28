@@ -17,14 +17,20 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             AddTiles();
-            //AddCharacters();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 1007, 1008, 1009, 1010, 1011, 1020 });
 
         }
 
         private void AddCharacters()
         {
-            
+            MapCharacters.Add(new Troll(70, 30));
+            MapCharacters.Add(new Goblin(50,3));
+            MapCharacters.Add(new Goblin(58, 4));
+            MapCharacters.Add(new Orc(25, 15));
+            MapCharacters.Add(new Bat(5, 6));
+            MapCharacters.Add(new Troll(69, 29));
+ 
         }
 
         protected override void AddTiles()

@@ -9,6 +9,8 @@ namespace _2530_Final_Project___Rougelike
 {
     class MapMountain : Map
     {
+        CappySheild CaptSheild = new CappySheild();
+
         public MapMountain(int ep) : base (ep)
         {
             FileName = "mapMountain.csv";
@@ -16,7 +18,7 @@ namespace _2530_Final_Project___Rougelike
             ReadMap();
             AddTiles();
             AddCharacters();
-            StandableTiles.AddRange(new List<int> {1501,1502,1503,1509, 1520 });// tiles that lead to other  places
+            StandableTiles.AddRange(new List<int> {1501,1502,1503,1509, 1520, 1525 });// tiles that lead to other  places
         }
         private void AddCharacters()
         {
@@ -39,6 +41,7 @@ namespace _2530_Final_Project___Rougelike
             TileInfo.Add(1503, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1509, new Tile(ConsoleColor.White, '.'));
             TileInfo.Add(1520, new Tile(ConsoleColor.White, '.'));
+            TileInfo.Add(1525, new Tile(CaptSheild.Color, CaptSheild.CharacterRepresentation));
         }
 
         public override void CheckSpace(int mapValue)
@@ -65,6 +68,10 @@ namespace _2530_Final_Project___Rougelike
                 case 1509:
                     Game.newMap = new MapForest2(3); //going into position
                     Game.CheckSpace = typeof(MapForest2).GetMethod("CheckSpace");
+                    break;
+                case 1525:
+                    Game.AddItem(CaptSheild);
+                    MapSpace[14][95] = 0;
                     break;
             }
         }

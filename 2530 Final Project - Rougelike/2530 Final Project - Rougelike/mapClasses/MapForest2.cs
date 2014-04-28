@@ -24,7 +24,13 @@ namespace _2530_Final_Project___Rougelike
 
         private void AddCharacters()
         {
-            
+            MapCharacters.Add(new Troll(70, 30));
+            MapCharacters.Add(new Goblin(50,3));
+            MapCharacters.Add(new Goblin(58, 4));
+            MapCharacters.Add(new Orc(25, 15));
+            MapCharacters.Add(new Bat(5, 6));
+            MapCharacters.Add(new Troll(69, 29));
+ 
         }
 
         protected override void AddTiles()

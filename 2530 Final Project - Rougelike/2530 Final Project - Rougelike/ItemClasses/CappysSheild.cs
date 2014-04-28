@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Program
+    class CappySheild : Item
     {
-        static void Main(string[] args)
-        {
-            Game theGame = new Game(new MapMountain(4));
-        }
+        public CappySheild() : base("Captain America's Sheild", 2, 5, 10, 0, 'A', ConsoleColor.Red) { }
     }
 }
