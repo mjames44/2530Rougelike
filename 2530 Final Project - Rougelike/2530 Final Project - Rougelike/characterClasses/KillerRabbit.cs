@@ -11,17 +11,17 @@ namespace _2530_Final_Project___Rougelike
         public KillerRabbit(int x, int y)
             : base(x, y)
         {
-            HP = 45;
+            HP = 65;
             XP = 60;
 
             CharacterRepresentation = 'R';
             Name = "Killer Rabbit";
             Color = ConsoleColor.White;
-            Attack = 11;
+            Attack = 25;
             Defense = 1;
             Armor = 1;
             MinDamage = 1;
-            MaxDamage = 13;
+            MaxDamage = 23;
         }
 
         public override void DropItem()

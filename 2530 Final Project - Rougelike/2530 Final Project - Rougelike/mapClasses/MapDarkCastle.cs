@@ -25,6 +25,13 @@ namespace _2530_Final_Project___Rougelike
             MapCharacters.Add(new Ogre(79, 35));
             MapCharacters.Add(new Ogre(24, 27));
             MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
+            MapCharacters.Add(new KillerRabbit(92, 25));
             MapCharacters.Add(new KillerRabbit(24, 3));
             MapCharacters.Add(new Goblin(5, 30));
             MapCharacters.Add(new Goblin(10, 24));
