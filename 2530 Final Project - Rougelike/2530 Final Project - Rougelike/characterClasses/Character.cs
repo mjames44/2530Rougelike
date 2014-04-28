@@ -81,11 +81,11 @@ namespace _2530_Final_Project___Rougelike
                 CharacterMoved = false;
         }
 
-        internal int[] NextSpace(int[][] mapSpace, List<int> standableTiles)
+        internal int[] NextSpace(int[][] mapSpace, List<int> standableTiles, int dir)
         {
             Random rand = new Random(DateTime.Now.Millisecond);
 
-            int moveDirection = rand.Next() % 8;
+            int moveDirection = dir % 8;
 
             switch (moveDirection)
             {

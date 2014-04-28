@@ -264,11 +264,19 @@ namespace _2530_Final_Project___Rougelike
                 occupiedPositions.Add(el.PreviousPosition);
             }
 
+            List<int> moveDirections = new List<int>();
+            Random rand = new Random();
+
+            foreach (Character el in characterList)
+            {
+                moveDirections.Add(rand.Next());
+            }
+
             foreach (Character el in characterList)
             {
                 if (el.GetType() != pc.GetType())
                 {
-                    int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles);
+                    int[] nextSpace = el.NextSpace(currentMap.MapSpace, currentMap.StandableTiles, moveDirections[characterList.IndexOf(el)]);
 
                     if (!SpaceOccupied(nextSpace[0], nextSpace[1], el) && CanMoveHere(currentMap.MapSpace[nextSpace[0]][nextSpace[1]]))
                         el.Move(nextSpace);
