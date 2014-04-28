@@ -16,12 +16,27 @@ namespace _2530_Final_Project___Rougelike
 
             ReadMap();
             base.AddTiles();
+            AddCharacters();
             StandableTiles.AddRange(new List<int> { 514 });
         }
 
         protected override void AddTiles()
         {
             TileInfo.Add(514, new Tile(ConsoleColor.White, '.'));
+        }
+
+        private void AddCharacters()
+        {
+            MapCharacters = new List<Character>();
+
+            MapCharacters.Add(new Guard(53, 20));
+            MapCharacters.Add(new Guard(53, 14));
+            MapCharacters.Add(new Guard(41, 12));
+            MapCharacters.Add(new Guard(58, 29));
+            MapCharacters.Add(new Guard(58, 13));
+            MapCharacters.Add(new Guard(40, 27));
+
+            MapCharacters.Add(new BarracksCaptain(39,34));
         }
 
         public override void CheckSpace(int mapValue)

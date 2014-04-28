@@ -10,7 +10,7 @@ namespace _2530_Final_Project___Rougelike
     {
         public BrownCat(int x, int y) : base(x,y)
         {
-            CharacterRepresentation = 'h';
+            CharacterRepresentation = 'm';
             Name = "Brown Cat";
             Color = ConsoleColor.DarkYellow;
 

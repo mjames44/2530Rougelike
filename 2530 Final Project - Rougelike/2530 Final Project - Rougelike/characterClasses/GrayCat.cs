@@ -11,7 +11,7 @@ namespace _2530_Final_Project___Rougelike
         public GrayCat(int x, int y)
             : base(x, y)
         {
-            CharacterRepresentation = 'h';
+            CharacterRepresentation = 'm';
             Name = "Gray Cat";
             Color = ConsoleColor.DarkYellow;
 

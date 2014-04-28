@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2530_Final_Project___Rougelike
 {
-    class Raiper : Item
+    class Rapier : Item
     {
-        public Raiper() : base("Raiper", 2, 8, 5, 0, 'R', ConsoleColor.Gray) { }
+        public Rapier() : base("Rapier", 2, 8, 5, 0, 'R', ConsoleColor.Gray) { }
     }
 }
